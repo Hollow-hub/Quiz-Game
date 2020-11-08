@@ -16,7 +16,7 @@ public class Round {
 
     private int points;
     public Round() {
-        points = 0;
+        this.points = 0;
     }
     /*  we have an array list: questions [20,5] (String) for the 
     questions(first column) and the answers (other columns)
@@ -25,14 +25,14 @@ public class Round {
     this list is of type: ArrayList<String[]>
     so at each call the functions: right answer and bid
     will get a String as mentioned above
-    */ 
     
-    /* this method is for the right answer
-    type of lap */
+    this method is for the right answer
+    type of lap 
+    */
     public Boolean rightAnswer() {
         //  just for testing purposes i made a sample 
         //  question with answers;
-        String[] question;
+        String[] question;// this will be a parameter in the function
         question = new String[5];
         //this is the question
         question[0] = "How tall is the eiffel tower";
@@ -42,12 +42,13 @@ public class Round {
         question[2] = "128 meters";
         question[3] = "256 meters";
         question[4] = "512 meters";
+       
         if (interaction(question)) {
-            points += 1000;
-            return true;
+            this.points += 1000;
+            return true; // true means he won
         }
         else {
-            return false;
+            return false; // false means he lost
         }
     }
 
@@ -69,8 +70,9 @@ public class Round {
             System.out.println("You LOSE" + bid_player_One + "points");
     }
     
-    /* this method handles the
-    the interaction with the user */
+    /*  this method handles the
+        the interaction with the user
+    */
     public static boolean interaction(String[] question) {
         System.out.println(question[0]); // that prints the question
         int[] questionNumbers = {1,2,3,4};  
@@ -82,9 +84,9 @@ public class Round {
             //numbers are shuffled, but index isn't
             questionNumbers[i] = random.nextInt(512) % i; 
         }
-
+        // as mentioned before: indexes are in correct order
         correctAnswersPlace = questionNumbers[0];
-        
+        // this prints the questions shuffled
         System.out.printf("%n 1. %s   2.%s %n 3.%s  4.%s %n", 
                             question[questionNumbers[1]], 
                             question[questionNumbers[2]],
@@ -106,6 +108,5 @@ public class Round {
                                 correctAnswer);
             return false;
         }
-
     }
 }
