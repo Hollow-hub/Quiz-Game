@@ -4,7 +4,14 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Collections;
 
-
+/**
+ * This class represents each Round 
+ * in the game. Different method are 
+ * for different types of rounds 
+ * @author Katsikas Stefanos
+ * @author Gkountelos Dimitrios
+ * @version 0.0.1
+ */
 public class Round {
     /* η round δεχεται ως ορισματα τον μονοδιαστατο  και τον αριθμο του μονοδιαστατου
     *  και το ειδος της ερωτησης
@@ -15,20 +22,20 @@ public class Round {
 
 
     private int points;
+
     public Round() {
         this.points = 0;
     }
-    /*  we have an array list: questions [20,5] (String) for the 
-    questions(first column) and the answers (other columns)
-    the second column is for the right answer
-    
-    this list is of type: ArrayList<String[]>
-    so at each call the functions: right answer and bid
-    will get a String as mentioned above
-    
-    this method is for the right answer
-    type of lap 
-    */
+
+    /**
+     * this method is for the "right answer" type of lap and it
+     * gets an array: questions[20,5] (String) as input
+     * the first column has the questions
+     * the seconde column has the correct answer for each question
+     * the other columns have the incorrect answers (one per column)
+     * @return true if player won or 
+     *         false if he lost
+     */
     public Boolean rightAnswer() {
         //  just for testing purposes i made a sample 
         //  question with answers;
@@ -43,8 +50,8 @@ public class Round {
         question[3] = "256 meters";
         question[4] = "512 meters";
        
-        if (interaction(question)) {
-            this.points += 1000;
+        if (interaction(question) == true) {
+            //this.points += 1000;
             return true; // true means he won
         }
         else {
@@ -70,42 +77,53 @@ public class Round {
             System.out.println("You LOSE" + bid_player_One + "points");
     }
     
-    /*  this method handles the
-        the interaction with the user
-    */
+    /**
+     * this method handles the interaction (questions and anwers)
+     * with the user
+     * @param question is a row from the questions[20,5] array as 
+     *                 mentioned above
+     * @return true if user won or false if he lost
+     */
     public static boolean interaction(String[] question) {
         System.out.println(question[0]); // that prints the question
+        
         int[] questionNumbers = {1,2,3,4};  
-        String correctAnswer = question[1]; // this holds the correct answer
         int correctAnswersPlace = 1; 
         
         Random random = new Random();
-        for (int i:questionNumbers) {
-            //numbers are shuffled, but index isn't
-            questionNumbers[i] = random.nextInt(512) % i; 
+        int temp, selected;
+        // a loop that goes from end to start of the array
+        for (int i=questionNumbers.length-1; i>=0; i--) {
+            selected = random.nextInt(i); // random number between 0-i(current index)
+            // swap the current array value (i) with a randomly selected one
+            temp = questionNumbers[i];
+            questionNumbers[i] = questionNumbers[selected];
+            questionNumbers[selected] = temp;
         }
         // as mentioned before: indexes are in correct order
+        // so this holds the number that is shown to the user
+        // for the correct answer
         correctAnswersPlace = questionNumbers[0];
+        
         // this prints the questions shuffled
-        System.out.printf("%n 1. %s   2.%s %n 3.%s  4.%s %n", 
-                            question[questionNumbers[1]], 
-                            question[questionNumbers[2]],
-                            question[questionNumbers[3]], 
-                            question[questionNumbers[4]]);
+        System.out.println("1."+question[questionNumbers[0]]+
+                        " 2."+ question[questionNumbers[1]]);
         
-        
-        System.out.printf("Select between: 1, 2, 3, 4: ");
+        System.out.println("3."+question[questionNumbers[2]]+
+                        " 4."+ question[questionNumbers[3]]);
+
+        System.out.println("Select between: 1, 2, 3, 4: ");
         Scanner chosen = new Scanner(System.in);
         int playersAnswer = chosen.nextInt();
         chosen.close();
         
         if (playersAnswer == correctAnswersPlace) {
-            System.out.printf("Win%n");
+            System.out.println("Win");
             return true;
         }
         else {
-            System.out.printf("You idiot, the correct answer is: %s%n",
-                                correctAnswer);
+            System.out.println("You idiot, the correct answer is: "+
+                                question[1]);
             return false;
         }
     }
