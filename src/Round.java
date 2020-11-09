@@ -10,17 +10,14 @@ import java.util.Collections;
  * for different types of rounds 
  * @author Katsikas Stefanos
  * @author Gkountelos Dimitrios
- * @version 0.0.1
+ * @version 0.0.2
  */
 public class Round {
-    /* η round δεχεται ως ορισματα τον μονοδιαστατο  και τον αριθμο του μονοδιαστατου
-    *  και το ειδος της ερωτησης
-    * */
-    String x="nothing";
+    /**
+     * Round takes as parameters, 2 arrays and the question category
+     */
+
     Scanner console = new Scanner(System.in);
-    String answer_player_One;
-
-
     private int points;
 
     public Round() {
@@ -28,15 +25,13 @@ public class Round {
     }
 
     /**
-     * this method is for the "right answer" type of lap and it
+     * this method is for the "right answer" type of round and it
      * gets an array: questions[20,5] (String) as input
      * the first column has the questions
-     * the seconde column has the correct answer for each question
+     * the second column has the correct answer for each question
      * the other columns have the incorrect answers (one per column)
-     * @return true if player won or 
-     *         false if he lost
      */
-    public Boolean rightAnswer() {
+    public void rightAnswer() {
         //  just for testing purposes i made a sample 
         //  question with answers;
         String[] question;// this will be a parameter in the function
@@ -52,33 +47,50 @@ public class Round {
        
         if (interaction(question) == true) {
             //this.points += 1000;
-            return true; // true means he won
         }
-        else {
-            return false; // false means he lost
-        }
+
     }
 
+    /**
+     * this method is for "bidding" type of round and it
+     * gets an array: questions[20,5] (String) as input
+     * and it has the same input as the "right answer" type
+     * for the moment
+     */
+
     public void bid(){
+
+        //  just for testing purposes i made a sample
+        //  question with answers;
+        String[] question;// this will be a parameter in the function
+        question = new String[5];
+        //this is the question
+        question[0] = "How tall is the eiffel tower";
+        //this is the right answer
+        question[1] = "324 meters";
+        //the next ones are just random wrong answers
+        question[2] = "128 meters";
+        question[3] = "256 meters";
+        question[4] = "512 meters";
+
+
         System.out.println("The category is bidding!");
         System.out.println("You can bid 250,500,750 and 1000 points");
-        int bid_player_One=console.nextInt();
-        while (bid_player_One != 250 && bid_player_One != 500 && bid_player_One != 750 && bid_player_One != 1000){
+        int bid_player = console.nextInt();    // here it takes an input "bid" from the user
+        while (bid_player != 250 && bid_player != 500 && bid_player != 750 && bid_player != 1000){ //checks for wrong input
             System.out.println("You can't bid" + console + "points");
             System.out.println("Please bid again");
-            bid_player_One = console.nextInt();
+            bid_player = console.nextInt();
         }
-        System.out.println("");  /* εδω εμφανιζεται η ερωτηση */
-        System.out.println("");  /* εδω εμφανιζονται οι 4 απαντησεις */
-        answer_player_One = console.nextLine();
-        if (answer_player_One.equals(x)) /* εδω γινεται ελεγχος για το αν ο παιχτης απαντησε σωστα */
-            System.out.println("You WIN!" + bid_player_One + "points");
-        else
-            System.out.println("You LOSE" + bid_player_One + "points");
+        if (interaction(question) == true) {
+            System.out.println("take your" + bid_player + "that you had bidden");
+            //this.points += 1000;
+        }
+
     }
     
     /**
-     * this method handles the interaction (questions and anwers)
+     * this method handles the interaction (questions and answers)
      * with the user
      * @param question is a row from the questions[20,5] array as 
      *                 mentioned above
@@ -105,25 +117,35 @@ public class Round {
         // for the correct answer
         correctAnswersPlace = questionNumbers[0];
         
-        // this prints the questions shuffled
-        System.out.println("1."+question[questionNumbers[0]]+
+        // this prints the answers shuffled
+        System.out.println(" 1."+question[questionNumbers[0]]+
                         " 2."+ question[questionNumbers[1]]);
         
-        System.out.println("3."+question[questionNumbers[2]]+
+        System.out.println(" 3."+question[questionNumbers[2]]+
                         " 4."+ question[questionNumbers[3]]);
 
-        System.out.println("Select between: 1, 2, 3, 4: ");
+        System.out.println("Select between: 1, 2, 3, 4 ");
+        System.out.println("Answer:");
         Scanner chosen = new Scanner(System.in);
         int playersAnswer = chosen.nextInt();
+        short counter=1;
+        while (playersAnswer!=1 && playersAnswer!=2 && playersAnswer!=3 && playersAnswer!=4) {
+            if(counter==1)
+                System.out.println("Wrong Input...please man its 1,2,3,4 how hard can it be??");
+            else
+                System.out.println("I SAID 1,2,3 or freaking 4, WTF is wrong with you");
+            playersAnswer = chosen.nextInt();
+            counter+=1;
+        }
         chosen.close();
         
         if (playersAnswer == correctAnswersPlace) {
-            System.out.println("Win");
+            System.out.println("You Win");
             return true;
         }
         else {
             System.out.println("You idiot, the correct answer is: "+
-                                question[1]);
+                                correctAnswersPlace);
             return false;
         }
     }
