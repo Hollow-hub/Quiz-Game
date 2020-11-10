@@ -84,7 +84,7 @@ public class Round {
         }
         if (interaction(question) == true) {
             System.out.println("take your" + bid_player + "that you had bidden");
-            //this.points += 1000;
+            //this.points += bid_player;
         }
 
     }
