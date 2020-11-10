@@ -7,7 +7,7 @@ import java.util.Random;
  * for different types of rounds 
  * @author Katsikas Stefanos
  * @author Gkountelos Dimitrios
- * @version 0.0.2
+ * @version 0.0.3
  */
 public class Round {
     /**
@@ -20,6 +20,10 @@ public class Round {
     public Round() {
         this.points = 0;
     }
+
+    CliInterface CLI = new CliInterface();
+
+
 
     /**
      * this method is for the "right answer" type of round and it
@@ -42,7 +46,7 @@ public class Round {
         question[3] = "256 meters";
         question[4] = "512 meters";
        
-        if (interaction(question) == true) {
+        if (CLI.interaction(question) == true) {
             //this.points += 1000;
         }
 
@@ -79,7 +83,7 @@ public class Round {
             System.out.println("Please bid again");
             bid_player = console.nextInt();
         }
-        if (interaction(question) == true) {
+        if (CLI.interaction(question) == true) {
             System.out.println("take your" + bid_player + "that you had bidden");
             //this.points += bid_player;
         }
