@@ -11,7 +11,7 @@ import java.util.Random;
 public class CliInterface {
     /**
      * this method handles the interaction (questions and answers)
-     * with the user
+     * with the (user)
      * @param question is a row from the questions[20,5] array as 
      *                 mentioned above
      * @return true if user won or false if he lost
