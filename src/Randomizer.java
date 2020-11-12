@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * This class randomizes numbers
  * @author Katsikas Stefanos
- * @autho Gkountelos Dimitrios
+ * @author Gkountelos Dimitrios
  */
 public class Randomizer {
     /**
@@ -11,13 +11,13 @@ public class Randomizer {
      * @param start is the first number of the range
      *              that will get randomized
      * @param end is the last number
-     * @return the array with the numbers start->end shuffled
+     * @return shuffled[] which is the array with the numbers start->end shuffled
      */
     public int[] randomize(int start, int end) {
         int[] shuffled = new int[end+1-start];
         Random random = new Random();
         for (int i=0; i<shuffled.length; i++) {
-            shuffled[i] = i;
+            shuffled[i] = i+start;
         }
 
         int temp, selected;
@@ -27,10 +27,6 @@ public class Randomizer {
             temp = shuffled[i];
             shuffled[i] = shuffled[selected];
             shuffled[selected] = temp;
-        }
-
-        for (int i=0; i<shuffled.length; i++) {
-            shuffled[i] = shuffled[i+start];
         }
         return shuffled;
     }
