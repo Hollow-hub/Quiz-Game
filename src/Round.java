@@ -12,7 +12,6 @@ public class Round {
     /**
      * Round takes as parameters, 2 arrays and the question category
      */
-
     Scanner console = new Scanner(System.in);
     private int points;
     private CliInterface CLI;
@@ -21,9 +20,6 @@ public class Round {
         this.points = 0;
         this.CLI = new CliInterface();
     }
-
-
-
 
     /**
      * this method is for the "right answer" type of round and it
@@ -58,9 +54,7 @@ public class Round {
      * and it has the same input as the "right answer" type
      * for the moment
      */
-
     public void bid(){
-
         //  just for testing purposes i made a sample
         //  question with answers;
         String[] question;// this will be a parameter in the function
@@ -74,7 +68,6 @@ public class Round {
         question[3] = "256 meters";
         question[4] = "512 meters";
 
-
         System.out.println("The category is bidding!");
         System.out.println("You can bid 250,500,750 and 1000 points");
         int bid_player = console.nextInt();    // here it takes an input "bid" from the user
@@ -87,6 +80,5 @@ public class Round {
             System.out.println("take your" + bid_player + "that you had bidden");
             //this.points += bid_player;
         }
-
     }
 }
