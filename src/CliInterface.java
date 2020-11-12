@@ -19,20 +19,11 @@ public class CliInterface {
     public boolean interaction(String[] question) {
         System.out.println(question[0]); // that prints the question
         
-        int[] questionNumbers = {1,2,3,4};  
         int correctAnswersPlace = 1; 
-        
-        Random random = new Random();
-        int temp, selected;
-        // a loop that goes from end to start of the array
-        for (int i=questionNumbers.length-1; i>=0; i--) {
-            selected = random.nextInt(i); // random number between 0-i(current index)
-            // swap the current array value (i) with a randomly selected one
-            temp = questionNumbers[i];
-            questionNumbers[i] = questionNumbers[selected];
-            questionNumbers[selected] = temp;
-        }
-        // as mentioned before: indexes are in correct order
+        Randomizer randomizer = new Randomizer();
+        int[] questionNumbers = randomizer.randomize(1, 4);// shuffle numbers 1-4
+
+        // indexes are in correct order
         // so this holds the number that is shown to the user
         // for the correct answer
         correctAnswersPlace = questionNumbers[0];
@@ -50,12 +41,14 @@ public class CliInterface {
         int playersAnswer = chosen.nextInt();
         short counter=1;
         while (playersAnswer!=1 && playersAnswer!=2 && playersAnswer!=3 && playersAnswer!=4) {
-            if(counter==1)
+            if (counter == 1) {
                 System.out.println("Wrong Input...please man its 1,2,3,4 how hard can it be??");
-            else
+            }
+            else {
                 System.out.println("I SAID 1,2,3 or freaking 4, WTF is wrong with you");
+            }
             playersAnswer = chosen.nextInt();
-            counter+=1;
+            counter += 1;
         }
         chosen.close();
         
