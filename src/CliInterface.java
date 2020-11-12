@@ -16,7 +16,7 @@ public class CliInterface {
      *                 mentioned above
      * @return true if user won or false if he lost
      */
-    public static boolean interaction(String[] question) {
+    public boolean interaction(String[] question) {
         System.out.println(question[0]); // that prints the question
         
         int[] questionNumbers = {1,2,3,4};  

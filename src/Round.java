@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
 
 /**
  * This class represents each Round 
@@ -16,12 +15,13 @@ public class Round {
 
     Scanner console = new Scanner(System.in);
     private int points;
+    private CliInterface CLI;
 
     public Round() {
         this.points = 0;
+        this.CLI = new CliInterface();
     }
 
-    CliInterface CLI = new CliInterface();
 
 
 
