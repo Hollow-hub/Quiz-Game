@@ -10,24 +10,24 @@ import java.util.Scanner;
 public class CliInterface {
     /**
      * this method handles the interaction (questions and answers)
-     * with the (user)
-     * @param question is a row from the questions[20,5] array as 
-     *                 mentioned above
+     * with the user
+     * @param qac is an object from the class: Qac,
+     *          which has question, answers[4] and category
      * @return true if user won or false if he lost
      */
     public boolean interaction(Qac qac) {
         System.out.println(qac.getQuestion()); // that prints the question
         
-        int correctAnswersPlace = 1; 
+        int correctAnswersPlace = 0;// the first answer is the correct one
         Randomizer randomizer = new Randomizer();
         int[] questionNumbers = randomizer.randomize(1, 4);// shuffle numbers 1-4
 
-        // indexes are in correct order
+        // indexes are in correct order (0-3)
         // so this holds the number that is shown to the user
         // for the correct answer
         correctAnswersPlace = questionNumbers[0];
         
-        // this prints the answers shuffled
+        // this prints the answers in random order
         System.out.println(" 1."+qac.getAnswers()[questionNumbers[0]]+
                         " 2."+ qac.getAnswers()[questionNumbers[1]]);
         
