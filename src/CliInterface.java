@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
 
 /**
  * This class handles the command line interface
@@ -16,8 +15,8 @@ public class CliInterface {
      *                 mentioned above
      * @return true if user won or false if he lost
      */
-    public boolean interaction(String[] question) {
-        System.out.println(question[0]); // that prints the question
+    public boolean interaction(Qac qac) {
+        System.out.println(qac.getQuestion()); // that prints the question
         
         int correctAnswersPlace = 1; 
         Randomizer randomizer = new Randomizer();
@@ -29,18 +28,19 @@ public class CliInterface {
         correctAnswersPlace = questionNumbers[0];
         
         // this prints the answers shuffled
-        System.out.println(" 1."+question[questionNumbers[0]]+
-                        " 2."+ question[questionNumbers[1]]);
+        System.out.println(" 1."+qac.getAnswers()[questionNumbers[0]]+
+                        " 2."+ qac.getAnswers()[questionNumbers[1]]);
         
-        System.out.println(" 3."+question[questionNumbers[2]]+
-                        " 4."+ question[questionNumbers[3]]);
+        System.out.println(" 3."+qac.getAnswers()[questionNumbers[2]]+
+                        " 4."+ qac.getAnswers()[questionNumbers[3]]);
 
         System.out.println("Select between: 1, 2, 3, 4 ");
         System.out.println("Answer:");
         Scanner chosen = new Scanner(System.in);
         int playersAnswer = chosen.nextInt();
         short counter=1;
-        while (playersAnswer!=1 && playersAnswer!=2 && playersAnswer!=3 && playersAnswer!=4) {
+        while (playersAnswer!=1 && playersAnswer!=2 && 
+                playersAnswer!=3 && playersAnswer!=4) {
             if (counter == 1) {
                 System.out.println("Wrong Input...please man its 1,2,3,4 how hard can it be??");
             }
