@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * This class represents each Round 
@@ -6,7 +7,7 @@ import java.util.Scanner;
  * for different types of rounds 
  * @author Katsikas Stefanos
  * @author Gkountelos Dimitrios
- * @version 0.0.3
+ * @version 0.0.4
  */
 public class Round {
     /**
@@ -14,12 +15,14 @@ public class Round {
      */
     private int points;
     private CliInterface CLI;
-    
+
     public Round() {
         this.points = 0;
         this.CLI = new CliInterface();
     }
-    
+
+
+
     /**
      * this method is for the "right answer" type of round and it
      * gets an array: questions[20,5] (String) as input
@@ -27,10 +30,10 @@ public class Round {
      * the second column has the correct answer for each question
      * the other columns have the incorrect answers (one per column)
      */
-    public void rightAnswer() {
+    public void rightAnswer(Qac qac) {
         //  just for testing purposes i made a sample 
         //  question with answers;
-        String[] question;// this will be a parameter in the function
+       /* String[] question;// this will be a parameter in the function
         question = new String[5];
         //this is the question
         question[0] = "How tall is the eiffel tower";
@@ -39,9 +42,9 @@ public class Round {
         //the next ones are just random wrong answers
         question[2] = "128 meters";
         question[3] = "256 meters";
-        question[4] = "512 meters";
+        question[4] = "512 meters";*/
         
-        if (CLI.interaction(question) == true) {
+        if (CLI.interaction(qac) == true) {
             //this.points += 1000;
         }
         
@@ -53,10 +56,10 @@ public class Round {
      * and it has the same input as the "right answer" type
      * for the moment
      */
-    public void bid(){
+    public void bid(Qac qac){
         //  just for testing purposes i made a sample
         //  question with answers;
-        String[] question;// this will be a parameter in the function
+       /* String[] question;// this will be a parameter in the function
         question = new String[5];
         //this is the question
         question[0] = "How tall is the eiffel tower";
@@ -65,9 +68,9 @@ public class Round {
         //the next ones are just random wrong answers
         question[2] = "128 meters";
         question[3] = "256 meters";
-        question[4] = "512 meters";
-        
-        System.out.println("The category is bidding!");
+        question[4] = "512 meters";*/
+        String category = qac.getCategory();
+        System.out.println("The category is" + category);
         System.out.println("You can bid 250,500,750 and 1000 points");
         Scanner console = new Scanner(System.in);
         int bid_player = console.nextInt();    // here it takes an input "bid" from the user
@@ -78,7 +81,7 @@ public class Round {
         }
         console.close();
         
-        if (CLI.interaction(question) == true) {
+        if (CLI.interaction(qac) == true) {
             System.out.println("take your" + bid_player + "that you had bidden");
             //this.points += bid_player;
         }
