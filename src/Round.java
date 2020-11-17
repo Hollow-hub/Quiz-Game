@@ -21,11 +21,15 @@ public class Round {
         this.CLI = new CliInterface();
     }
 
-
-
+    /**  
+     * the getter for the points      
+     */
+    public int getPoint() {
+        return points;
+    }
     /**
      * this method is for the "right answer" type of round and it
-     * gets an array: questions[20,5] (String) as input
+     * @param qac is an object from the class: Qac
      * the first column has the questions
      * the second column has the correct answer for each question
      * the other columns have the incorrect answers (one per column)
@@ -33,19 +37,8 @@ public class Round {
     public void rightAnswer(Qac qac) {
         //  just for testing purposes i made a sample 
         //  question with answers;
-       /* String[] question;// this will be a parameter in the function
-        question = new String[5];
-        //this is the question
-        question[0] = "How tall is the eiffel tower";
-        //this is the right answer
-        question[1] = "324 meters";
-        //the next ones are just random wrong answers
-        question[2] = "128 meters";
-        question[3] = "256 meters";
-        question[4] = "512 meters";*/
-        
         if (CLI.interaction(qac) == true) {
-            //this.points += 1000;
+            this.points += 1000;
         }
         
     }
@@ -57,18 +50,6 @@ public class Round {
      * for the moment
      */
     public void bid(Qac qac){
-        //  just for testing purposes i made a sample
-        //  question with answers;
-       /* String[] question;// this will be a parameter in the function
-        question = new String[5];
-        //this is the question
-        question[0] = "How tall is the eiffel tower";
-        //this is the right answer
-        question[1] = "324 meters";
-        //the next ones are just random wrong answers
-        question[2] = "128 meters";
-        question[3] = "256 meters";
-        question[4] = "512 meters";*/
         String category = qac.getCategory();
         System.out.println("The category is" + category);
         System.out.println("You can bid 250,500,750 and 1000 points");
@@ -83,7 +64,7 @@ public class Round {
         
         if (CLI.interaction(qac) == true) {
             System.out.println("take your" + bid_player + "that you had bidden");
-            //this.points += bid_player;
+            this.points += bid_player;
         }
     }
 }
