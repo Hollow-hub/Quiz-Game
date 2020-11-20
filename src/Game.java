@@ -25,26 +25,28 @@ public class Game {
      * the method that organizes and runs the game
      */
     public void play(){
-        qac.add(new Qac("Ποια χρονιά κυκλοφόρησε ο Τιτανικός;","1997","1996","1998","2000","history"));
-        qac.add(new Qac("Ποιος είναι ο μεγαλύτερος σε όγκο νερού ποταμός στον κόσμο;","Αμαζόνιος","Μισισιπής","Νείλος","Βολγας","geography"));
-        qac.add(new Qac("Πόσες ήταν οι μούσες στην αρχαία ελληνική Μυθολογία;","9","7","12","10","history"));
-        qac.add(new Qac("Το στενό του Γιβραλτάρ χωρίζει την Ιβηρική χερσόνησο από ποια αφρικανική χώρα;","Μαροκο", "Αλγερια", "Τυνησια", "Δυτικη Σαχαρα","geography"));
-        qac.add(new Qac("Ποια είναι η μεγαλύτερη έρημος στον κόσμο;","Ανταρκτικη","Σαχαρα","Γκομπι","Αραβικη", "geography"));
-        qac.add(new Qac("Ποια χώρα βρίσκεται πιο κοντά στον Βόρειο Πόλο;" ,"Καναδάς","Φινλανδία" ,"Ρωσία" ,"Νορβηγία","geography"));
-        qac.add(new Qac("Ποιος είναι το παγκόσμιο ρεκόρ των 100 μέτρων του Usain Bolt;","9.58 sec", "9.32 sec", "9.76 sec", "9.22 sec" ,"sports"));
-        qac.add(new Qac("Ποιος ήταν πρωθυπουργός της Ελλάδας το 2005;", "Κωνσταντίνος Καραμανλής","Γιώργος Παπανδρέου" ,"Κώστας Σημίτης","Αλέξης Τσίπρας" ,"history"));
-        qac.add(new Qac("Σε ποια από τις παρακάτω περιπτώσεις τα αντιβιοτικά είναι παντελώς άχρηστα;", "Ιώσεις","Στρεπτόκοκκος" ,"Φυματίωση" ,"Λημώξεις" ,"science"));
-        qac.add(new Qac("Πώς ονομάζεται το σημαντικότερο βραβείο στον χώρο της πληροφορικής;", "Turing", "Torvalds", "Nobel", "Tesla" ,"science"));
-        qac.add(new Qac("Ποια είναι η έκταση της Γης;", "Περίπου 500 εκ. τετραγωνικά χιλιόμετρα","Περίπου 350 εκ. τετραγωνικά χιλιόμετρα","Περίπου 600 εκ. τετραγωνικά χιλιόμετρα","Περίπου 410 εκ. τετραγωνικά χιλιόμετρα", "geography"));
-        qac.add(new Qac("Ποιος έγραψε τη Διακήρυξη Ανεξαρτησίας των ΗΠΑ;", "Τόμας Τζέφερσον","Αλεξάντερ Χάμιλτον","Τζωρτζ Ουάσινγκτον","Αβραάμ Λίνκολν", "history"));
-        qac.add(new Qac("Ποιος είναι ο εφευρέτης του ηλεκτρικού λαμπτήρα;" ,"Thomas Edison","Alexander Graham Bell","Benjamin Franklin","Nicola Tesla", "history"));
-        qac.add(new Qac("Ποια χώρα έχει κατακτήσει τα περισσότερα παγκόσμια κύπελλα ποδοσφαίρου;" ,"Βραζιλία","Ισπανία","Ιταλία","Γερμανία" ,"sports"));
-        qac.add(new Qac("Σε τι άθλημα διαγωνίζεται ο πιο ακριβοπληρωμένος αθλητής στον κόσμο;", "Γκολφ","Μπάσκετ","Formula 1","Ποδόσφαιρο" ,"sports"));
-        qac.add(new Qac("Πόσα πρωταθλήματα F1 έχει κερδίσει ο Lewis Hamilton;","6","2","4","7" ,"sports"));
-        qac.add(new Qac("Ποιός θεωρείται ο πατέρας της επιστήμης των υπολογιστών;", "Alan Turing", "Linus Torvalds", "Dennis Ritchie", "Steve Jobs", "science"));
-        qac.add(new Qac("Ποιά ήταν η πρώτη αποστολή της NASA στη Σελήνη;", "Απόλλο 11", "Απόλλο 1", "Απόλλο 3", "Sputnik" ,"science"));
-        qac.add(new Qac("Από ποία γλώσσα προήλθε ο όρος Computer;", "Λατινικά", "Αγγλικά", "Ελληνικά", "Αράβικα" ,"science"));
-        qac.add(new Qac("Οι LA Lakers και οι New York Knicks παίζουν ποιο άθλημα;" ,"Μπασκετ", "Χοκεϊ", "Ραγκμπι","Baseball","sports"));
+        qac.add(new Qac("What year was the Titanic released?", "1997", "1996", "1998", "2000", "history"));
+        qac.add(new Qac("Which is the largest river in the world in volume of water?", "Amazon", "Mississippi", "Nile", "Volga", "geography"));
+        qac.add(new Qac("How many muses were there in ancient Greek Mythology?", "9", "7", "12", "10", "history"));
+        qac.add(new Qac("The Strait of Gibraltar separates the Iberian Peninsula from which African country?", "Morocco", "Algeria", "Tunisia", "Western Sahara", "geography"));
+        qac.add(new Qac("Which is the largest desert in the world?", "Antarctica", "Sahara", "Gobi", "Arabian", "geography"));
+        qac.add(new Qac("Which country is closest to the North Pole?" , "Canada", "Finland", "Russia", "Norway", "geography"));
+        qac.add(new Qac("What is Usain Bolt's 100m world record?", "9.58 sec", "9.32 sec", "9.76 sec", "9.22 sec", "sports"));
+        qac.add(new Qac("Who was the Prime Minister of Greece in 2005?", "Konstantinos Karamanlis", "George Papandreou", "Costas Simitis", "Alexis Tsipras", "history"));
+        qac.add(new Qac("In which of the following cases are antibiotics completely useless?", "Viruses", "Streptococcus", "Tuberculosis", "Infections", "science"));
+        qac.add(new Qac("What is the name of the most important prize in the field of information technology?", "Turing", "Torvalds", "Nobel", "Tesla", "science"));
+        qac.add(new Qac("What is the area of the Earth?", "About 500 million square kilometers", "About 350 million square kilometers", "About 600 million square kilometers","Approximately 410 million square kilometers", "geography"));
+        qac.add(new Qac("Who Wrote the US Declaration of Independence?", "Thomas Jefferson", "Alexander Hamilton", "George Washington", "Abraham Lincoln", "history"));
+        qac.add(new Qac("Who is the inventor of the light bulb?" , "Thomas Edison", "Alexander Graham Bell", "Benjamin Franklin", "Nicola Tesla", "history"));
+        qac.add(new Qac("Which country has won the most World Cups?" , "Brazil", "Spain", "Italy", "Germany", "sports"));
+        qac.add(new Qac("In what sport does the highest paid athlete in the world compete?", "Golf", "Basketball", "Formula 1", "Football", "sports"));
+        qac.add(new Qac("How many F1 championships has Lewis Hamilton won?", "6", "2", "4", "7", "sports"));
+        qac.add(new Qac("Who is considered the father of computer science?", "Alan Turing", "Linus Torvalds", "Dennis Ritchie", "Steve Jobs", "science"));
+        qac.add(new Qac("What was NASA's first mission to the Moon?", "Apollo 11", "Apollo 1", "Apollo 3", "Sputnik", "science"));
+        qac.add(new Qac("From which language did the term Computer come?", "Latin", "English", "Greek", "Arabic", "science"));
+        qac.add(new Qac("Which sport do the LA Lakers and the New York Knicks play?" , "Basketball", "Hockey", "Rugby", "Baseball", "sports"));
+
+
         
         // insert types of rounds into a HashMap
         HashMap<Integer, String> roundTypes = new HashMap<Integer, String>();
@@ -53,7 +55,7 @@ public class Game {
 
         System.out.println("How many rounds do you want? (type 1-20)");
         Scanner scanner = new Scanner(System.in);
-        // player choses the number of rounds
+        // player chooses the number of rounds
         byte numberOfRounds = scanner.nextByte();
         while (numberOfRounds <1 && numberOfRounds > 20) {
             System.out.println("Wrong number... Type a number between 1 and 20");

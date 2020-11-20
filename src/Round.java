@@ -34,7 +34,6 @@ public class Round {
      * the other columns have the incorrect answers (one per column)
      */
     public void rightAnswer(Qac qac) {
-        //  just for testing purposes i made a sample 
         //  question with answers;
         if (CLI.interaction(qac) == true) {
             this.points += 1000;
