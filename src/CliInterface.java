@@ -18,7 +18,7 @@ public class CliInterface {
     public boolean interaction(Qac qac) {
         System.out.println(qac.getQuestion()); // that prints the question
         
-        int correctAnswersPlace = 0;// the first answer is the correct one
+        int correctAnswersPlace;
         Randomizer randomizer = new Randomizer();
         int[] questionNumbers = randomizer.randomize(1, 4);// shuffle numbers 1-4
 

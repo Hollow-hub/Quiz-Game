@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 /**
  * This class represents each Round 
@@ -40,7 +39,6 @@ public class Round {
         if (CLI.interaction(qac) == true) {
             this.points += 1000;
         }
-        
     }
     
     /**

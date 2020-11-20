@@ -21,7 +21,7 @@ public class Randomizer {
         }
 
         int temp, selected;
-        for (int i=shuffled.length-1; i>=0; i--) {
+        for (int i=shuffled.length-1; i>0; i--) {
             selected = random.nextInt(i);// random number between 0-i(current index)
             // swap the current array value (i) with a randomly selected one
             temp = shuffled[i];

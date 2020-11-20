@@ -1,12 +1,29 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.HashMap;
 
+/**
+ * @author Katsikas Stefanos
+ * @author Gkountelos Dimitrios
+ * this class implements the 
+ * logic of the game and the 
+ * main operation of it
+ * @version 0.0.1
+ */
 public class Game {
 
     ArrayList<Qac> qac;
+    /**
+     * the constructor of the class
+     */
     public Game(){
         qac = new ArrayList<>(20);
     }
-
+    
+    /**
+     * the method that organizes and runs the game
+     */
     public void play(){
         qac.add(new Qac("Ποια χρονιά κυκλοφόρησε ο Τιτανικός;","1997","1996","1998","2000","history"));
         qac.add(new Qac("Ποιος είναι ο μεγαλύτερος σε όγκο νερού ποταμός στον κόσμο;","Αμαζόνιος","Μισισιπής","Νείλος","Βολγας","geography"));
@@ -28,7 +45,40 @@ public class Game {
         qac.add(new Qac("Ποιά ήταν η πρώτη αποστολή της NASA στη Σελήνη;", "Απόλλο 11", "Απόλλο 1", "Απόλλο 3", "Sputnik" ,"science"));
         qac.add(new Qac("Από ποία γλώσσα προήλθε ο όρος Computer;", "Λατινικά", "Αγγλικά", "Ελληνικά", "Αράβικα" ,"science"));
         qac.add(new Qac("Οι LA Lakers και οι New York Knicks παίζουν ποιο άθλημα;" ,"Μπασκετ", "Χοκεϊ", "Ραγκμπι","Baseball","sports"));
+        
+        // insert types of rounds into a HashMap
+        HashMap<Integer, String> roundTypes = new HashMap<Integer, String>();
+        roundTypes.put(0, "rightAnswer");
+        roundTypes.put(1, "bid");
 
+        System.out.println("How many rounds do you want? (type 1-20)");
+        Scanner scanner = new Scanner(System.in);
+        // player choses the number of rounds
+        byte numberOfRounds = scanner.nextByte();
+        while (numberOfRounds <1 && numberOfRounds > 20) {
+            System.out.println("Wrong number... Type a number between 1 and 20");
+            numberOfRounds = scanner.nextByte();
+        }
+        scanner.close();
+
+        String typeOfRound = new String();
+        Round round = new Round();
+        Random random = new Random();
+        // a loop that runs each round 
+        for (int i=0; i<numberOfRounds; i++) {
+            // random value in the HashMap, that contains
+            // the different types of Round
+            typeOfRound = roundTypes.get(random.nextInt(roundTypes.size()));
+           
+            // this is for type: rightAnswer
+            if (typeOfRound.equals("rightAnswer")) {
+                round.rightAnswer(qac.get(i));
+            }
+            // this is for type: bid 
+            else {
+                round.bid(qac.get(i));
+            }
+            qac.remove(i);// removes shown questions
+        }
     }
-
 }
