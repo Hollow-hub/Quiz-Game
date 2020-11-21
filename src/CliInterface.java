@@ -28,11 +28,11 @@ public class CliInterface {
         correctAnswersPlace = questionNumbers[0];
         
         // this prints the answers in random order
-        System.out.println(" 1."+qac.getAnswers()[questionNumbers[0]]+
-                        " 2."+ qac.getAnswers()[questionNumbers[1]]);
+        System.out.println(" 1."+qac.getAnswers()[questionNumbers[0]-1]+
+                        " 2."+ qac.getAnswers()[questionNumbers[1]-1]);
         
-        System.out.println(" 3."+qac.getAnswers()[questionNumbers[2]]+
-                        " 4."+ qac.getAnswers()[questionNumbers[3]]);
+        System.out.println(" 3."+qac.getAnswers()[questionNumbers[2]-1]+
+                        " 4."+ qac.getAnswers()[questionNumbers[3]-1]);
 
         System.out.println("Select between: 1, 2, 3, 4 ");
         System.out.println("Answer:");
@@ -50,7 +50,6 @@ public class CliInterface {
             playersAnswer = chosen.nextInt();
             counter += 1;
         }
-        chosen.close();
         
         if (playersAnswer == correctAnswersPlace) {
             System.out.println("You Win");

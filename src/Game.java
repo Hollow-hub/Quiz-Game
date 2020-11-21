@@ -59,7 +59,7 @@ public class Game {
             System.out.println("Wrong number... Type a number between 1 and 20");
             numberOfRounds = scanner.nextByte();
         }
-        scanner.close();
+        // scanner.close();
 
         String typeOfRound = new String();
         Round round = new Round();
@@ -80,5 +80,6 @@ public class Game {
             }
             qac.remove(i);// removes shown questions
         }
+        scanner.close();
     }
 }
