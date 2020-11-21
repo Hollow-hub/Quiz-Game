@@ -53,14 +53,14 @@ public class Round {
         Scanner console = new Scanner(System.in);
         int bid_player = console.nextInt();    // here it takes an input "bid" from the user
         while (bid_player != 250 && bid_player != 500 && bid_player != 750 && bid_player != 1000){ //checks for wrong input
-            System.out.println("You can't bid" + console + "points");
+            System.out.println("You can't bid " + bid_player + " points");
             System.out.println("Please bid again");
             bid_player = console.nextInt();
         }
-        console.close();
+        // console.close();
         
         if (CLI.interaction(qac) == true) {
-            System.out.println("take your" + bid_player + "that you had bidden");
+            System.out.println("take your " + bid_player + " that you had bidden");
             this.points += bid_player;
         }
     }
