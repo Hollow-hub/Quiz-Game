@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Random;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * @author Katsikas Stefanos
@@ -14,12 +11,15 @@ import java.util.HashMap;
 public class Game {
 
     ArrayList<Qac> qac;
+    public Randomizer random;
     /**
      * the constructor of the class
      */
     public Game(){
-        qac = new ArrayList<>(20);
+        this.random = new Randomizer();
+        this.qac = new ArrayList<>(20);
     }
+
     
     /**
      * the method that organizes and runs the game
@@ -47,18 +47,20 @@ public class Game {
         qac.add(new Qac("Which sport do the LA Lakers and the New York Knicks play?" , "Basketball", "Hockey", "Rugby", "Baseball", "sports"));
 
 
+        //this function shuffles the Arraylist
+        Collections.shuffle(qac);
         
         // insert types of rounds into a HashMap
         HashMap<Integer, String> roundTypes = new HashMap<Integer, String>();
         roundTypes.put(0, "rightAnswer");
         roundTypes.put(1, "bid");
 
-        System.out.println("How many rounds do you want? (type 1-20)");
+        System.out.println("How many rounds do you want? (type 1-5)");
         Scanner scanner = new Scanner(System.in);
         // player chooses the number of rounds
         byte numberOfRounds = scanner.nextByte();
-        while (numberOfRounds <1 && numberOfRounds > 20) {
-            System.out.println("Wrong number... Type a number between 1 and 20");
+        while (numberOfRounds <1 || numberOfRounds > 5) {
+            System.out.println("Wrong number... Type a number between 1 and 5");
             numberOfRounds = scanner.nextByte();
         }
         // scanner.close();
@@ -67,7 +69,7 @@ public class Game {
         Round round = new Round();
         Random random = new Random();
         // a loop that runs each round 
-        for (int i=0; i<numberOfRounds; i++) {
+        for (int i=0; i<numberOfRounds*4; i++) {
             // random value in the HashMap, that contains
             // the different types of Round
             typeOfRound = roundTypes.get(random.nextInt(roundTypes.size()));
