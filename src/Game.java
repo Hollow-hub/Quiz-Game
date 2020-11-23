@@ -10,6 +10,8 @@ import java.util.*;
  */
 public class Game {
 
+
+    public Round points;
     ArrayList<Qac> qac;
     public Randomizer random;
     /**
@@ -18,6 +20,7 @@ public class Game {
     public Game(){
         this.random = new Randomizer();
         this.qac = new ArrayList<>(20);
+        this.points = new Round();
     }
 
     
@@ -85,5 +88,9 @@ public class Game {
             qac.remove(i);// removes shown questions
         }
         scanner.close();
+        if (round.getPoint()>0)
+            System.out.println("Congratulations!!!/n Points:" + points );
+        else
+            System.out.println("Better luck next time.../n Points:" + points);
     }
 }

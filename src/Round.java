@@ -63,5 +63,9 @@ public class Round {
             System.out.println("take your " + bid_player + " that you had bidden");
             this.points += bid_player;
         }
+        else{
+            System.out.println("You have lost" + bid_player + "points");
+            this.points -=bid_player;
+        }
     }
 }
