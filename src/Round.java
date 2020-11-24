@@ -37,7 +37,7 @@ public class Round {
         //  question with answers;
         if (CLI.interaction(qac) == true) {
             this.points += 1000;
-            System.out.println("Take 1000 points!11");
+            System.out.println("Take 1000 points!!!");
         }
     }
     

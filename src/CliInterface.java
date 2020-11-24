@@ -15,8 +15,9 @@ public class CliInterface {
      *          which has question, answers[4] and category
      * @return true if user won or false if he lost
      */
+    private int k=1;
     public boolean interaction(Qac qac) {
-        System.out.println(qac.getQuestion());
+        System.out.println(k++ + "." + qac.getQuestion());
         int correctAnswersPlace = 0;
         Randomizer randomizer = new Randomizer();
         int[] questionNumbers = randomizer.randomize(0, 3);
