@@ -6,7 +6,7 @@ import java.util.*;
  * this class implements the 
  * logic of the game and the 
  * main operation of it
- * @version 0.0.1
+ * @version 0.1.2
  */
 public class Game {
 

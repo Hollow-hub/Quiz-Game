@@ -5,7 +5,7 @@ import java.util.Scanner;
  * with the user
  * @author Katsikas Stefanos
  * @author Gkountelos Dimitrios
- * @version 0.1.0
+ * @version 1.1.0
  */
 public class CliInterface {
     /**
