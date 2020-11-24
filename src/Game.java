@@ -22,7 +22,6 @@ public class Game {
         this.qac = new ArrayList<>(20);
         this.points = new Round();
     }
-
     
     /**
      * the method that organizes and runs the game
