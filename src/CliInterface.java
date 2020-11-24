@@ -30,8 +30,8 @@ public class CliInterface {
 
         // print all the answers
         System.out.println("1." + qac.getAnswers()[questionNumbers[0]] + "   " +
-                            "2." + qac.getAnswers()[questionNumbers[1]] + "\n" +
-                            "3." + qac.getAnswers()[questionNumbers[2]] + "   " +
+                            "2." + qac.getAnswers()[questionNumbers[1]]);
+        System.out.println("3." + qac.getAnswers()[questionNumbers[2]] + "   " +
                             "4." + qac.getAnswers()[questionNumbers[3]]);
 
         System.out.println("Select between: 1, 2, 3, 4 \n" + 
