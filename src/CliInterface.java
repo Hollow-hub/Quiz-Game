@@ -34,8 +34,8 @@ public class CliInterface {
         System.out.println("3." + qac.getAnswers()[questionNumbers[2]] + "   " +
                             "4." + qac.getAnswers()[questionNumbers[3]]);
 
-        System.out.println("Select between: 1, 2, 3, 4 \n" + 
-                            "Answer:");
+        System.out.printf("Select between: 1, 2, 3, 4 %nAnswer:");
+
         // get users answer
         Scanner scanner = new Scanner(System.in);
         int playersAnswer = scanner.nextInt();
@@ -60,7 +60,7 @@ public class CliInterface {
         }
         else {
             System.out.println("You idiot, the correct answer is: " +
-                                correctAnswersPlace);
+                                (correctAnswersPlace+1));
             return false;
         }
     }

@@ -37,6 +37,7 @@ public class Round {
         //  question with answers;
         if (CLI.interaction(qac) == true) {
             this.points += 1000;
+            System.out.println("Take 1000 points!11");
         }
     }
     
@@ -64,7 +65,7 @@ public class Round {
             this.points += bid_player;
         }
         else{
-            System.out.println("You have lost" + bid_player + "points");
+            System.out.println("You have lost " + bid_player + " points");
             this.points -=bid_player;
         }
     }
