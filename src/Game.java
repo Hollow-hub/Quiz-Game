@@ -10,7 +10,6 @@ import java.util.*;
  */
 public class Game {
 
-
     ArrayList<Qac> qac;
     public Randomizer random;
     /**
@@ -18,7 +17,7 @@ public class Game {
      */
     public Game(){
         this.random = new Randomizer();
-        this.qac = new ArrayList<>(20);
+        this.qac = new ArrayList<Qac>(20);
     }
     
     /**
@@ -68,21 +67,27 @@ public class Game {
         String typeOfRound = new String();
         Round round = new Round();
         Random random = new Random();
+        
         // a loop that runs each round 
+        int shownRoundNumber = 1;
         for (int i=0; i<numberOfRounds*4; i++) {
+            if (i % 4 == 0) {
+                System.out.println("-----Round " + shownRoundNumber + "-----");
+                shownRoundNumber++;
+            }
             // random value in the HashMap, that contains
             // the different types of Round
             typeOfRound = roundTypes.get(random.nextInt(roundTypes.size()));
            
             // this is for type: rightAnswer
             if (typeOfRound.equals("rightAnswer")) {
-                round.rightAnswer(qac.get(i));
+                round.rightAnswer(qac.get(0));
             }
             // this is for type: bid 
             else {
-                round.bid(qac.get(i));
+                round.bid(qac.get(0));
             }
-            qac.remove(i);// removes shown questions
+            qac.remove(0);// removes shown questions
         }
         scanner.close();
         if(round.getPoint()>0)
