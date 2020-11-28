@@ -17,7 +17,7 @@ public class Game {
      */
     public Game(){
         this.random = new Randomizer();
-        this.qac = new ArrayList<Qac>(20);
+        this.qac = new ArrayList<>(20);
     }
     
     /**
@@ -50,7 +50,7 @@ public class Game {
         Collections.shuffle(qac);
         
         // insert types of rounds into a HashMap
-        HashMap<Integer, String> roundTypes = new HashMap<Integer, String>();
+        HashMap<Integer, String> roundTypes = new HashMap<>();
         roundTypes.put(0, "rightAnswer");
         roundTypes.put(1, "bid");
 
@@ -64,7 +64,7 @@ public class Game {
         }
         // scanner.close();
 
-        String typeOfRound = new String();
+        String typeOfRound;
         Round round = new Round();
         Random random = new Random();
         

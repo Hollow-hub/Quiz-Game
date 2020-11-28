@@ -4,8 +4,9 @@
  * @author Gkountelos Dimitrios 
  */
 public class Qac {
-    private String question, category;
-    private String[] answers;
+    private final String question;
+    private final String category;
+    private final String[] answers;
     /**
      * the constructor of the class
      */

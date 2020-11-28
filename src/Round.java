@@ -13,7 +13,7 @@ public class Round {
      * Round takes as parameters, 2 arrays and the question category
      */
     private int points;
-    private CliInterface CLI;
+    private final CliInterface CLI;
 
     public Round() {
         this.points = 0;
