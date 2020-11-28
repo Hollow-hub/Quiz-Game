@@ -8,6 +8,11 @@ import java.util.Scanner;
  * @version 1.1.0
  */
 public class CliInterface {
+
+    private int k;
+    public CliInterface () {
+        this.k = 1;
+    }
     /**
      * this method handles the interaction (questions and answers)
      * with the user
@@ -15,7 +20,6 @@ public class CliInterface {
      *          which has question, answers[4] and category
      * @return true if user won or false if he lost
      */
-    private int k=1;
     public boolean interaction(Qac qac) {
         System.out.println(k++ + "." + qac.getQuestion());
         int correctAnswersPlace = 0;

@@ -11,7 +11,7 @@ public class Randomizer {
      * @param start is the first number of the range
      *              that will get randomized
      * @param end is the last number
-     * @return shuffled[] which is the array with the numbers start->end shuffled
+     * @return shuffled[] which is the array with the numbers start-end shuffled
      */
     public int[] randomize(int start, int end) {
         int[] shuffled = new int[end+1-start];

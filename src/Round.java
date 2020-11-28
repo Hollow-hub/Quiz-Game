@@ -21,7 +21,7 @@ public class Round {
     }
 
     /**  
-     * the getter for the points      
+     * @return points in the game so far
      */
     public int getPoint() {
         return points;
@@ -35,7 +35,7 @@ public class Round {
      */
     public void rightAnswer(Qac qac) {
         //  question with answers;
-        if (CLI.interaction(qac) == true) {
+        if (CLI.interaction(qac)) {
             this.points += 1000;
             System.out.println("Take 1000 points!!!");
         }
@@ -46,6 +46,8 @@ public class Round {
      * gets an array: questions[20,5] (String) as input
      * and it has the same input as the "right answer" type
      * for the moment
+     * @param qac is an object from the class Qac, which
+     *            includes question, answers[], category
      */
     public void bid(Qac qac){
         String category = qac.getCategory();
@@ -60,7 +62,7 @@ public class Round {
         }
         // console.close();
         
-        if (CLI.interaction(qac) == true) {
+        if (CLI.interaction(qac)) {
             System.out.println("take your " + bid_player + " that you had bidden");
             this.points += bid_player;
         }
