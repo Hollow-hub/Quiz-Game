@@ -32,7 +32,7 @@ public class Qac {
      * @param answer3 is an object from the class Qac
      * @param answer4 is an object from the class Qac
      * @param category is an object from the class Qac
-     * The same as the above, because we overloading
+     * The same as the above because we overloading
      * the constructor
      */
     public Qac(String question, String answer1,
