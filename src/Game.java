@@ -12,13 +12,17 @@ public class Game {
 
     ArrayList<Qac> qac;
     public Randomizer random;
+    public Players number_of_players;
+
     /**
      * the constructor of the class
      */
     public Game(){
         this.random = new Randomizer();
         this.qac = new ArrayList<>(20);
+        this.number_of_players = new Players();
     }
+
     
     /**
      * the method that organizes and runs the game
@@ -53,6 +57,7 @@ public class Game {
         HashMap<Integer, String> roundTypes = new HashMap<>();
         roundTypes.put(0, "rightAnswer");
         roundTypes.put(1, "bid");
+
 
         System.out.println("How many rounds do you want? (type 1-5)");
         Scanner scanner = new Scanner(System.in);
