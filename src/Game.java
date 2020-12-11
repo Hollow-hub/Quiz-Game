@@ -107,6 +107,7 @@ public class Game {
                     if (typeOfRound.equals("FastAnswer")){
                         //will be fixed later
                     }
+                    //this is for type: Thermometer
                 else{
                     // wil be fixed later
                 }
