@@ -88,14 +88,14 @@ public class Round {
         System.out.println("Player1 goes first");
         //player1 timer
         timer.start1();
-        if (CLI.multiplayerInteraction(qac)==1){
+        if (CLI.multiplayerInteraction(qac) == 1){
             timer.stop1();
             this.Player1_points += timer.getSeconds1()*0.2;
         }
         System.out.println("Now is Player2 row");
         //player2 timer
         timer.start2();
-        if (CLI.multiplayerInteraction(qac)==2){
+        if (CLI.multiplayerInteraction(qac) == 2){
             timer.stop2();
             this.Player2_points += timer.getSeconds2()*0.2;
         }

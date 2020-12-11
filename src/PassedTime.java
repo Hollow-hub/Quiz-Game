@@ -7,8 +7,8 @@ import java.util.TimerTask;
  * @author Katsikas Stefanos
  * @author Gkountelos Dimitrios
  * this class implements the
- * logic of the game and the
- * main operation of it
+ * logic of the time and how to
+ * count it
  * @version 0.0.1
  */
 
