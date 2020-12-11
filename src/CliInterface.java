@@ -144,7 +144,7 @@ public class CliInterface {
         
         System.out.println("You idiot, the correct answer is: " +
                             (correctAnswersPlace+1));
-        // i have to change this. if a player gets it wrong, the other should answer
+        // I have to change this. if a player gets it wrong, the other should answer
         return 0;
     }
 

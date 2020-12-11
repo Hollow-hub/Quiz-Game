@@ -1,23 +1,29 @@
 import java.util.Scanner;
 
+
 /**
  * This class represents each Round 
  * in the game. Different method are 
  * for different types of rounds 
  * @author Katsikas Stefanos
  * @author Gkountelos Dimitrios
- * @version 1.1.0
+ * @version 1.1.1
  */
 public class Round {
-    /**
-     * Round takes as parameters, 2 arrays and the question category
-     */
+
+
     private int points;
     private final CliInterface CLI;
+    private PassedTime timer;
+    private int Player1_points;
+    private int Player2_points;
 
     public Round() {
         this.points = 0;
         this.CLI = new CliInterface();
+        this.timer = new PassedTime();
+        this.Player1_points = 0;
+        this.Player2_points = 0;
     }
 
     /**  
@@ -43,9 +49,7 @@ public class Round {
     
     /**
      * this method is for "bidding" type of round and it
-     * gets an array: questions[20,5] (String) as input
-     * and it has the same input as the "right answer" type
-     * for the moment
+     * gets an array: questions[20,5] (String) as input.
      * @param qac is an object from the class Qac, which
      *            includes question, answers[], category
      */
@@ -71,4 +75,33 @@ public class Round {
             this.points -=bid_player;
         }
     }
+
+    /**
+     * this method is for "stop the timer" type
+     * of round  and it gets an
+     * array: questions[20,5] (String) as input.
+     * @param qac is an object from the class Qac,
+     * which includes question, answers[], category
+     */
+    public void StopTheTimer(Qac qac){
+        System.out.println("You are playing stop the timer!!!");
+        System.out.println("Player1 goes first");
+        //player1 timer
+        timer.start1();
+        if (CLI.multiplayerInteraction(qac)==1){
+            timer.stop1();
+            this.Player1_points += timer.getSeconds1()*0.2;
+        }
+        System.out.println("Now is Player2 row");
+        //player2 timer
+        timer.start2();
+        if (CLI.multiplayerInteraction(qac)==2){
+            timer.stop2();
+            this.Player2_points += timer.getSeconds2()*0.2;
+        }
+
+    }
+
+
+
 }

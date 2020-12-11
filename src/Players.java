@@ -29,10 +29,14 @@ public class Players {
     /**
      * asks and returns the number of players
      */
-    public int getPlayers(){
+    public Byte getPlayers(){
         System.out.println("How many players are gonna play?");
         Scanner console = new Scanner(System.in);
-        int scanner_players = console.nextInt();
+        byte scanner_players = console.nextByte();
+        while (scanner_players != 1 && scanner_players != 2){
+            System.out.println("Wrong Input, try again. Hint: (1 or 2)");
+            scanner_players = console.nextByte();
+        }
         return scanner_players;
     }
 

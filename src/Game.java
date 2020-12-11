@@ -14,6 +14,7 @@ public class Game {
     public Randomizer random;
     public Players number_of_players;
 
+
     /**
      * the constructor of the class
      */
@@ -58,6 +59,8 @@ public class Game {
         roundTypes.put(0, "rightAnswer");
         roundTypes.put(1, "bid");
 
+        //gets how many players are gonna play
+        byte players = number_of_players.getPlayers();
 
         System.out.println("How many rounds do you want? (type 1-5)");
         Scanner scanner = new Scanner(System.in);
@@ -83,14 +86,30 @@ public class Game {
             // random value in the HashMap, that contains
             // the different types of Round
             typeOfRound = roundTypes.get(random.nextInt(roundTypes.size()));
-           
-            // this is for type: rightAnswer
-            if (typeOfRound.equals("rightAnswer")) {
-                round.rightAnswer(qac.get(0));
+
+            if (players==1) {
+                // this is for type: rightAnswer
+                if (typeOfRound.equals("rightAnswer")) {
+                    round.rightAnswer(qac.get(0));
+                }
+                // this is for type: bid
+                else {
+                    round.bid(qac.get(0));
+                }
             }
-            // this is for type: bid 
-            else {
-                round.bid(qac.get(0));
+            else{
+                //this is for type: StopTheTimer
+                if (typeOfRound.equals("StopTheTimer")){
+                    round.StopTheTimer(qac.get(0));
+                }
+                //this is for type: FastAnswer
+                else
+                    if (typeOfRound.equals("FastAnswer")){
+                        //will be fixed later
+                    }
+                else{
+                    // wil be fixed later
+                }
             }
             qac.remove(0);// removes shown questions
         }
