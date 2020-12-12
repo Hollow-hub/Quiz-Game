@@ -72,7 +72,7 @@ public class Round {
         }
         else{
             System.out.println("You have lost " + bid_player + " points");
-            this.points -=bid_player;
+            this.points -= bid_player;
         }
     }
 
@@ -102,6 +102,21 @@ public class Round {
 
     }
 
-
-
+    /**
+     * 
+     * @param qac
+     */
+    public void fastAnswer(Qac qac) {
+        int result = CLI.fastAnswerInteraction(qac);
+        if (result == 1) {
+            Player1_points += 1000;
+        }
+        else if (result == 2) {
+            Player2_points += 1000;
+        }
+        else if (result == 3) {
+            Player1_points += 1000;
+            Player2_points += 1000;
+        }
+    }
 }

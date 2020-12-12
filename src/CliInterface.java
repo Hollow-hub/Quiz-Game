@@ -39,6 +39,7 @@ public class CliInterface {
         System.out.printf("Select between: 1, 2, 3, 4 %nAnswer:");
         return correctAnswersPlace;
     }
+
     /**
      * this method handles the interaction (questions and answers)
      * with the user
@@ -89,13 +90,13 @@ public class CliInterface {
      * @param qac
      * @return 0 if nobody won, 1 if player 1 won and 2 if player 2 won 
      */
-    public int multiplayerInteraction(Qac qac) {
+    public int fastAnswerInteraction(Qac qac) {
         int correctAnswersPlace = showQuestions(qac, 0);
-        HashMap<Character, Integer> players2Answer = new HashMap<>();
-        players2Answer.put('h', 1);
-        players2Answer.put('j', 2);
-        players2Answer.put('k', 3);
-        players2Answer.put('l', 4);
+        HashMap<Character, Integer> player2 = new HashMap<>();
+        player2.put('h', 1);
+        player2.put('j', 2);
+        player2.put('k', 3);
+        player2.put('l', 4);
         
         // get the input and check if it's valid
         Scanner scanner = new Scanner(System.in);
@@ -111,7 +112,7 @@ public class CliInterface {
             playersAnswer =  Character.getNumericValue(input);
         }
         else {
-            playersAnswer = players2Answer.get(input);
+            playersAnswer = player2.get(input);
         }
         
         // player chose between 1-4 and we handle 0-3
@@ -134,7 +135,7 @@ public class CliInterface {
                 playersAnswer =  Character.getNumericValue(input);
             }
             else {
-                playersAnswer = players2Answer.get(input);
+                playersAnswer = player2.get(input);
             }
 
             if (playersAnswer - 1 == correctAnswersPlace) {
@@ -145,6 +146,62 @@ public class CliInterface {
         System.out.println("You idiot, the correct answer is: " +
                             (correctAnswersPlace+1));
         // I have to change this. if a player gets it wrong, the other should answer
+        return 0;
+    }
+
+    /**
+     * this method handles the interaction when we need to get 
+     * an answer from each player
+     * @param qac is an object from class Qac (question, answers[], category)
+     * @return 0 if nobody got it correct or
+     * invalid input. 1 if only player 1 got it right. 2 if only player 2 got
+     * it right and 3 if both players got it right
+     */
+    public int multiplayerInteraction(Qac qac) {
+        int correctAnswersPlace = showQuestions(qac, 0);
+        HashMap<Character, Integer> player2 = new HashMap<>();
+        player2.put('h', 1);
+        player2.put('j', 2);
+        player2.put('k', 3);
+        player2.put('l', 4);
+
+        //gets the two inputs and checks if they are valid
+        Scanner scanner = new Scanner(System.in);
+        char firstInput = scanner.next().charAt(0);
+        char secondInput = scanner.next().charAt(0);
+        if (!isValid(firstInput) || !isValid(secondInput)) {
+            System.out.println("Wrong input... Aborting:( :( :(");
+            return 0;
+        }
+
+        // match inputs with players
+        int player1Answer, player2Answer;
+        if (isPlayer1(firstInput)) {
+            player1Answer = Character.getNumericValue(firstInput);
+            player2Answer = player2.get(secondInput);
+        }
+        else {
+            player1Answer = player2.get(firstInput);
+            player2Answer = Character.getNumericValue(secondInput);
+        }
+
+        // check who got it right
+        if (player1Answer - 1 == correctAnswersPlace && 
+            player2Answer - 1 == correctAnswersPlace) {
+            System.out.println("You both got it right!");
+            return 3;
+        }
+        else if (player1Answer - 1 == correctAnswersPlace) {
+            System.out.println("Only player 1 got it right :(");
+            return 1;
+        }   
+        else if (player2Answer - 1 == correctAnswersPlace) {
+            System.out.println("Only player 2 got it right :(");
+            return 2;
+        }
+
+        System.out.println("You both idiots, the correct answer is: " + 
+                                (correctAnswersPlace+1));
         return 0;
     }
 
