@@ -105,14 +105,21 @@ public class Game {
                 //this is for type: FastAnswer
                 else
                     if (typeOfRound.equals("FastAnswer")){
-                        //will be fixed later
+                        round.fastAnswer(qac.get(0));
                     }
                     //this is for type: Thermometer
-                else{
-                    // wil be fixed later
-                }
+                    else{
+                        for (int j=0; j < 10; j++){
+                            if (round.Thermometer(qac.get(j)) == 1)
+                                break;
+                            qac.remove(j);
+                        }
+                    }
             }
-            qac.remove(0);// removes shown questions
+            if(typeOfRound.equals("rightAnswer") || typeOfRound.equals("bid") ||
+                    typeOfRound.equals("StopTheTimer") || typeOfRound.equals("FastAnswer")){
+                qac.remove(0);// removes shown questions
+            }
         }
         scanner.close();
         if(round.getPoint()>0)
