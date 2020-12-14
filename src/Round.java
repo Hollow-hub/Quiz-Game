@@ -114,9 +114,5 @@ public class Round {
         else if (result == 2) {
             Player2_points += 1000;
         }
-        else if (result == 3) {
-            Player1_points += 1000;
-            Player2_points += 1000;
-        }
     }
 }
