@@ -14,6 +14,8 @@ public class Randomizer {
      * @return shuffled[] which is the array with the numbers start-end shuffled
      */
     public int[] randomize(int start, int end) {
+        if (end < start)
+            return null;
         int[] shuffled = new int[end+1-start];
         Random random = new Random();
         for (int i=0; i<shuffled.length; i++) {

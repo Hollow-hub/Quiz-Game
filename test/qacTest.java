@@ -2,10 +2,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class qacTest {
-    String[] words1, words2;
+    public String[] words1, words2;
     public qacTest() {
-        words1 = new String[]{"Ποια χρονιά κυκλοφόρησε ο Τιτανικός;", "1997", "1996", "1998", "2000", "history"};
-        words2 = new String[]{"Πόσες ήταν οι μούσες στην αρχαία ελληνική Μυθολογία;", "9", "7", "12", "10", "history"};
+        words1 = new String[]{"Ποια χρονιά κυκλοφόρησε ο Τιτανικός;",
+                                "1997", "1996", "1998", "2000", "history"};
+        words2 = new String[]{"Πόσες ήταν οι μούσες στην αρχαία ελληνική Μυθολογία;",
+                                "9", "7", "12", "10", "history"};
     }
 
     @Test

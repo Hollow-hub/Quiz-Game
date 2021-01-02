@@ -19,7 +19,8 @@ public class CliInterface {
      * this method prints the questions
      * we may need to change it to show it on the gui...
      */
-    private int showQuestions(Qac qac, int correctAnswersPlace) {
+    public int showQuestions(Qac qac) {
+        int correctAnswersPlace = 0;
         System.out.println(k++ + "." + qac.getQuestion());
         Randomizer randomizer = new Randomizer();
         int[] questionNumbers = randomizer.randomize(0, 3);
@@ -48,7 +49,7 @@ public class CliInterface {
      * @return true if user won or false if he lost
      */
     public boolean interaction(Qac qac) {
-        int correctAnswersPlace = showQuestions(qac, 0);
+        int correctAnswersPlace = showQuestions(qac);
 
         // get users answer
         Scanner scanner = new Scanner(System.in);
@@ -87,11 +88,11 @@ public class CliInterface {
      * firstly, it gets the players answer. Player one 
      * has 1, 2, 3, 4 as possible answers and player two 
      * has h, j, k, l, that means: h == 1, j == 2, k == 3, l == 4
-     * @param qac
+     * @param qac is an object from class Qac
      * @return 0 if nobody won, 1 if player 1 won and 2 if player 2 won 
      */
     public int fastAnswerInteraction(Qac qac) {
-        int correctAnswersPlace = showQuestions(qac, 0);
+        int correctAnswersPlace = showQuestions(qac);
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
         player2.put('j', 2);
@@ -101,13 +102,13 @@ public class CliInterface {
         // get the input and check if it's valid
         Scanner scanner = new Scanner(System.in);
         char input = scanner.next().charAt(0);
-        if (!isValid(input)) {
+        if (isValid(input)) {
             System.out.println("Wrong input... Aborting:( :( :(");
             return 0;
         }
 
         boolean player1 = isPlayer1(input);
-        int playersAnswer = 0;
+        int playersAnswer;
         if (player1) {
             playersAnswer =  Character.getNumericValue(input);
         }
@@ -128,7 +129,7 @@ public class CliInterface {
         else {
             System.out.println("Wrong, the other player should answer");
             input = scanner.next().charAt(0);
-            if (!isValid(input)) 
+            if (isValid(input))
                 return 0;
                 
             if (isPlayer1(input)) {
@@ -158,7 +159,7 @@ public class CliInterface {
      * it right and 3 if both players got it right
      */
     public int multiplayerInteraction(Qac qac) {
-        int correctAnswersPlace = showQuestions(qac, 0);
+        int correctAnswersPlace = showQuestions(qac);
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
         player2.put('j', 2);
@@ -169,7 +170,7 @@ public class CliInterface {
         Scanner scanner = new Scanner(System.in);
         char firstInput = scanner.next().charAt(0);
         char secondInput = scanner.next().charAt(0);
-        if (!isValid(firstInput) || !isValid(secondInput)) {
+        if (isValid(firstInput) || isValid(secondInput)) {
             System.out.println("Wrong input... Aborting:( :( :(");
             return 0;
         }
@@ -208,23 +209,15 @@ public class CliInterface {
     /**
      * this method checks if the input is valid
      */
-    private boolean isValid(char input) {
-        if (input != '1' && input != '2' && input != '3' && input != '4' &&
-            input != 'h' && input != 'j' && input != 'k' && input != 'l') {
-            return false;
-        }
-        return true;
+    public boolean isValid(char input) {
+        return input != '1' && input != '2' && input != '3' && input != '4' &&
+                input != 'h' && input != 'j' && input != 'k' && input != 'l';
     }
 
     /**
      * this method checks if input is from player one 
      */
-    private boolean isPlayer1(char input) {
-        if (input == '1' || input == '2' || input == '3' || input == '4') {
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean isPlayer1(char input) {
+        return input == '1' || input == '2' || input == '3' || input == '4';
     }
 }
