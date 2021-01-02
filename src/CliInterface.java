@@ -102,7 +102,7 @@ public class CliInterface {
         // get the input and check if it's valid
         Scanner scanner = new Scanner(System.in);
         char input = scanner.next().charAt(0);
-        if (isValid(input)) {
+        if (isNotValid(input)) {
             System.out.println("Wrong input... Aborting:( :( :(");
             return 0;
         }
@@ -129,7 +129,7 @@ public class CliInterface {
         else {
             System.out.println("Wrong, the other player should answer");
             input = scanner.next().charAt(0);
-            if (isValid(input))
+            if (isNotValid(input))
                 return 0;
                 
             if (isPlayer1(input)) {
@@ -170,7 +170,7 @@ public class CliInterface {
         Scanner scanner = new Scanner(System.in);
         char firstInput = scanner.next().charAt(0);
         char secondInput = scanner.next().charAt(0);
-        if (isValid(firstInput) || isValid(secondInput)) {
+        if (isNotValid(firstInput) || isNotValid(secondInput)) {
             System.out.println("Wrong input... Aborting:( :( :(");
             return 0;
         }
@@ -209,7 +209,7 @@ public class CliInterface {
     /**
      * this method checks if the input is valid
      */
-    public boolean isValid(char input) {
+    public boolean isNotValid(char input) {
         return input != '1' && input != '2' && input != '3' && input != '4' &&
                 input != 'h' && input != 'j' && input != 'k' && input != 'l';
     }
