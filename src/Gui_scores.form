@@ -16,6 +16,7 @@
         </constraints>
         <properties>
           <font size="16"/>
+          <foreground color="-16777216"/>
           <text value="Singleplayer"/>
         </properties>
       </component>
@@ -25,6 +26,7 @@
         </constraints>
         <properties>
           <font size="16"/>
+          <foreground color="-16777216"/>
           <text value="Multiplayer"/>
         </properties>
       </component>
@@ -34,6 +36,7 @@
         </constraints>
         <properties>
           <font size="16"/>
+          <foreground color="-16777216"/>
           <text value="Player 1"/>
         </properties>
       </component>
@@ -43,6 +46,7 @@
         </constraints>
         <properties>
           <font size="16"/>
+          <foreground color="-16777216"/>
           <text value="Player 2"/>
         </properties>
       </component>
@@ -284,6 +288,7 @@
         </constraints>
         <properties>
           <font size="16"/>
+          <foreground color="-16777216"/>
           <text value="points"/>
         </properties>
       </component>

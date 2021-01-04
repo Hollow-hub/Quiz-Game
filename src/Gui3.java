@@ -20,8 +20,9 @@ public class Gui3 extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 //isInt(textField1, textField1.getText());
                 num_rounds = Integer.parseInt(textField1.getText());
-
-                //System.out.println(num_rounds);
+                dispose();
+                Gui4_1 gui4_1 = new Gui4_1();
+                gui4_1.setVisible(true);
             }
         });
     }
