@@ -12,6 +12,7 @@ import java.util.Scanner;
  */
 public class Round {
 
+
     private int points;
     private final CliInterface CLI;
     private PassedTime timer;
@@ -31,6 +32,14 @@ public class Round {
      */
     public int getPoint() {
         return points;
+    }
+
+    /**
+     * setter for points
+     * @param points the new value
+     */
+    public void setPoints(int points) {
+        this.points = points;
     }
     /**
      * this method is for the "right answer" type of round and it
@@ -104,8 +113,7 @@ public class Round {
 
     /**
      * 
-     * @param qac is an object from the class Qac
-     *            with question, answers and category
+     * @param qac
      */
     public void fastAnswer(Qac qac){
         int result = CLI.fastAnswerInteraction(qac);
@@ -120,8 +128,8 @@ public class Round {
     /**
      * 2 Arraylists to save the progress of the 2 players
      */
-//    ArrayList<Integer> p1Answers = new ArrayList<>(5);
-//    ArrayList<Integer> p2Answers = new ArrayList<>(5);
+    ArrayList<Integer> p1Answers = new ArrayList<>(5);
+    ArrayList<Integer> p2Answers = new ArrayList<>(5);
 
     /**
      * this method is for "Thermometer" type
@@ -157,27 +165,7 @@ public class Round {
 //        }
 //        return 0;
 //    }
-    public int Thermometer(Qac qac){
-        int p1Answers = 0;
-        int p2Answers = 0;
-        if (CLI.multiplayerInteraction(qac) == 3){
-            p1Answers++;
-            p2Answers++;
-        }
-        else if (CLI.multiplayerInteraction(qac) == 1) {
-            p1Answers++;
-        }
-        else if (CLI.multiplayerInteraction(qac) == 2){
-            p2Answers++;
-        }
-        if (p1Answers == 1){
-            Player1_points += 5000;
-            return 1;
-        }
-        else if (p2Answers == 1){
-            Player2_points += 5000;
-            return 1;
-        }
-        return 0;
+    public int Thermometer(Qac qac) {
+        return CLI.multiplayerInteraction(qac);
     }
 }
