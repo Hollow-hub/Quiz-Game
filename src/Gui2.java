@@ -20,16 +20,16 @@ public class Gui2 extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                Gui3_1 gui3_1 = new Gui3_1();
-                gui3_1.setVisible(true);
+                Gui3 gui3 = new Gui3();
+                gui3.setVisible(true);
             }
         });
         a2PlayersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                Gui3_2 gui3_2 = new Gui3_2();
-                gui3_2.setVisible(true);
+                Gui3 gui3 = new Gui3();
+                gui3.setVisible(true);
             }
         });
     }

@@ -1,15 +1,15 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Gui3_2 extends JFrame{
-    private JPanel rootPanel4;
+public class Gui3 extends JFrame{
     private JPanel rootPanel3;
     private JTextField textField1;
     private JButton submitButton;
     public int num_rounds;
 
-    public Gui3_2(){
+    public Gui3(){
         add(rootPanel3);
         setTitle("Buzz");
         setSize(300,200);
@@ -20,11 +20,11 @@ public class Gui3_2 extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 //isInt(textField1, textField1.getText());
                 num_rounds = Integer.parseInt(textField1.getText());
-                System.out.println(num_rounds);
+
+                //System.out.println(num_rounds);
             }
         });
     }
-
     public boolean isInt(JTextField input, String message){
         try{
             int rounds = Integer.parseInt(input.getText());
@@ -38,5 +38,3 @@ public class Gui3_2 extends JFrame{
     }
 
 }
-
-
