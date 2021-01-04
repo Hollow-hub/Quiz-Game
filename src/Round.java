@@ -33,6 +33,14 @@ public class Round {
     public int getPoint() {
         return points;
     }
+
+    /**
+     * setter for points
+     * @param points the new value
+     */
+    public void setPoints(int points) {
+        this.points = points;
+    }
     /**
      * this method is for the "right answer" type of round and it
      * @param qac is an object from the class: Qac
@@ -131,25 +139,33 @@ public class Round {
      * @return 1 if someone of the 2 players found 5 correct
      * answers
      */
-    public int Thermometer(Qac qac){
-        if (CLI.multiplayerInteraction(qac) == 1 && CLI.multiplayerInteraction(qac) == 2){
-            p1Answers.add(1);
-            p2Answers.add(1);
-        }
-        else if (CLI.multiplayerInteraction(qac) == 1) {
-            p1Answers.add(1);
-        }
-        else if (CLI.multiplayerInteraction(qac) == 2){
-            p2Answers.add(1);
-        }
-        if (p1Answers.get(4) == 1){
-            Player1_points += 5000;
-            return 1;
-        }
-        else if (p2Answers.get(4) == 2){
-            Player2_points += 5000;
-            return 1;
-        }
-        return 0;
+    /*
+     /*
+      THERE IS A BUG OVER THERE...P1.ANSWERS.ADD...
+      WE NEED TO CHANGE ARRAYLIST TO JUST VARIABLES
+     */
+//    public int Thermometer(Qac qac){
+//        if (CLI.multiplayerInteraction(qac) == 1 && CLI.multiplayerInteraction(qac) == 2){
+//            p1Answers.add(1);
+//            p2Answers.add(1);
+//        }
+//        else if (CLI.multiplayerInteraction(qac) == 1) {
+//            p1Answers.add(1);
+//        }
+//        else if (CLI.multiplayerInteraction(qac) == 2){
+//            p2Answers.add(1);
+//        }
+//        if (p1Answers.get(4) == 1){
+//            Player1_points += 5000;
+//            return 1;
+//        }
+//        else if (p2Answers.get(4) == 2){
+//            Player2_points += 5000;
+//            return 1;
+//        }
+//        return 0;
+//    }
+    public int Thermometer(Qac qac) {
+        return CLI.multiplayerInteraction(qac);
     }
 }
