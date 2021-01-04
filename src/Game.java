@@ -49,6 +49,9 @@ public class Game{
         HashMap<Integer, String> roundTypes = new HashMap<>();
         roundTypes.put(0, "rightAnswer");
         roundTypes.put(1, "bid");
+        roundTypes.put(2, "StopTheTimer");
+        roundTypes.put(3, "FastAnswer");
+
 
         //gets how many players are gonna play
         byte players = number_of_players.getPlayers();
@@ -61,7 +64,6 @@ public class Game{
             System.out.println("Wrong number... Type a number between 1 and 5");
             numberOfRounds = scanner.nextByte();
         }
-        // scanner.close();
 
         String typeOfRound;
         Round round = new Round();
@@ -101,16 +103,15 @@ public class Game{
                     //this is for type: Thermometer
                     else{
                         for (int j=0; j < 10; j++){
-                            if (round.Thermometer(qac.get(j)) == 1)
+                            if (round.Thermometer(qac.get(0)) == 1) {
+                                qac.remove(0);
                                 break;
-                            qac.remove(j);
+                            }
+//                            qac.remove(0);
                         }
                     }
             }
-            if(typeOfRound.equals("rightAnswer") || typeOfRound.equals("bid") ||
-                    typeOfRound.equals("StopTheTimer") || typeOfRound.equals("FastAnswer")){
-                qac.remove(0);// removes shown questions
-            }
+            qac.remove(0);// removes shown questions
         }
         scanner.close();
         if(round.getPoint()>0)

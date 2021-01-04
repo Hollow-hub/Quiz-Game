@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public class Round {
 
-
     private int points;
     private final CliInterface CLI;
     private PassedTime timer;
@@ -105,7 +104,8 @@ public class Round {
 
     /**
      * 
-     * @param qac
+     * @param qac is an object from the class Qac
+     *            with question, answers and category
      */
     public void fastAnswer(Qac qac){
         int result = CLI.fastAnswerInteraction(qac);
@@ -120,8 +120,8 @@ public class Round {
     /**
      * 2 Arraylists to save the progress of the 2 players
      */
-    ArrayList<Integer> p1Answers = new ArrayList<>(5);
-    ArrayList<Integer> p2Answers = new ArrayList<>(5);
+//    ArrayList<Integer> p1Answers = new ArrayList<>(5);
+//    ArrayList<Integer> p2Answers = new ArrayList<>(5);
 
     /**
      * this method is for "Thermometer" type
@@ -131,22 +131,50 @@ public class Round {
      * @return 1 if someone of the 2 players found 5 correct
      * answers
      */
+    /*
+     /*
+      THERE IS A BUG OVER THERE...P1.ANSWERS.ADD...
+      WE NEED TO CHANGE ARRAYLIST TO JUST VARIABLES
+     */
+//    public int Thermometer(Qac qac){
+//        if (CLI.multiplayerInteraction(qac) == 1 && CLI.multiplayerInteraction(qac) == 2){
+//            p1Answers.add(1);
+//            p2Answers.add(1);
+//        }
+//        else if (CLI.multiplayerInteraction(qac) == 1) {
+//            p1Answers.add(1);
+//        }
+//        else if (CLI.multiplayerInteraction(qac) == 2){
+//            p2Answers.add(1);
+//        }
+//        if (p1Answers.get(4) == 1){
+//            Player1_points += 5000;
+//            return 1;
+//        }
+//        else if (p2Answers.get(4) == 2){
+//            Player2_points += 5000;
+//            return 1;
+//        }
+//        return 0;
+//    }
     public int Thermometer(Qac qac){
-        if (CLI.multiplayerInteraction(qac) == 1 && CLI.multiplayerInteraction(qac) == 2){
-            p1Answers.add(1);
-            p2Answers.add(1);
+        int p1Answers = 0;
+        int p2Answers = 0;
+        if (CLI.multiplayerInteraction(qac) == 3){
+            p1Answers++;
+            p2Answers++;
         }
         else if (CLI.multiplayerInteraction(qac) == 1) {
-            p1Answers.add(1);
+            p1Answers++;
         }
         else if (CLI.multiplayerInteraction(qac) == 2){
-            p2Answers.add(1);
+            p2Answers++;
         }
-        if (p1Answers.get(4) == 1){
+        if (p1Answers == 1){
             Player1_points += 5000;
             return 1;
         }
-        else if (p2Answers.get(4) == 2){
+        else if (p2Answers == 1){
             Player2_points += 5000;
             return 1;
         }
