@@ -9,7 +9,7 @@ import java.io.*;
  * main operation of it
  * @version 0.1.2
  */
-public class Game {
+public class Game{
 
     ArrayList<Qac> qac;
     public Randomizer random;
@@ -57,7 +57,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         // player chooses the number of rounds
         byte numberOfRounds = scanner.nextByte();
-        while (numberOfRounds <1 || numberOfRounds > 5) {
+        while (numberOfRounds < 1 || numberOfRounds > 5) {
             System.out.println("Wrong number... Type a number between 1 and 5");
             numberOfRounds = scanner.nextByte();
         }
