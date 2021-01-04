@@ -12,10 +12,9 @@ import java.util.Scanner;
  */
 public class Round {
 
-
     private int points;
     private final CliInterface CLI;
-    private PassedTime timer;
+    private final PassedTime timer;
     private int Player1_points;
     private int Player2_points;
 
@@ -34,12 +33,22 @@ public class Round {
         return points;
     }
 
+    public int getPlayer1_points() { return this.Player1_points; }
+
+    public int getPlayer2_points() { return this.Player2_points; }
     /**
-     * setter for points
+     * setter for points of player 1
      * @param points the new value
      */
-    public void setPoints(int points) {
-        this.points = points;
+    public void setPlayer1_points(int points) {
+        this.Player1_points = points;
+    }
+    /**
+     * setter for points of player 2
+     * @param points the new value
+     */
+    public void setPlayer2_points(int points) {
+        this.Player2_points = points;
     }
     /**
      * this method is for the "right answer" type of round and it
@@ -113,23 +122,17 @@ public class Round {
 
     /**
      * 
-     * @param qac
+     * @param qac is an object from class Qac
      */
     public void fastAnswer(Qac qac){
         int result = CLI.fastAnswerInteraction(qac);
         if (result == 1) {
-            Player1_points += 1000;
+            this.Player1_points += 1000;
         }
         else if (result == 2) {
-            Player2_points += 1000;
+            this.Player2_points += 1000;
         }
     }
-
-    /**
-     * 2 Arraylists to save the progress of the 2 players
-     */
-    ArrayList<Integer> p1Answers = new ArrayList<>(5);
-    ArrayList<Integer> p2Answers = new ArrayList<>(5);
 
     /**
      * this method is for "Thermometer" type
@@ -139,32 +142,6 @@ public class Round {
      * @return 1 if someone of the 2 players found 5 correct
      * answers
      */
-    /*
-     /*
-      THERE IS A BUG OVER THERE...P1.ANSWERS.ADD...
-      WE NEED TO CHANGE ARRAYLIST TO JUST VARIABLES
-     */
-//    public int Thermometer(Qac qac){
-//        if (CLI.multiplayerInteraction(qac) == 1 && CLI.multiplayerInteraction(qac) == 2){
-//            p1Answers.add(1);
-//            p2Answers.add(1);
-//        }
-//        else if (CLI.multiplayerInteraction(qac) == 1) {
-//            p1Answers.add(1);
-//        }
-//        else if (CLI.multiplayerInteraction(qac) == 2){
-//            p2Answers.add(1);
-//        }
-//        if (p1Answers.get(4) == 1){
-//            Player1_points += 5000;
-//            return 1;
-//        }
-//        else if (p2Answers.get(4) == 2){
-//            Player2_points += 5000;
-//            return 1;
-//        }
-//        return 0;
-//    }
     public int Thermometer(Qac qac) {
         return CLI.multiplayerInteraction(qac);
     }
