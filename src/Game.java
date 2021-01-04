@@ -101,9 +101,10 @@ public class Game{
                     //this is for type: Thermometer
                     else{
                         for (int j=0; j < 10; j++){
-                            if (round.Thermometer(qac.get(j)) == 1)
+                            if (round.Thermometer(qac.get(0)) == 1) {
+                                qac.remove(0);
                                 break;
-                            qac.remove(j);
+                            }
                         }
                     }
             }
