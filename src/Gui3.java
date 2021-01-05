@@ -7,9 +7,12 @@ public class Gui3 extends JFrame{
     private JPanel rootPanel3;
     private JTextField textField1;
     private JButton submitButton;
-    public int num_rounds;
+    public int n_rounds;
+    public Gui_connection gui_con;
+
 
     public Gui3(){
+        gui_con = new Gui_connection();
         add(rootPanel3);
         setTitle("Buzz");
         setSize(300,200);
@@ -19,7 +22,8 @@ public class Gui3 extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //isInt(textField1, textField1.getText());
-                num_rounds = Integer.parseInt(textField1.getText());
+                n_rounds = Integer.parseInt(textField1.getText());
+                gui_con.num_rounds = n_rounds;
                 dispose();
                 Gui4_1 gui4_1 = new Gui4_1();
                 gui4_1.setVisible(true);

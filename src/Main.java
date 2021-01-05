@@ -10,7 +10,7 @@ public class Main {
                 gui_1.setVisible(true);
             }
         });
-        Game buzz = new Game();
-        buzz.play();
+//        Game buzz = new Game();
+//        buzz.play();
     }
 }

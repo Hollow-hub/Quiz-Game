@@ -14,6 +14,7 @@ public class Game{
     ArrayList<Qac> qac;
     public Randomizer random;
     public Players number_of_players;
+    public byte players;
 
 
     /**
@@ -29,7 +30,7 @@ public class Game{
     /**
      * the method that organizes and runs the game
      */
-    public void play(){
+    public void play(Gui_connection gui_con){
         String file = "questions.txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
@@ -54,18 +55,20 @@ public class Game{
 
 
         //gets how many players are gonna play
-        byte players = number_of_players.getPlayers();
+//        players = number_of_players.getPlayers();
+//        System.out.println(gui_con.num_players);
 
-        System.out.println("How many rounds do you want? (type 1-5)");
-        Scanner scanner = new Scanner(System.in);
+//        System.out.println("How many rounds do you want? (type 1-5)");
+//        Scanner scanner = new Scanner(System.in);
         // player chooses the number of rounds
-        byte numberOfRounds = scanner.nextByte();
-        while (numberOfRounds < 1 || numberOfRounds > 5) {
-            System.out.println("Wrong number... Type a number between 1 and 5");
-            numberOfRounds = scanner.nextByte();
-        }
+//        byte numberOfRounds = scanner.nextByte();
+//        while (numberOfRounds < 1 || numberOfRounds > 5) {
+//            System.out.println("Wrong number... Type a number between 1 and 5");
+//            numberOfRounds = scanner.nextByte();
+//        }
         // scanner.close();
 
+        int numberOfRounds = gui_con.num_rounds;
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
@@ -129,7 +132,7 @@ public class Game{
             qac.remove(0);// removes shown questions
         }
 
-        scanner.close();
+//        scanner.close();
         if (players == 1) {
             if (round.getPoint() > 0)
                 System.out.println("Congratulations!!!");

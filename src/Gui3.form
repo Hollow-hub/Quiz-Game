@@ -10,15 +10,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="53776" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-619881"/>
-          <text value="How many rounds do you want to play?"/>
-        </properties>
-      </component>
       <component id="80207" class="javax.swing.JTextField" binding="textField1" default-binding="true">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
@@ -52,6 +43,15 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
+      <component id="53776" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-619881"/>
+          <text value="How many rounds do you want to play?"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

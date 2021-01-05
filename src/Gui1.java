@@ -11,7 +11,7 @@ public class Gui1 extends JFrame {
 
         add(rootPanel);
         setTitle("Buzz");
-        setSize(300,200);
+        setSize(350,250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 
