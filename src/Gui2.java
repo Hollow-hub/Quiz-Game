@@ -42,7 +42,7 @@ public class Gui2 extends JFrame{
                 n_rounds = Integer.parseInt(textField1.getText());
                 gui_con.num_rounds = n_rounds;
                 dispose();
-                if (game.players== 1) {
+                if (game.players == 1) {
                     Gui4_1 gui4_1 = new Gui4_1();
                     gui4_1.setVisible(true);
                     game.play(gui_con);
