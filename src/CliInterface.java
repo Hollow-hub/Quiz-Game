@@ -41,6 +41,40 @@ public class CliInterface {
         return correctAnswersPlace;
     }
 
+    public int timerInteraction(int correctAnswer) {
+        HashMap<Character, Integer> player2 = new HashMap<>();
+        player2.put('h', 1);
+        player2.put('j', 2);
+        player2.put('k', 3);
+        player2.put('l', 4);
+        Scanner scanner = new Scanner(System.in);
+        char input = scanner.next().charAt(0);
+        if (isNotValid(input)) {
+            System.out.println("Wrong input... Aborting:( :( :(");
+            return 0;
+        }
+
+        boolean player1 = isPlayer1(input);
+        int playersAnswer;
+        if (player1) {
+            playersAnswer =  Character.getNumericValue(input);
+        }
+        else {
+            playersAnswer = player2.get(input);
+        }
+
+        // player chose between 1-4 and we handle 0-3
+        if ((playersAnswer - 1) == correctAnswer) {
+            if (player1) {
+                return 1;
+            }
+            else {
+                return 2;
+            }
+        }
+        // I have to change this. if a player gets it wrong, the other should answer
+        return 0;
+    }
     /**
      * this method handles the interaction (questions and answers)
      * with the user
@@ -140,7 +174,7 @@ public class CliInterface {
             }
 
             if (playersAnswer - 1 == correctAnswersPlace) {
-                return player1 ? 1 : 2;
+                return player1 ? 10 : 20;
             }
         }
         

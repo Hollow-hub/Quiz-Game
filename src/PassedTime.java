@@ -20,8 +20,8 @@ public class PassedTime {
     private Date endDate1;
     private Date endDate2;
 
-    private int startingSeconds1=5;
-    private int startingSeconds2=5;
+    private int startingSeconds1=6;
+    private int startingSeconds2=6;
 
     /**
      * timer of player1
@@ -30,6 +30,10 @@ public class PassedTime {
     TimerTask task1 = new TimerTask() {
         @Override
         public void run() {
+            if (startingSeconds1 == 1) {
+//                this.MyTimer1.cancel();
+                stop1();
+            }
             startingSeconds1--;
             System.out.println("Seconds1:" + startingSeconds1);
         }
@@ -43,6 +47,10 @@ public class PassedTime {
     TimerTask task2 = new TimerTask() {
         @Override
         public void run() {
+            if (startingSeconds2 == 1) {
+//                MyTimer2.cancel();
+                stop2();
+            }
             startingSeconds2--;
             System.out.println("Seconds2:" + startingSeconds2);
         }
@@ -93,7 +101,4 @@ public class PassedTime {
     public int getSeconds2(){
         return (int) (endDate2.getTime() - startDate2.getTime());
     }
-
-
-
 }

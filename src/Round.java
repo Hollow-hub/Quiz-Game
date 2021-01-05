@@ -14,14 +14,16 @@ public class Round {
 
     private int points;
     private final CliInterface CLI;
-    private final PassedTime timer;
+//    private final PassedTime timer1;
+//    private final PassedTime timer2;
     private int Player1_points;
     private int Player2_points;
 
     public Round() {
         this.points = 0;
         this.CLI = new CliInterface();
-        this.timer = new PassedTime();
+//        this.timer1 = new PassedTime();
+//        this.timer2 = new PassedTime();
         this.Player1_points = 0;
         this.Player2_points = 0;
     }
@@ -104,19 +106,38 @@ public class Round {
     public void StopTheTimer(Qac qac){
         System.out.println("You are playing stop the timer!!!");
         System.out.println("Player1 goes first");
+        int correctAnswersPlace = CLI.showQuestions(qac);
+
+        PassedTime timer1 = new PassedTime();
+        PassedTime timer2 = new PassedTime();
         //player1 timer
-        timer.start1();
-        if (CLI.multiplayerInteraction(qac) == 1){
-            timer.stop1();
-            this.Player1_points += timer.getSeconds1()*0.2;
+        timer1.start1();
+        timer2.start2();
+        int winner = CLI.timerInteraction(correctAnswersPlace);
+        if (winner == 1){
+            timer1.stop1();
+            this.Player1_points += timer1.getSeconds1()*0.2;
         }
-        System.out.println("Now is Player2 row");
+        else if (winner == 2){
+            timer2.stop2();
+            this.Player2_points += timer2.getSeconds2()*0.2;
+        }
+
+        int nextWinner = CLI.timerInteraction(correctAnswersPlace);
+        if (winner == 2 && nextWinner == 1){
+            timer1.stop1();
+            this.Player1_points += timer1.getSeconds1()*0.2;
+        }
+        else if (winner == 1 && nextWinner == 2){
+            timer2.stop2();
+            this.Player2_points += timer2.getSeconds2()*0.2;
+        }
+        else {
+            timer1.stop1();
+            timer2.stop2();
+        }
+//        System.out.println("Now is Player2 row");
         //player2 timer
-        timer.start2();
-        if (CLI.multiplayerInteraction(qac) == 2){
-            timer.stop2();
-            this.Player2_points += timer.getSeconds2()*0.2;
-        }
 
     }
 
@@ -131,6 +152,12 @@ public class Round {
         }
         else if (result == 2) {
             this.Player2_points += 1000;
+        }
+        else if (result == 10) {
+            this.Player1_points += 500;
+        }
+        else if (result == 20) {
+            this.Player2_points += 500;
         }
     }
 

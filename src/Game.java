@@ -92,7 +92,6 @@ public class Game{
                 }
             }
             else{
-                //this is for type: StopTheTimer
                 if (typeOfRound.equals("StopTheTimer")){
                     round.StopTheTimer(qac.get(0));
                 }
@@ -105,19 +104,19 @@ public class Game{
                     int p1 = 0;
                     int p2 = 0;
 
-                    for (int j = 0; j < 5; j++) {
-                        int result = round.Thermometer(qac.get(0));
-                        if (result == 3) {
-                            p1++;
-                            p2++;
-                        }
-                        if (result == 1) {
-                            p1++;
-                        } else if (result == 2) {
-                            p2++;
-                        }
-                        qac.remove(0);
-                    }
+//                    for (int j = 0; j < 5; j++) {
+//                        int result = round.Thermometer(qac.get(0));
+//                        if (result == 3) {
+//                            p1++;
+//                            p2++;
+//                        }
+//                        if (result == 1) {
+//                            p1++;
+//                        } else if (result == 2) {
+//                            p2++;
+//                        }
+//                        qac.remove(0);
+                    //}
 
                     if (p1 == 5) {
                         round.setPlayer1_points(round.getPlayer1_points() + 5000);
