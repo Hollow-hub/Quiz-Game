@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -18,6 +17,7 @@ public class Round {
 //    private final PassedTime timer2;
     private int Player1_points;
     private int Player2_points;
+    private int shownRoundNumber;
 
     public Round() {
         this.points = 0;
@@ -26,6 +26,10 @@ public class Round {
 //        this.timer2 = new PassedTime();
         this.Player1_points = 0;
         this.Player2_points = 0;
+    }
+
+    public void setShownRoundNumber(int shownRoundNumber){
+        this.shownRoundNumber = shownRoundNumber;
     }
 
     /**  
@@ -61,7 +65,8 @@ public class Round {
      */
     public void rightAnswer(Qac qac) {
         //  question with answers;
-        if (CLI.interaction(qac)) {
+
+        if (CLI.interaction(qac,"RightAnswer",shownRoundNumber)) {
             this.points += 1000;
             System.out.println("Take 1000 points!!!");
         }
@@ -86,7 +91,7 @@ public class Round {
         }
         // console.close();
         
-        if (CLI.interaction(qac)) {
+        if (CLI.interaction(qac, "Bid", shownRoundNumber)) {
             System.out.println("take your " + bid_player + " that you had bidden");
             this.points += bid_player;
         }

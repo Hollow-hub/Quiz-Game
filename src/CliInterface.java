@@ -80,38 +80,49 @@ public class CliInterface {
      * with the user
      * @param qac is an object from the class: Qac,
      *          which has question, answers[4] and category
+     * @param typeofRound
      * @return true if user won or false if he lost
      */
-    public boolean interaction(Qac qac) {
-        int correctAnswersPlace = showQuestions(qac);
-
-        // get users answer
-        Scanner scanner = new Scanner(System.in);
-        int playersAnswer = scanner.nextInt();
-        byte counter = 1;
-        // check if playersAnswers is valid
-        while (playersAnswer!=1 && playersAnswer!=2 && 
-                playersAnswer!=3 && playersAnswer!=4) {
-            if (counter == 1) {
-                System.out.println("Wrong Input...please man its 1,2,3,4 how hard can it be??");
-            }
-            else {
-                System.out.println("I SAID 1,2,3 or freaking 4, WTF is wrong with you");
-            }
-            playersAnswer = scanner.nextInt();
-            counter += 1;
+    public boolean interaction(Qac qac, String typeofRound, int shownRoundNumber) {
+        Gui4_1 gui4_1 = new Gui4_1(qac,typeofRound,shownRoundNumber);
+        gui4_1.setVisible(true);
+        while (gui4_1.buttonPressed == false){
+            System.out.println("MHTSO eisai malakas");
         }
-
-        // player chose between 1-4 and we handle 0-3
-        if ((playersAnswer - 1) == correctAnswersPlace) {
-            System.out.println("You Win");
+        if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
             return true;
         }
-        else {
-            System.out.println("You idiot, the correct answer is: " +
-                                (correctAnswersPlace+1));
-            return false;
-        }
+        return false;
+
+//        int correctAnswersPlace = showQuestions(qac);
+
+        // get users answer
+//        Scanner scanner = new Scanner(System.in);
+//        int playersAnswer = scanner.nextInt();
+//        byte counter = 1;
+//        // check if playersAnswers is valid
+//        while (playersAnswer!=1 && playersAnswer!=2 &&
+//                playersAnswer!=3 && playersAnswer!=4) {
+//            if (counter == 1) {
+//                System.out.println("Wrong Input...please man its 1,2,3,4 how hard can it be??");
+//            }
+//            else {
+//                System.out.println("I SAID 1,2,3 or freaking 4, WTF is wrong with you");
+//            }
+//            playersAnswer = scanner.nextInt();
+//            counter += 1;
+//        }
+//
+//        // player chose between 1-4 and we handle 0-3
+//        if ((playersAnswer - 1) == correctAnswersPlace) {
+//            System.out.println("You Win");
+//            return true;
+//        }
+//        else {
+//            System.out.println("You idiot, the correct answer is: " +
+//                                (correctAnswersPlace+1));
+//            return false;
+//        }
     }
 
     /**
