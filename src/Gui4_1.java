@@ -14,9 +14,11 @@ public class Gui4_1 extends JFrame {
     private JLabel TypeRound;
     private JLabel correctAnswer;
     public Gui_connection gui_con;
+    public Game game;
 
 
     public Gui4_1(){
+        game = new Game();
         gui_con = new Gui_connection();
         add(rootPanel4_1);
         setTitle("Buzz");
