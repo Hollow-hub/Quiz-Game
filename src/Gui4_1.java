@@ -48,6 +48,7 @@ public class Gui4_1 extends JFrame {
         setSize(600,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setVisible(true);
 
         int[] answers = showQuestions(qac);
         Button1.setText("1. " + qac.getAnswers()[answers[0]]);
@@ -61,6 +62,7 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
+                dispose();
             }
         });
         button2.addKeyListener(new KeyAdapter() {
@@ -70,6 +72,7 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
+                dispose();
             }
         });
         button3.addKeyListener(new KeyAdapter() {
@@ -79,6 +82,7 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
+                dispose();
             }
         });
         button4.addKeyListener(new KeyAdapter() {
@@ -88,6 +92,7 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
+                dispose();
             }
         });
 
