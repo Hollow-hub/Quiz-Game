@@ -34,7 +34,7 @@ public class Game{
 //        Gui_connection gui_connection = new Gui_connection();
         Gui1 gui1 = new Gui1();
         gui1.setVisible(true);
-        while (gui1.access == false){
+        while (!gui1.access){
             System.out.println(gui1.access);
         }
         Gui2 gui2 = new Gui2();
@@ -96,7 +96,7 @@ public class Game{
                 shownRoundNumber++;
             }
             round.setShownRoundNumber(shownRoundNumber - 1);
-            // random value in the HashMap, that contains
+            // rando992222m value in the HashMap, that contains
             // the different types of Round
             typeOfRound = roundTypes.get(random.nextInt(roundTypes.size()));
 
@@ -111,42 +111,48 @@ public class Game{
                 }
             }
             else{ // for two player game
-                if (typeOfRound.equals("StopTheTimer")){
-                    round.StopTheTimer(qac.get(0));
-                }
-                //this is for type: FastAnswer
-                else if (typeOfRound.equals("FastAnswer")) {
-                    round.fastAnswer(qac.get(0));
-                }
-                //this is for type: Thermometer
-                else {
-                    int p1 = 0;
-                    int p2 = 0;
-                    // if there are less than five questions left,
-                    // thermometer can't be played
-//                    if (qac.size() < 5) {
-//                        continue;
-//                    }
-//
-//                    for (int j = 0; j < 5; j++) {
-//                        int result = round.Thermometer(qac.get(0));
-//                        if (result == 3) {
-//                            p1++;
-//                            p2++;
-//                        }
-//                        if (result == 1) {
-//                            p1++;
-//                        } else if (result == 2) {
-//                            p2++;
-//                        }
-//                        qac.remove(0);
-//                    }
-//
-//                    if (p1 == 5) {
-//                        round.setPlayer1_points(round.getPlayer1_points() + 5000);
-//                    } else if (p2 == 5) {
-//                        round.setPlayer2_points(round.getPlayer2_points() + 5000);
-//                    }
+                switch (typeOfRound) {
+                    case "rightAnswerMultiplayer":
+                        round.rightAnswerMultiplayer(qac.get(0));
+                        break;
+                    case "bidMultiplayer":
+                        round.bidMultiplayer(qac.get(0));
+                        break;
+                    case "StopTheTimer":
+                        round.StopTheTimer(qac.get(0));
+                        break;
+                    case "FastAnswer":
+                        round.fastAnswer(qac.get(0));
+                        break;
+                    default:
+                        int p1 = 0;
+                        int p2 = 0;
+//                     if there are less than five questions left,
+//                     thermometer can't be played
+                        if (qac.size() < 5) {
+                            continue;
+                        }
+
+                        for (int j = 0; j < 5; j++) {
+                            int result = round.Thermometer(qac.get(0));
+                            if (result == 3) {
+                                p1++;
+                                p2++;
+                            }
+                            if (result == 1) {
+                                p1++;
+                            } else if (result == 2) {
+                                p2++;
+                            }
+                            qac.remove(0);
+                        }
+
+                        if (p1 == 5) {
+                            round.setPlayer1_points(round.getPlayer1_points() + 5000);
+                        } else if (p2 == 5) {
+                            round.setPlayer2_points(round.getPlayer2_points() + 5000);
+                        }
+                        break;
                 }
 
             }

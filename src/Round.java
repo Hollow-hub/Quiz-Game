@@ -102,6 +102,43 @@ public class Round {
         }
     }
 
+    public void rightAnswerMultiplayer(Qac qac) {
+        int result = CLI.multiplayerInteraction(qac);
+        if (result == 3) {
+            Player2_points += 1000;
+            Player1_points += 1000;
+        }
+        else if (result == 2) {
+            Player2_points += 1000;
+        }
+        else if (result == 1) {
+            Player1_points += 1000;
+        }
+    }
+
+    public void bidMultiplayer(Qac qac) {
+//        String category = qac.getCategory();
+        int bid_player1 = CLI.bidding;
+        int bid_player2 = CLI.bidding;
+
+        int result = CLI.multiplayerInteraction(qac);
+        if (result == 1) {
+            Player1_points += bid_player1;
+            Player2_points -= bid_player2;
+        }
+        else if (result == 3) {
+            Player1_points += bid_player1;
+            Player2_points += bid_player2;
+        }
+        else if (result == 2) {
+            Player2_points += bid_player2;
+            Player1_points -= bid_player1;
+        }
+        else {
+            Player1_points -= bid_player1;
+            Player2_points -= bid_player2;
+        }
+    }
     /**
      * this method is for "stop the timer" type
      * of round  and it gets an
