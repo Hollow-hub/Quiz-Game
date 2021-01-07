@@ -64,6 +64,8 @@ public class Game{
         roundTypes.put(1, "bid");
         roundTypes.put(2, "StopTheTimer");
         roundTypes.put(3, "FastAnswer");
+        roundTypes.put(4, "rightAnswerMultiplayer");
+        roundTypes.put(5, "bidMultiplayer");
 
 
         //gets how many players are gonna play
