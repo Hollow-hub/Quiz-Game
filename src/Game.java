@@ -14,8 +14,7 @@ public class Game{
     ArrayList<Qac> qac;
     public Randomizer random;
     public Players number_of_players;
-    public int players;
-
+//    public int players;
 
     /**
      * the constructor of the class
@@ -31,7 +30,7 @@ public class Game{
      * the method that organizes and runs the game
      * @param
      */
-    public void play() throws InterruptedException {
+    public void play(){
 //        Gui_connection gui_connection = new Gui_connection();
         Gui1 gui1 = new Gui1();
         gui1.setVisible(true);
@@ -150,7 +149,9 @@ public class Game{
         }
 
 //        scanner.close();
-        if (players == 1) {
+        if (gui2.players == 1) {
+            Finish_1 finish_1 = new Finish_1(round.getPoint());
+            finish_1.setVisible(true);
             if (round.getPoint() > 0)
                 System.out.println("Congratulations!!!");
             else

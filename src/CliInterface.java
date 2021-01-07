@@ -10,8 +10,11 @@ import java.util.HashMap;
  */
 public class CliInterface {
 
+    public int bidding;
+
     private int k;
     public CliInterface () {
+        bidding = 0;
         this.k = 1;
     }
     
@@ -84,16 +87,33 @@ public class CliInterface {
      * @return true if user won or false if he lost
      */
     public boolean interaction(Qac qac, String typeofRound, int shownRoundNumber) {
-        Gui4_1 gui4_1 = new Gui4_1(qac,typeofRound,shownRoundNumber);
-        gui4_1.setVisible(true);
-        while (gui4_1.buttonPressed == false){
-            System.out.println("10");
+        if (typeofRound.equals("Bid")){
+            Gui_Bidding gui_bidding = new Gui_Bidding();
+            gui_bidding.setVisible(true);
+            while(gui_bidding.bidding == 0){
+                System.out.println("Bidding");
+            }
+            bidding = gui_bidding.bidding;
+            Gui4_1 gui4_1 = new Gui4_1(qac, typeofRound, shownRoundNumber);
+            gui4_1.setVisible(true);
+            while (gui4_1.buttonPressed == false){
+                System.out.println("Bid");
+            }
+            if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
+                return true;
+            }
+            return false;
+        }else {
+            Gui4_1 gui4_1 = new Gui4_1(qac, typeofRound, shownRoundNumber);
+            gui4_1.setVisible(true);
+            while (gui4_1.buttonPressed == false) {
+                System.out.println("RightAnswer");
+            }
+            if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1) {
+                return true;
+            }
+            return false;
         }
-        if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
-            return true;
-        }
-        return false;
-
 //        int correctAnswersPlace = showQuestions(qac);
 
         // get users answer

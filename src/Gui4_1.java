@@ -35,11 +35,9 @@ public class Gui4_1 extends JFrame {
         return answers;
     }
 
-
-
     public Gui4_1(Qac qac, String typeofRound, int shownRoundNumber){
 
-        revalidate();
+
         NumOfRound.setText("Round " + String.valueOf(shownRoundNumber));
         TypeRound.setText(typeofRound);
         question.setText(qac.getQuestion());

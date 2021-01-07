@@ -66,7 +66,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="bec35" class="javax.swing.JLabel">
+      <component id="bec35" class="javax.swing.JLabel" binding="p2">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -74,7 +74,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="69ef5" class="javax.swing.JLabel">
+      <component id="69ef5" class="javax.swing.JLabel" binding="p3">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -82,7 +82,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="6c2e9" class="javax.swing.JLabel">
+      <component id="6c2e9" class="javax.swing.JLabel" binding="p4">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -90,7 +90,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="65249" class="javax.swing.JLabel">
+      <component id="65249" class="javax.swing.JLabel" binding="p5">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -98,7 +98,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="277f3" class="javax.swing.JLabel">
+      <component id="277f3" class="javax.swing.JLabel" binding="p6">
         <constraints>
           <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -106,7 +106,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="9e1d4" class="javax.swing.JLabel">
+      <component id="9e1d4" class="javax.swing.JLabel" binding="p7">
         <constraints>
           <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -114,7 +114,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="7ce75" class="javax.swing.JLabel">
+      <component id="7ce75" class="javax.swing.JLabel" binding="p8">
         <constraints>
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -122,7 +122,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="22c53" class="javax.swing.JLabel">
+      <component id="22c53" class="javax.swing.JLabel" binding="p9">
         <constraints>
           <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -130,7 +130,7 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="cbc5f" class="javax.swing.JLabel">
+      <component id="cbc5f" class="javax.swing.JLabel" binding="p10">
         <constraints>
           <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -292,7 +292,7 @@
           <text value="points"/>
         </properties>
       </component>
-      <component id="b8379" class="javax.swing.JLabel">
+      <component id="b8379" class="javax.swing.JLabel" binding="p1">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
