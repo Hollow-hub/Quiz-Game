@@ -60,7 +60,7 @@ public class PassedTime {
      * starting point of counting seconds for player1
      */
     public void start1(){
-        MyTimer1.scheduleAtFixedRate(task1,1000,1000);
+        MyTimer1.scheduleAtFixedRate(task1,0,1000);
         startDate1 = new Date();
     }
 
@@ -68,7 +68,7 @@ public class PassedTime {
      * starting point of counting seconds for player2
      */
     public void start2(){
-        MyTimer2.scheduleAtFixedRate(task2,1000,1000);
+        MyTimer2.scheduleAtFixedRate(task2,0,1000);
         startDate2 = new Date();
     }
 

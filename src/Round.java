@@ -109,8 +109,6 @@ public class Round {
      * which includes question, answers[], category
      */
     public void StopTheTimer(Qac qac){
-        System.out.println("You are playing stop the timer!!!");
-        System.out.println("Player1 goes first");
         int correctAnswersPlace = CLI.showQuestions(qac);
 
         PassedTime timer1 = new PassedTime();
@@ -121,29 +119,27 @@ public class Round {
         int winner = CLI.timerInteraction(correctAnswersPlace);
         if (winner == 1){
             timer1.stop1();
-            this.Player1_points += timer1.getSeconds1()*0.2;
+            this.Player1_points += (5000 - timer1.getSeconds1())*0.2;
         }
         else if (winner == 2){
             timer2.stop2();
-            this.Player2_points += timer2.getSeconds2()*0.2;
+            this.Player2_points += (5000 - timer2.getSeconds2())*0.2;
         }
 
         int nextWinner = CLI.timerInteraction(correctAnswersPlace);
         if (winner == 2 && nextWinner == 1){
             timer1.stop1();
-            this.Player1_points += timer1.getSeconds1()*0.2;
+            this.Player1_points += (5000 - timer1.getSeconds1())*0.2;
         }
         else if (winner == 1 && nextWinner == 2){
             timer2.stop2();
-            this.Player2_points += timer2.getSeconds2()*0.2;
+            System.out.println(timer2.getSeconds2());
+            this.Player2_points += (5000 - timer2.getSeconds2())*0.2;
         }
         else {
             timer1.stop1();
             timer2.stop2();
         }
-//        System.out.println("Now is Player2 row");
-        //player2 timer
-
     }
 
     /**

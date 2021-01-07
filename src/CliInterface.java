@@ -86,13 +86,10 @@ public class CliInterface {
     public boolean interaction(Qac qac, String typeofRound, int shownRoundNumber) {
         Gui4_1 gui4_1 = new Gui4_1(qac,typeofRound,shownRoundNumber);
         gui4_1.setVisible(true);
-        while (gui4_1.buttonPressed == false){
+        while (!gui4_1.buttonPressed){
             System.out.println("10");
         }
-        if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
-            return true;
-        }
-        return false;
+        return Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1;
 
 //        int correctAnswersPlace = showQuestions(qac);
 

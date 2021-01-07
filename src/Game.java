@@ -111,19 +111,25 @@ public class Game{
                     round.bid(qac.get(0));
                 }
             }
-            else{
+            else{ // for two player game
                 if (typeOfRound.equals("StopTheTimer")){
                     round.StopTheTimer(qac.get(0));
                 }
                 //this is for type: FastAnswer
                 else if (typeOfRound.equals("FastAnswer")) {
-                    round.fastAnswer(qac.get(0));
+//                    round.fastAnswer(qac.get(0));
+                    System.out.println("hello");
                 }
                 //this is for type: Thermometer
                 else {
                     int p1 = 0;
                     int p2 = 0;
-
+                    // if there are less than five questions left,
+                    // thermometer can't be played
+//                    if (qac.size() < 5) {
+//                        continue;
+//                    }
+//
 //                    for (int j = 0; j < 5; j++) {
 //                        int result = round.Thermometer(qac.get(0));
 //                        if (result == 3) {
@@ -136,20 +142,19 @@ public class Game{
 //                            p2++;
 //                        }
 //                        qac.remove(0);
-                    //}
-
-                    if (p1 == 5) {
-                        round.setPlayer1_points(round.getPlayer1_points() + 5000);
-                    } else if (p2 == 5) {
-                        round.setPlayer2_points(round.getPlayer2_points() + 5000);
-                    }
+//                    }
+//
+//                    if (p1 == 5) {
+//                        round.setPlayer1_points(round.getPlayer1_points() + 5000);
+//                    } else if (p2 == 5) {
+//                        round.setPlayer2_points(round.getPlayer2_points() + 5000);
+//                    }
                 }
 
             }
             qac.remove(0);// removes shown questions
         }
 
-//        scanner.close();
         if (players == 1) {
             if (round.getPoint() > 0)
                 System.out.println("Congratulations!!!");
