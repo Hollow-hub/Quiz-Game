@@ -16,5 +16,5 @@
 Πόσα πρωταθλήματα F1 έχει κερδίσει ο Lewis Hamilton;, 6, 2, 4, 7, sports
 Ποιός θεωρείται ο πατέρας της επιστήμης των υπολογιστών;, Alan Turing, Linus Torvalds, Dennis Ritchie, Steve Jobs, science
 Ποιά ήταν η πρώτη αποστολή της NASA στη Σελήνη;, Απόλλο 11, Απόλλο 1, Απόλλο 3, Sputnik, science
-Από ποία γλώσσα προήλθε ο όρος Computer;, Λατινικά, Αγγλικά, Ελληνικά, Αράβικα, science
+Από ποία γλώσσα προήλθε ο όρος Computer;, Αγγλικά, Λατινικά, Ελληνικά, Αράβικα, science
 Οι LA Lakers και οι New York Knicks παίζουν ποιο άθλημα;, Μπασκετ, Χοκεϊ, Ραγκμπι, Baseball, sports

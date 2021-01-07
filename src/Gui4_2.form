@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui4_2">
-  <grid id="27dc6" binding="rootPanel4_2" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="rootPanel4_2" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -10,138 +10,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="82a74" binding="player1Panel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-6468677"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="8e6f1" class="javax.swing.JButton" binding="Button1">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="1"/>
-            </properties>
-          </component>
-          <component id="7522a" class="javax.swing.JButton" binding="Button2">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="2"/>
-            </properties>
-          </component>
-          <component id="161c3" class="javax.swing.JButton" binding="Button3">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="3"/>
-            </properties>
-          </component>
-          <component id="e0d29" class="javax.swing.JButton" binding="Button4">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="4"/>
-            </properties>
-          </component>
-          <component id="920e4" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font size="16"/>
-              <text value="Pick :1, 2, 3, 4"/>
-            </properties>
-          </component>
-          <component id="8d94" class="javax.swing.JLabel" binding="WinOrlose">
-            <constraints>
-              <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font size="16"/>
-              <text value="Win or Lose"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="1695" binding="player2Panel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-6468677"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="e11d9" class="javax.swing.JButton" binding="Buttonh">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="h"/>
-            </properties>
-          </component>
-          <component id="8a99e" class="javax.swing.JButton" binding="buttonj">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="j"/>
-            </properties>
-          </component>
-          <component id="2577c" class="javax.swing.JButton" binding="buttonk">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="k"/>
-            </properties>
-          </component>
-          <component id="4f933" class="javax.swing.JButton" binding="buttonl">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-8696901"/>
-              <text value="l"/>
-            </properties>
-          </component>
-          <component id="cd451" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font size="16"/>
-              <text value="Pick :h, j, k, l"/>
-            </properties>
-          </component>
-          <component id="5cd4c" class="javax.swing.JLabel" binding="WinOrLose">
-            <constraints>
-              <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font size="16"/>
-              <text value="Win or Lose"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <component id="d0881" class="javax.swing.JLabel" binding="NumRound">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
@@ -171,7 +39,7 @@
       </component>
       <component id="402a2" class="javax.swing.JLabel">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="16"/>
@@ -180,7 +48,7 @@
       </component>
       <component id="e964" class="javax.swing.JLabel" binding="correctAnswer">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font size="16"/>
@@ -233,6 +101,107 @@
           </component>
         </children>
       </grid>
+      <component id="161c3" class="javax.swing.JButton" binding="Button3">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <text value="3"/>
+        </properties>
+      </component>
+      <component id="e0d29" class="javax.swing.JButton" binding="Button4">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <text value="4"/>
+        </properties>
+      </component>
+      <component id="920e4" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="Pick :1, 2, 3, 4"/>
+        </properties>
+      </component>
+      <component id="9724e" class="javax.swing.JButton" binding="jbutton">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <text value="j"/>
+        </properties>
+      </component>
+      <component id="2b634" class="javax.swing.JButton" binding="kbutton">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <text value="k"/>
+        </properties>
+      </component>
+      <component id="6f01b" class="javax.swing.JButton" binding="lbutton">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <text value="l"/>
+        </properties>
+      </component>
+      <component id="afb2f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="Pick :h, j, k, l "/>
+        </properties>
+      </component>
+      <component id="7522a" class="javax.swing.JButton" binding="Button2">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <text value="2"/>
+        </properties>
+      </component>
+      <component id="6bfb3" class="javax.swing.JButton" binding="hbutton">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <borderPainted value="true"/>
+          <focusable value="true"/>
+          <selected value="false"/>
+          <text value="h"/>
+        </properties>
+      </component>
+      <component id="8e6f1" class="javax.swing.JButton" binding="Button1">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8696901"/>
+          <focusable value="true"/>
+          <selected value="false"/>
+          <text value="1"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

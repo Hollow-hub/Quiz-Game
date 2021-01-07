@@ -103,7 +103,7 @@ public class Round {
     }
 
     public void rightAnswerMultiplayer(Qac qac) {
-        int result = CLI.multiplayerInteraction(qac);
+        int result = CLI.multiplayerInteraction(qac,"RightAnswerMultiplayer",shownRoundNumber);
         if (result == 3) {
             Player2_points += 1000;
             Player1_points += 1000;
@@ -121,7 +121,7 @@ public class Round {
         int bid_player1 = CLI.bidding;
         int bid_player2 = CLI.bidding;
 
-        int result = CLI.multiplayerInteraction(qac);
+        int result = CLI.multiplayerInteraction(qac,"BidMultiplayer",shownRoundNumber);
         if (result == 1) {
             Player1_points += bid_player1;
             Player2_points -= bid_player2;
@@ -209,6 +209,6 @@ public class Round {
      * answers
      */
     public int Thermometer(Qac qac) {
-        return CLI.multiplayerInteraction(qac);
+        return CLI.multiplayerInteraction(qac,"Thermometer",shownRoundNumber);
     }
 }

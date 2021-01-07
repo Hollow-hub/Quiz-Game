@@ -223,52 +223,89 @@ public class CliInterface {
      * invalid input. 1 if only player 1 got it right. 2 if only player 2 got
      * it right and 3 if both players got it right
      */
-    public int multiplayerInteraction(Qac qac) {
-        int correctAnswersPlace = showQuestions(qac);
+    public int multiplayerInteraction(Qac qac, String typeofRound, int shownRoundNumber) {
+//        int correctAnswersPlace = showQuestions(qac);
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
         player2.put('j', 2);
         player2.put('k', 3);
         player2.put('l', 4);
 
-        //gets the two inputs and checks if they are valid
-        Scanner scanner = new Scanner(System.in);
-        char firstInput = scanner.next().charAt(0);
-        char secondInput = scanner.next().charAt(0);
-        if (isNotValid(firstInput) || isNotValid(secondInput)) {
-            System.out.println("Wrong input... Aborting:( :( :(");
-            return 0;
+        if (typeofRound.equals("BidMultiplayer")) {
+            Gui_Bidding gui_bidding = new Gui_Bidding();
+            gui_bidding.setVisible(true);
+            while (gui_bidding.bidding == 0) {
+                System.out.println("Bidding");
+            }
+            bidding = gui_bidding.bidding;
         }
-
-        // match inputs with players
+        Gui4_2 gui4_2 = new Gui4_2(qac,typeofRound,shownRoundNumber);
+        gui4_2.setVisible(true);
+        while (gui4_2.buttonPressed1 == false || gui4_2.buttonPressed2 == false){
+            System.out.println("RAM");
+        }
+        gui4_2.correctAnswer.setText(String.valueOf(gui4_2.correctAnswersPlace + 1));
+        gui4_2.dispose();
         int player1Answer, player2Answer;
-        if (isPlayer1(firstInput)) {
-            player1Answer = Character.getNumericValue(firstInput);
-            player2Answer = player2.get(secondInput);
-        }
-        else {
-            player1Answer = player2.get(firstInput);
-            player2Answer = Character.getNumericValue(secondInput);
-        }
-
-        // check who got it right
-        if (player1Answer - 1 == correctAnswersPlace && 
-            player2Answer - 1 == correctAnswersPlace) {
+        player1Answer = Character.getNumericValue(gui4_2.answer1);
+        player2Answer = player2.get(gui4_2.answer2);
+        if (player1Answer - 1 == gui4_2.correctAnswersPlace &&
+                player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("You both got it right!");
             return 3;
         }
-        else if (player1Answer - 1 == correctAnswersPlace) {
+        else if (player1Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 1 got it right :(");
             return 1;
-        }   
-        else if (player2Answer - 1 == correctAnswersPlace) {
+        }
+        else if (player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 2 got it right :(");
             return 2;
         }
 
-        System.out.println("You both idiots, the correct answer is: " + 
-                                (correctAnswersPlace+1));
-        return 0;
+            System.out.println("You both idiots, the correct answer is: " +
+                    (gui4_2.correctAnswersPlace+1));
+            return 0;
+
+
+        //gets the two inputs and checks if they are valid
+//        Scanner scanner = new Scanner(System.in);
+//        char firstInput = scanner.next().charAt(0);
+//        char secondInput = scanner.next().charAt(0);
+//        if (isNotValid(firstInput) || isNotValid(secondInput)) {
+//            System.out.println("Wrong input... Aborting:( :( :(");
+//            return 0;
+//        }
+
+        // match inputs with players
+//        int player1Answer, player2Answer;
+//        if (isPlayer1(firstInput)) {
+//            player1Answer = Character.getNumericValue(firstInput);
+//            player2Answer = player2.get(secondInput);
+//        }
+//        else {
+//            player1Answer = player2.get(firstInput);
+//            player2Answer = Character.getNumericValue(secondInput);
+//        }
+
+        // check who got it right
+//        if (player1Answer - 1 == correctAnswersPlace &&
+//            player2Answer - 1 == correctAnswersPlace) {
+//            System.out.println("You both got it right!");
+//            return 3;
+//        }
+//        else if (player1Answer - 1 == correctAnswersPlace) {
+//            System.out.println("Only player 1 got it right :(");
+//            return 1;
+//        }
+//        else if (player2Answer - 1 == correctAnswersPlace) {
+//            System.out.println("Only player 2 got it right :(");
+//            return 2;
+//        }
+//
+//        System.out.println("You both idiots, the correct answer is: " +
+//                                (correctAnswersPlace+1));
+//        return 0;
     }
 
     /**

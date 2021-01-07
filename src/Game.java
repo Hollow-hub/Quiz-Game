@@ -98,7 +98,7 @@ public class Game{
                 shownRoundNumber++;
             }
             round.setShownRoundNumber(shownRoundNumber - 1);
-            // rando992222m value in the HashMap, that contains
+            // random value in the HashMap, that contains
             // the different types of Round
             typeOfRound = roundTypes.get(random.nextInt(roundTypes.size()));
 
