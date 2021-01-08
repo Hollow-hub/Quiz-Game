@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 /**
  * This class represents each Round 
  * in the game. Different method are 
@@ -12,7 +9,7 @@ import java.util.Scanner;
 public class Round {
 
     private int points;
-    private final CliInterface CLI;
+    private final Interface CLI;
 //    private final PassedTime timer1;
 //    private final PassedTime timer2;
     private int Player1_points;
@@ -21,7 +18,7 @@ public class Round {
 
     public Round() {
         this.points = 0;
-        this.CLI = new CliInterface();
+        this.CLI = new Interface();
 //        this.timer1 = new PassedTime();
 //        this.timer2 = new PassedTime();
         this.Player1_points = 0;
@@ -147,36 +144,18 @@ public class Round {
      * which includes question, answers[], category
      */
     public void StopTheTimer(Qac qac){
-        int correctAnswersPlace = CLI.showQuestions(qac);
+//        int correctAnswersPlace = CLI.showQuestions(qac);
 
-        PassedTime timer1 = new PassedTime();
-        PassedTime timer2 = new PassedTime();
-        //player1 timer
-        timer1.start1();
-        timer2.start2();
-        int winner = CLI.timerInteraction(correctAnswersPlace);
-        if (winner == 1){
-            timer1.stop1();
-            this.Player1_points += (5000 - timer1.getSeconds1())*0.2;
-        }
-        else if (winner == 2){
-            timer2.stop2();
-            this.Player2_points += (5000 - timer2.getSeconds2())*0.2;
-        }
-
-        int nextWinner = CLI.timerInteraction(correctAnswersPlace);
-        if (winner == 2 && nextWinner == 1){
-            timer1.stop1();
-            this.Player1_points += (5000 - timer1.getSeconds1())*0.2;
-        }
-        else if (winner == 1 && nextWinner == 2){
-            timer2.stop2();
-            System.out.println(timer2.getSeconds2());
-            this.Player2_points += (5000 - timer2.getSeconds2())*0.2;
-        }
+        int[] winner = CLI.timerInteraction(qac,"StopTheTimer",shownRoundNumber);
+        if (winner[0] == 0 && winner[1] == 0)
+            return;
+        else if (winner[0] == 0)
+            this.Player2_points += (5000 - winner[1])*0.2;
+        else if (winner[1] == 0)
+            this.Player1_points += (5000 - winner[0])*0.2;
         else {
-            timer1.stop1();
-            timer2.stop2();
+            this.Player1_points += (5000 - winner[0]) * 0.2;
+            this.Player2_points += (5000 - winner[1]) * 0.2;
         }
     }
 
@@ -185,7 +164,7 @@ public class Round {
      * @param qac is an object from class Qac
      */
     public void fastAnswer(Qac qac){
-        int result = CLI.fastAnswerInteraction(qac);
+        int result = CLI.fastAnswerInteraction(qac,"FastAnswer",shownRoundNumber);
         if (result == 1) {
             this.Player1_points += 1000;
         }

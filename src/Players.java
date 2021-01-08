@@ -40,20 +40,5 @@ public class Players {
         return scanner_players;
     }
 
-    /**
-     * method the saves the progress of singleplayer
-     */
-    public void single_player(){
-        //array_single_player.add(point_single_player.getPoint());
-
-    }
-
-    /**
-     * method the saves the progress of multiplayer
-     */
-
-    public void multi_player(){
-
-    }
 
 }

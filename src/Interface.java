@@ -8,12 +8,12 @@ import java.util.HashMap;
  * @author Gkountelos Dimitrios
  * @version 1.1.0
  */
-public class CliInterface {
+public class Interface {
 
     public int bidding;
 
     private int k;
-    public CliInterface () {
+    public Interface() {
         bidding = 0;
         this.k = 1;
     }
@@ -44,39 +44,99 @@ public class CliInterface {
         return correctAnswersPlace;
     }
 
-    public int timerInteraction(int correctAnswer) {
+    public int[] timerInteraction(Qac qac, String typeofRound, int shownRoundNumber) {
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
         player2.put('j', 2);
         player2.put('k', 3);
         player2.put('l', 4);
-        Scanner scanner = new Scanner(System.in);
-        char input = scanner.next().charAt(0);
-        if (isNotValid(input)) {
-            System.out.println("Wrong input... Aborting:( :( :(");
-            return 0;
-        }
 
-        boolean player1 = isPlayer1(input);
-        int playersAnswer;
-        if (player1) {
-            playersAnswer =  Character.getNumericValue(input);
-        }
-        else {
-            playersAnswer = player2.get(input);
-        }
+        PassedTime timer1 = new PassedTime();
+        PassedTime timer2 = new PassedTime();
+        int[] results = new int[2];
 
-        // player chose between 1-4 and we handle 0-3
-        if ((playersAnswer - 1) == correctAnswer) {
-            if (player1) {
-                return 1;
+        timer1.start1();
+        timer2.start2();
+
+
+        Gui_timer gui_timer = new Gui_timer(qac,typeofRound,shownRoundNumber);
+        gui_timer.setVisible(true);
+        while (gui_timer.buttonPressed1 == false || gui_timer.buttonPressed2 == false){
+            System.out.println("RAM");
+            gui_timer.Timer.setText(String.valueOf(timer1.startingSeconds1));
+            if (gui_timer.buttonPressed1 == true) {
+                timer1.stop1();
+                gui_timer.hbutton.requestFocus();
             }
             else {
-                return 2;
+                gui_timer.Button1.requestFocus();
             }
+            if (gui_timer.buttonPressed2 == true)
+                timer2.stop2();
         }
+        gui_timer.correctAnswer.setText(String.valueOf(gui_timer.correctAnswersPlace + 1));
+        gui_timer.dispose();
+        int player1Answer, player2Answer;
+        if(isPlayer1(gui_timer.answer1)){
+            player1Answer = (Integer.parseInt(String.valueOf(gui_timer.answer1)));
+            player2Answer = player2.get(gui_timer.answer2);
+        }else{
+            player1Answer = player2.get(gui_timer.answer1);
+            player2Answer = (Integer.parseInt(String.valueOf(gui_timer.answer2)));
+        }
+
+//        Scanner scanner = new Scanner(System.in);
+//        char input = scanner.next().charAt(0);
+//        if (isNotValid(input)) {
+//            System.out.println("Wrong input... Aborting:( :( :(");
+//            return 0;
+//        }
+
+        results[0] = timer1.getSeconds1();
+        results[1] = timer2.getSeconds2();
+
+        if (player1Answer - 1 == gui_timer.correctAnswersPlace &&
+                player2Answer - 1 == gui_timer.correctAnswersPlace) {
+            System.out.println("You both got it right!");
+
+        }
+        else if (player1Answer - 1 == gui_timer.correctAnswersPlace) {
+            System.out.println("Only player 1 got it right :(");
+            results[1] = 0;
+
+        }
+        else if (player2Answer - 1 == gui_timer.correctAnswersPlace) {
+            System.out.println("Only player 2 got it right :(");
+            results[0] = 0;
+
+        }else {
+            System.out.println("You both idiots, the correct answer is: " +
+                    (gui_timer.correctAnswersPlace + 1));
+            results[0] = 0;
+            results[1] = 0;
+        }
+        return results;
+
+//        boolean player1 = isPlayer1((char) player1Answer);
+//        int playersAnswer;
+//        if (player1) {
+//            playersAnswer =  Character.getNumericValue(player1Answer);
+//        }
+//        else {
+//            playersAnswer = player2.get(player2Answer);
+//        }
+//
+//        // player chose between 1-4 and we handle 0-3
+//        if ((playersAnswer - 1) == correctAnswer) {
+//            if (player1) {
+//                return 1;
+//            }
+//            else {
+//                return 2;
+//            }
+//        }
         // I have to change this. if a player gets it wrong, the other should answer
-        return 0;
+
     }
     /**
      * this method handles the interaction (questions and answers)
@@ -156,63 +216,93 @@ public class CliInterface {
      * @param qac is an object from class Qac
      * @return 0 if nobody won, 1 if player 1 won and 2 if player 2 won 
      */
-    public int fastAnswerInteraction(Qac qac) {
-        int correctAnswersPlace = showQuestions(qac);
+    public int fastAnswerInteraction(Qac qac,String typeofRound,int shownRoundNumber) {
+//        int correctAnswersPlace = showQuestions(qac);
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
         player2.put('j', 2);
         player2.put('k', 3);
         player2.put('l', 4);
+
+        Gui4_2 gui4_2 = new Gui4_2(qac,typeofRound,shownRoundNumber);
+        gui4_2.setVisible(true);
+        while (gui4_2.buttonPressed1 == false && gui4_2.buttonPressed2 == false){
+            System.out.println("RAM");
+            if (gui4_2.buttonPressed1 == true)
+                gui4_2.hbutton.requestFocus();
+            else
+                gui4_2.Button1.requestFocus();
+        }
+        gui4_2.correctAnswer.setText(String.valueOf(gui4_2.correctAnswersPlace + 1));
+        gui4_2.dispose();
+        int player1Answer = 0, player2Answer = 0;
+        if(isPlayer1(gui4_2.answer1)){
+            player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
+        }else{
+            player2Answer = player2.get(gui4_2.answer1);
+        }
+        if (player1Answer - 1 == gui4_2.correctAnswersPlace) {
+            System.out.println("Only player 1 got it right :(");
+            return 1;
+        }
+        else if (player2Answer - 1 == gui4_2.correctAnswersPlace) {
+            System.out.println("Only player 2 got it right :(");
+            return 2;
+        }
+
+        System.out.println("You both idiots, the correct answer is: " +
+                (gui4_2.correctAnswersPlace+1));
+        return 0;
         
         // get the input and check if it's valid
-        Scanner scanner = new Scanner(System.in);
-        char input = scanner.next().charAt(0);
-        if (isNotValid(input)) {
-            System.out.println("Wrong input... Aborting:( :( :(");
-            return 0;
-        }
-
-        boolean player1 = isPlayer1(input);
-        int playersAnswer;
-        if (player1) {
-            playersAnswer =  Character.getNumericValue(input);
-        }
-        else {
-            playersAnswer = player2.get(input);
-        }
-        
-        // player chose between 1-4 and we handle 0-3
-        if ((playersAnswer - 1) == correctAnswersPlace) {
-            System.out.println("You Win");
-            if (player1) {
-                return 1;
-            }
-            else {
-                return 2;
-            }
-        }
-        else {
-            System.out.println("Wrong, the other player should answer");
-            input = scanner.next().charAt(0);
-            if (isNotValid(input))
-                return 0;
-                
-            if (isPlayer1(input)) {
-                playersAnswer =  Character.getNumericValue(input);
-            }
-            else {
-                playersAnswer = player2.get(input);
-            }
-
-            if (playersAnswer - 1 == correctAnswersPlace) {
-                return player1 ? 10 : 20;
-            }
-        }
-        
-        System.out.println("You idiot, the correct answer is: " +
-                            (correctAnswersPlace+1));
-        // I have to change this. if a player gets it wrong, the other should answer
-        return 0;
+//        Scanner scanner = new Scanner(System.in);
+//        char input = scanner.next().charAt(0);
+//        if (isNotValid(input)) {
+//            System.out.println("Wrong input... Aborting:( :( :(");
+//            return 0;
+//        }
+//
+//        boolean player1 = isPlayer1(input);
+//        int playersAnswer;
+//        if (player1) {
+//            playersAnswer =  Character.getNumericValue(input);
+//        }
+//        else {
+//            playersAnswer = player2.get(input);
+//        }
+//
+//        // player chose between 1-4 and we handle 0-3
+//        if ((playersAnswer - 1) == correctAnswersPlace) {
+//            System.out.println("You Win");
+//            if (player1) {
+//                return 1;
+//            }
+//            else {
+//                return 2;
+//            }
+//        }
+//        else {
+//            System.out.println("Wrong, the other player should answer");
+//            input = scanner.next().charAt(0);
+//            if (isNotValid(input))
+//                return 0;
+//
+//            if (isPlayer1(input)) {
+//                playersAnswer =  Character.getNumericValue(input);
+//            }
+//            else {
+//                playersAnswer = player2.get(input);
+//            }
+//
+//            if (playersAnswer - 1 == correctAnswersPlace) {
+//                return player1 ? 10 : 20;
+//            }
+//        }
+//
+//        System.out.println("You idiot, the correct answer is: " +
+//                            (correctAnswersPlace+1));
+//        // I have to change this. if a player gets it wrong, the other should answer
+//        return 0;
     }
 
     /**

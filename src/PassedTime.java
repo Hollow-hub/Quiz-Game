@@ -20,8 +20,8 @@ public class PassedTime {
     private Date endDate1;
     private Date endDate2;
 
-    private int startingSeconds1=6;
-    private int startingSeconds2=6;
+    public int startingSeconds1=6;
+    public int startingSeconds2=6;
 
     /**
      * timer of player1

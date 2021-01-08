@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Gui4_2 extends JFrame{
+public class Gui_timer extends JFrame{
     private JLabel TypeRound;
     private JLabel question;
     public JLabel correctAnswer;
@@ -18,7 +18,7 @@ public class Gui4_2 extends JFrame{
     private JButton jbutton;
     private JButton kbutton;
     private JButton lbutton;
-    private JLabel Timer;
+    public JLabel Timer;
     public int correctAnswersPlace;
     public char answer1;
     public char answer2;
@@ -43,7 +43,7 @@ public class Gui4_2 extends JFrame{
         return answers;
     }
 
-    public Gui4_2(Qac qac, String typeofRound, int shownRoundNumber) {
+    public Gui_timer(Qac qac, String typeofRound, int shownRoundNumber) {
 
 
         NumRound.setText("Round " + String.valueOf(shownRoundNumber));
