@@ -29,7 +29,7 @@ public class Gui4_2 extends JFrame{
 
 
 
-    private int[] showQuestions(Qac qac){
+    private int[] showQuestions(Qac qac) {
         correctAnswersPlace = 0;
         Randomizer randomizer = new Randomizer();
         int[] questionNumbers = randomizer.randomize(0, 3);
@@ -45,8 +45,7 @@ public class Gui4_2 extends JFrame{
         return answers;
     }
 
-    public Gui4_2(Qac qac, String typeofRound, int shownRoundNumber) {
-
+    public Gui4_2(Qac qac, String typeofRound, int shownRoundNumber){
 
         NumRound.setText("Round " + String.valueOf(shownRoundNumber));
         TypeRound.setText(typeofRound);

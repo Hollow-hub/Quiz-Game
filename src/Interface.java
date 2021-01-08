@@ -24,7 +24,7 @@ public class Interface {
      * this method prints the questions
      * we may need to change it to show it on the gui...
      */
-    public int showQuestions(Qac qac) {
+    public String showQuestions(Qac qac) {
         int correctAnswersPlace = 0;
         System.out.println(k++ + "." + qac.getQuestion());
         Randomizer randomizer = new Randomizer();
@@ -43,7 +43,7 @@ public class Interface {
         System.out.println("3." + qac.getAnswers()[questionNumbers[2]] + "   " +
                 "4." + qac.getAnswers()[questionNumbers[3]]);
         System.out.printf("Select between: 1, 2, 3, 4 %nAnswer:");
-        return correctAnswersPlace;
+        return qac.getAnswers()[questionNumbers[correctAnswersPlace]];
     }
 
     public int[] timerInteraction(Qac qac, String typeofRound, int shownRoundNumber) {
