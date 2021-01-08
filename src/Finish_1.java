@@ -7,7 +7,6 @@ public class Finish_1 extends  JFrame{
     private JButton ScoreBoardButton;
     private JButton quitGameButton;
     private JLabel P1points;
-    public Game playerPoints;
 
     Finish_1(int point){
         P1points.setText(String.valueOf(point));

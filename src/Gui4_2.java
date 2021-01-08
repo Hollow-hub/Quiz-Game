@@ -18,12 +18,14 @@ public class Gui4_2 extends JFrame{
     private JButton jbutton;
     private JButton kbutton;
     private JButton lbutton;
+    private JButton Next;
     private JLabel Timer;
     public int correctAnswersPlace;
     public char answer1;
     public char answer2;
     public boolean buttonPressed1;
     public boolean buttonPressed2;
+    public boolean nextButtonPressed;
 
 
 
@@ -135,6 +137,12 @@ public class Gui4_2 extends JFrame{
             }
         });
 
+        Next.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextButtonPressed = true;
+            }
+        });
     }
 
 }

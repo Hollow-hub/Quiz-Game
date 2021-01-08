@@ -19,11 +19,13 @@ public class Gui_timer extends JFrame{
     private JButton kbutton;
     private JButton lbutton;
     public JLabel Timer;
+    private JButton nextButton;
     public int correctAnswersPlace;
     public char answer1;
     public char answer2;
     public boolean buttonPressed1;
     public boolean buttonPressed2;
+    public boolean nextButtonPressed;
 
 
 
@@ -135,6 +137,12 @@ public class Gui_timer extends JFrame{
             }
         });
 
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextButtonPressed = true;
+            }
+        });
     }
 
 }

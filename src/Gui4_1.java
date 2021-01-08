@@ -14,9 +14,11 @@ public class Gui4_1 extends JFrame {
     private JLabel NumOfRound;
     private JLabel TypeRound;
     private JLabel correctAnswer;
+    public JButton nextButton;
     public int correctAnswersPlace;
     public char answer;
     public boolean buttonPressed;
+    public boolean nextButtonPressed;
 
 
     private int[] showQuestions(Qac qac){
@@ -43,7 +45,7 @@ public class Gui4_1 extends JFrame {
         question.setText(qac.getQuestion());
         add(rootPanel4_1);
         setTitle("Buzz");
-        setSize(600,500);
+        setSize(650,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -60,7 +62,6 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
-                dispose();
             }
         });
         button2.addKeyListener(new KeyAdapter() {
@@ -70,7 +71,6 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
-                dispose();
             }
         });
         button3.addKeyListener(new KeyAdapter() {
@@ -80,7 +80,6 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
-                dispose();
             }
         });
         button4.addKeyListener(new KeyAdapter() {
@@ -90,10 +89,15 @@ public class Gui4_1 extends JFrame {
                 answer = e.getKeyChar();
                 buttonPressed = true;
                 correctAnswer.setText(String.valueOf(correctAnswersPlace + 1));
-                dispose();
             }
         });
 
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextButtonPressed = true;
+            }
+        });
     }
 
 }

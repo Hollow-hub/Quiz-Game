@@ -172,6 +172,8 @@ public class Game{
             System.out.println("Points:" + round.getPoint());
         }
         else {
+            Finish_2 finish_2 = new Finish_2(round.getPlayer1_points(),round.getPlayer2_points());
+            finish_2.setVisible(true);
             System.out.println("Player 1 points: " + round.getPlayer1_points());
             System.out.println("Player 2 points: " + round.getPlayer2_points());
         }

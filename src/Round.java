@@ -81,7 +81,7 @@ public class Round {
 //        System.out.println("You can bid 250,500,750 and 1000 points");
 //        Scanner console = new Scanner(System.in);
 //        int bid_player = console.nextInt();    // here it takes an input "bid" from the user
-        int bid_player = CLI.bidding;
+        int bid_player = CLI.bidding1;
 //        while (bid_player != 250 && bid_player != 500 && bid_player != 750 && bid_player != 1000){ //checks for wrong input
 //            System.out.println("You can't bid " + bid_player + " points");
 //            System.out.println("Please bid again");
@@ -115,8 +115,8 @@ public class Round {
 
     public void bidMultiplayer(Qac qac) {
 //        String category = qac.getCategory();
-        int bid_player1 = CLI.bidding;
-        int bid_player2 = CLI.bidding;
+        int bid_player1 = CLI.bidding1;
+        int bid_player2 = CLI.bidding2;
 
         int result = CLI.multiplayerInteraction(qac,"BidMultiplayer",shownRoundNumber);
         if (result == 1) {

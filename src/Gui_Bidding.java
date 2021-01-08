@@ -8,12 +8,13 @@ public class Gui_Bidding extends  JFrame{
     private JButton a500Button;
     private JButton a750Button;
     private JButton a1000Button;
+    public JLabel Player;
     public int bidding;
 
     public Gui_Bidding(){
         add(rootPanelBidding);
         setTitle("Buzz");
-        setSize(350,180);
+        setSize(350,220);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 

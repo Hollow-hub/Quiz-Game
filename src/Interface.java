@@ -10,11 +10,13 @@ import java.util.HashMap;
  */
 public class Interface {
 
-    public int bidding;
+    public int bidding1;
+    public int bidding2;
 
     private int k;
     public Interface() {
-        bidding = 0;
+        bidding1 = 0;
+        bidding2 = 0;
         this.k = 1;
     }
     
@@ -61,21 +63,20 @@ public class Interface {
 
         Gui_timer gui_timer = new Gui_timer(qac,typeofRound,shownRoundNumber);
         gui_timer.setVisible(true);
-        while (gui_timer.buttonPressed1 == false || gui_timer.buttonPressed2 == false){
+        while (!gui_timer.buttonPressed1 || !gui_timer.buttonPressed2){
             System.out.println("RAM");
             gui_timer.Timer.setText(String.valueOf(timer1.startingSeconds1));
-            if (gui_timer.buttonPressed1 == true) {
+            if (gui_timer.buttonPressed1) {
                 timer1.stop1();
                 gui_timer.hbutton.requestFocus();
             }
             else {
                 gui_timer.Button1.requestFocus();
             }
-            if (gui_timer.buttonPressed2 == true)
+            if (gui_timer.buttonPressed2)
                 timer2.stop2();
         }
         gui_timer.correctAnswer.setText(String.valueOf(gui_timer.correctAnswersPlace + 1));
-        gui_timer.dispose();
         int player1Answer, player2Answer;
         if(isPlayer1(gui_timer.answer1)){
             player1Answer = (Integer.parseInt(String.valueOf(gui_timer.answer1)));
@@ -98,20 +99,37 @@ public class Interface {
         if (player1Answer - 1 == gui_timer.correctAnswersPlace &&
                 player2Answer - 1 == gui_timer.correctAnswersPlace) {
             System.out.println("You both got it right!");
+            while (!gui_timer.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui_timer.dispose();
+            results[1] = 0;
 
         }
         else if (player1Answer - 1 == gui_timer.correctAnswersPlace) {
             System.out.println("Only player 1 got it right :(");
+            while (!gui_timer.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui_timer.dispose();
             results[1] = 0;
 
         }
         else if (player2Answer - 1 == gui_timer.correctAnswersPlace) {
             System.out.println("Only player 2 got it right :(");
+            while (!gui_timer.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui_timer.dispose();
             results[0] = 0;
 
         }else {
             System.out.println("You both idiots, the correct answer is: " +
                     (gui_timer.correctAnswersPlace + 1));
+            while (!gui_timer.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui_timer.dispose();
             results[0] = 0;
             results[1] = 0;
         }
@@ -149,31 +167,48 @@ public class Interface {
     public boolean interaction(Qac qac, String typeofRound, int shownRoundNumber) {
         if (typeofRound.equals("Bid")){
             Gui_Bidding gui_bidding = new Gui_Bidding();
+            gui_bidding.Player.setText("Player 1");
             gui_bidding.setVisible(true);
             while(gui_bidding.bidding == 0){
                 System.out.println("Bidding");
             }
-            bidding = gui_bidding.bidding;
+            bidding1 = gui_bidding.bidding;
             Gui4_1 gui4_1 = new Gui4_1(qac, typeofRound, shownRoundNumber);
             gui4_1.setVisible(true);
-            while (gui4_1.buttonPressed == false){
+            while (!gui4_1.buttonPressed){
                 System.out.println("Bid");
             }
+
             if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
+                while (!gui4_1.nextButtonPressed){
+                    System.out.println("nothing");
+                }
+                gui4_1.dispose();
                 return true;
             }
-            return false;
+            while (!gui4_1.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_1.dispose();
         }else {
             Gui4_1 gui4_1 = new Gui4_1(qac, typeofRound, shownRoundNumber);
             gui4_1.setVisible(true);
-            while (gui4_1.buttonPressed == false) {
+            while (!gui4_1.buttonPressed) {
                 System.out.println("RightAnswer");
             }
-            if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1) {
+            if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
+                while (!gui4_1.nextButtonPressed){
+                    System.out.println("nothing");
+                }
+                gui4_1.dispose();
                 return true;
             }
-            return false;
+            while (!gui4_1.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_1.dispose();
         }
+        return false;
 //        int correctAnswersPlace = showQuestions(qac);
 
         // get users answer
@@ -226,15 +261,15 @@ public class Interface {
 
         Gui4_2 gui4_2 = new Gui4_2(qac,typeofRound,shownRoundNumber);
         gui4_2.setVisible(true);
-        while (gui4_2.buttonPressed1 == false && gui4_2.buttonPressed2 == false){
+        while (!gui4_2.buttonPressed1 && !gui4_2.buttonPressed2){
             System.out.println("RAM");
-            if (gui4_2.buttonPressed1 == true)
+            if (gui4_2.buttonPressed1)
                 gui4_2.hbutton.requestFocus();
             else
                 gui4_2.Button1.requestFocus();
         }
         gui4_2.correctAnswer.setText(String.valueOf(gui4_2.correctAnswersPlace + 1));
-        gui4_2.dispose();
+
         int player1Answer = 0, player2Answer = 0;
         if(isPlayer1(gui4_2.answer1)){
             player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
@@ -243,15 +278,27 @@ public class Interface {
         }
         if (player1Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 1 got it right :(");
+            while (!gui4_2.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_2.dispose();
             return 1;
         }
         else if (player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 2 got it right :(");
+            while (!gui4_2.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_2.dispose();
             return 2;
         }
 
         System.out.println("You both idiots, the correct answer is: " +
                 (gui4_2.correctAnswersPlace+1));
+        while (!gui4_2.nextButtonPressed){
+            System.out.println("nothing");
+        }
+        gui4_2.dispose();
         return 0;
         
         // get the input and check if it's valid
@@ -323,23 +370,31 @@ public class Interface {
 
         if (typeofRound.equals("BidMultiplayer")) {
             Gui_Bidding gui_bidding = new Gui_Bidding();
+            gui_bidding.Player.setText("Player 1");
             gui_bidding.setVisible(true);
             while (gui_bidding.bidding == 0) {
                 System.out.println("Bidding");
             }
-            bidding = gui_bidding.bidding;
+            bidding1 = gui_bidding.bidding;
+
+            Gui_Bidding gui_bidding2 = new Gui_Bidding();
+            gui_bidding2.Player.setText("Player 2");
+            gui_bidding2.setVisible(true);
+            while (gui_bidding2.bidding == 0) {
+                System.out.println("Bidding");
+            }
+            bidding2 = gui_bidding2.bidding;
         }
         Gui4_2 gui4_2 = new Gui4_2(qac,typeofRound,shownRoundNumber);
         gui4_2.setVisible(true);
-        while (gui4_2.buttonPressed1 == false || gui4_2.buttonPressed2 == false){
+        while (!gui4_2.buttonPressed1 || !gui4_2.buttonPressed2){
             System.out.println("RAM");
-            if (gui4_2.buttonPressed1 == true)
+            if (gui4_2.buttonPressed1)
                 gui4_2.hbutton.requestFocus();
             else
                 gui4_2.Button1.requestFocus();
         }
         gui4_2.correctAnswer.setText(String.valueOf(gui4_2.correctAnswersPlace + 1));
-        gui4_2.dispose();
         int player1Answer, player2Answer;
         if(isPlayer1(gui4_2.answer1)){
             player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
@@ -351,20 +406,36 @@ public class Interface {
         if (player1Answer - 1 == gui4_2.correctAnswersPlace &&
                 player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("You both got it right!");
+            while (!gui4_2.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_2.dispose();
             return 3;
         }
         else if (player1Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 1 got it right :(");
+            while (!gui4_2.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_2.dispose();
             return 1;
         }
         else if (player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 2 got it right :(");
+            while (!gui4_2.nextButtonPressed){
+                System.out.println("nothing");
+            }
+            gui4_2.dispose();
             return 2;
         }
 
-            System.out.println("You both idiots, the correct answer is: " +
+        System.out.println("You both idiots, the correct answer is: " +
                     (gui4_2.correctAnswersPlace+1));
-            return 0;
+        while (!gui4_2.nextButtonPressed){
+            System.out.println("nothing");
+        }
+        gui4_2.dispose();
+        return 0;
 
 
         //gets the two inputs and checks if they are valid
