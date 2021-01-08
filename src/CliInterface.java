@@ -243,12 +243,21 @@ public class CliInterface {
         gui4_2.setVisible(true);
         while (gui4_2.buttonPressed1 == false || gui4_2.buttonPressed2 == false){
             System.out.println("RAM");
+            if (gui4_2.buttonPressed1 == true)
+                gui4_2.hbutton.requestFocus();
+            else
+                gui4_2.Button1.requestFocus();
         }
         gui4_2.correctAnswer.setText(String.valueOf(gui4_2.correctAnswersPlace + 1));
         gui4_2.dispose();
         int player1Answer, player2Answer;
-        player1Answer = Character.getNumericValue(gui4_2.answer1);
-        player2Answer = player2.get(gui4_2.answer2);
+        if(isPlayer1(gui4_2.answer1)){
+            player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
+            player2Answer = player2.get(gui4_2.answer2);
+        }else{
+            player1Answer = player2.get(gui4_2.answer1);
+            player2Answer = (Integer.parseInt(String.valueOf(gui4_2.answer2)));
+        }
         if (player1Answer - 1 == gui4_2.correctAnswersPlace &&
                 player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("You both got it right!");
