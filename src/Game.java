@@ -87,7 +87,7 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
-        int rounds = qac.size()/6;
+        int rounds = qac.size()/13;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
@@ -173,6 +173,17 @@ public class Game{
         else {
             Finish_2 finish_2 = new Finish_2(round.getPlayer1_points(),round.getPlayer2_points());
             finish_2.setVisible(true);
+            if(round.getPlayer1_points() > round.getPlayer2_points()){
+                finish_2.Player1.setText("Player 1");
+                finish_2.Player2.setText("Player 2");
+            }
+            else if(round.getPlayer1_points() < round.getPlayer2_points()){
+                finish_2.Player1.setText("Player 2");
+                finish_2.Player2.setText("Player 1");
+            }else {
+                finish_2.Won.setText("DRAW");
+                finish_2.Lost.setText("DRAW");
+            }
             System.out.println("Player 1 points: " + round.getPlayer1_points());
             System.out.println("Player 2 points: " + round.getPlayer2_points());
         }

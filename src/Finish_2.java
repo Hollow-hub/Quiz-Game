@@ -10,6 +10,10 @@ public class Finish_2 extends JFrame{
     private JLabel P1points;
     private JLabel P2points;
     private JPanel FinishPanel2;
+    public JLabel Player1;
+    public JLabel Player2;
+    public JLabel Won;
+    public JLabel Lost;
 
     public Finish_2(int point1 , int point2){
         setUndecorated(true);

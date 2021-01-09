@@ -35,7 +35,7 @@
         </constraints>
         <properties>
           <font size="16"/>
-          <text value="- Σταμάτησε  το  χρονόμετρο.  Υπάρχει  ένα  χρονόμετρο  που  μετράει  αντίστροφα  5 δευτερόλεπτα "/>
+          <text value="- Σταμάτησε  το  χρονόμετρο.  Υπάρχει  ένα  χρονόμετρο  που  μετράει  αντίστροφα  "/>
         </properties>
       </component>
       <component id="988a2" class="javax.swing.JLabel">
@@ -44,7 +44,7 @@
         </constraints>
         <properties>
           <font size="16"/>
-          <text value="5 δευτερόλεπτα και ο κάθε παίχτης που απαντάει σωστά κερδίζει τόσους πόντους "/>
+          <text value=" 5 δευτερόλεπτα και ο κάθε παίχτης που απαντάει σωστά κερδίζει τόσους πόντους "/>
         </properties>
       </component>
       <component id="8090a" class="javax.swing.JLabel">
@@ -53,7 +53,7 @@
         </constraints>
         <properties>
           <font size="16"/>
-          <text value=" όσους τα millisecondπου απέμεναν ακόμα όταν απάντησε επί 0,2."/>
+          <text value=" όσους τα millisecond που απέμεναν ακόμα όταν απάντησε επί 0,2."/>
         </properties>
       </component>
       <component id="4c2e4" class="javax.swing.JLabel">
