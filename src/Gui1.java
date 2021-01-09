@@ -8,14 +8,12 @@ public class Gui1 extends JFrame {
     private JButton quitGameButton;
     private JPanel rootPanel;
     private JButton instructionsButton;
-    public Gui_connection gui_connection;
     public boolean access;
 
     public Gui1(){
         setUndecorated(true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2 - 180 , dim.height/2-this.getSize().height/2 - 260);
-        gui_connection = new Gui_connection();
         add(rootPanel);
         setTitle("Buzz");
         setSize(350,250);
