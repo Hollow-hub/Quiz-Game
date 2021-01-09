@@ -5,9 +5,9 @@ public class showQuestionsTest {
     public String[] words1, words2;
     public showQuestionsTest() {
         words1 = new String[]{"Ποια χρονιά κυκλοφόρησε ο Τιτανικός;",
-                "1997", "1996", "1998", "2000", "history"};
+                "1997", "1996", "1998", "2000", "history", "none"};
         words2 = new String[]{"Πόσες ήταν οι μούσες στην αρχαία ελληνική Μυθολογία;",
-                "9", "7", "12", "10", "history"};
+                "9", "7", "12", "10", "history", "none"};
     }
 
     @Test
