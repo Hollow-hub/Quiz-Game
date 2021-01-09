@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.HashMap;
 
 /**
@@ -60,7 +59,10 @@ public class Interface {
         timer1.start1();
         timer2.start2();
 
-
+        Gui_Image gui_image = new Gui_Image(qac.getImagePath());
+        if (!qac.getImagePath().equals("none")) {
+            gui_image.setVisible(true);
+        }
         Gui_timer gui_timer = new Gui_timer(qac,typeofRound,shownRoundNumber);
         gui_timer.setVisible(true);
         while (!gui_timer.buttonPressed1 || !gui_timer.buttonPressed2){
@@ -102,6 +104,7 @@ public class Interface {
             while (!gui_timer.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui_timer.dispose();
             results[1] = 0;
 
@@ -111,6 +114,7 @@ public class Interface {
             while (!gui_timer.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui_timer.dispose();
             results[1] = 0;
 
@@ -120,6 +124,7 @@ public class Interface {
             while (!gui_timer.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui_timer.dispose();
             results[0] = 0;
 
@@ -129,6 +134,7 @@ public class Interface {
             while (!gui_timer.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui_timer.dispose();
             results[0] = 0;
             results[1] = 0;
@@ -175,6 +181,10 @@ public class Interface {
             bidding1 = gui_bidding.bidding;
             Gui4_1 gui4_1 = new Gui4_1(qac, typeofRound, shownRoundNumber);
             gui4_1.setVisible(true);
+            Gui_Image gui_image = new Gui_Image(qac.getImagePath());
+            if (!qac.getImagePath().equals("none")) {
+                gui_image.setVisible(true);
+            }
             while (!gui4_1.buttonPressed){
                 System.out.println("Bid");
             }
@@ -183,6 +193,7 @@ public class Interface {
                 while (!gui4_1.nextButtonPressed){
                     System.out.println("nothing");
                 }
+                gui_image.dispose();
                 gui4_1.dispose();
                 return true;
             }
@@ -193,6 +204,10 @@ public class Interface {
         }else {
             Gui4_1 gui4_1 = new Gui4_1(qac, typeofRound, shownRoundNumber);
             gui4_1.setVisible(true);
+            Gui_Image gui_image = new Gui_Image(qac.getImagePath());
+            if (!qac.getImagePath().equals("none")) {
+                gui_image.setVisible(true);
+            }
             while (!gui4_1.buttonPressed) {
                 System.out.println("RightAnswer");
             }
@@ -200,12 +215,14 @@ public class Interface {
                 while (!gui4_1.nextButtonPressed){
                     System.out.println("nothing");
                 }
+                gui_image.dispose();
                 gui4_1.dispose();
                 return true;
             }
             while (!gui4_1.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_1.dispose();
         }
         return false;
@@ -261,6 +278,10 @@ public class Interface {
 
         Gui4_2 gui4_2 = new Gui4_2(qac,typeofRound,shownRoundNumber);
         gui4_2.setVisible(true);
+        Gui_Image gui_image = new Gui_Image(qac.getImagePath());
+        if (!qac.getImagePath().equals("none")) {
+            gui_image.setVisible(true);
+        }
         while (!gui4_2.buttonPressed1 && !gui4_2.buttonPressed2){
             System.out.println("RAM");
             if (gui4_2.buttonPressed1)
@@ -281,6 +302,7 @@ public class Interface {
             while (!gui4_2.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_2.dispose();
             return 1;
         }
@@ -289,6 +311,7 @@ public class Interface {
             while (!gui4_2.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_2.dispose();
             return 2;
         }
@@ -298,6 +321,7 @@ public class Interface {
         while (!gui4_2.nextButtonPressed){
             System.out.println("nothing");
         }
+        gui_image.dispose();
         gui4_2.dispose();
         return 0;
         
@@ -387,6 +411,10 @@ public class Interface {
         }
         Gui4_2 gui4_2 = new Gui4_2(qac,typeofRound,shownRoundNumber);
         gui4_2.setVisible(true);
+        Gui_Image gui_image = new Gui_Image(qac.getImagePath());
+        if (!qac.getImagePath().equals("none")) {
+            gui_image.setVisible(true);
+        }
         while (!gui4_2.buttonPressed1 || !gui4_2.buttonPressed2){
             System.out.println("RAM");
             if (gui4_2.buttonPressed1)
@@ -409,6 +437,7 @@ public class Interface {
             while (!gui4_2.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_2.dispose();
             return 3;
         }
@@ -417,6 +446,7 @@ public class Interface {
             while (!gui4_2.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_2.dispose();
             return 1;
         }
@@ -425,6 +455,7 @@ public class Interface {
             while (!gui4_2.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_2.dispose();
             return 2;
         }
@@ -434,6 +465,7 @@ public class Interface {
         while (!gui4_2.nextButtonPressed){
             System.out.println("nothing");
         }
+        gui_image.dispose();
         gui4_2.dispose();
         return 0;
 
