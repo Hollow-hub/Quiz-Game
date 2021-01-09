@@ -107,7 +107,7 @@
             <properties>
               <font size="16"/>
               <foreground color="-16777216"/>
-              <text value="Player1 points:"/>
+              <text value="Player2 points:"/>
             </properties>
           </component>
           <component id="22d9" class="javax.swing.JLabel" binding="P1points">
