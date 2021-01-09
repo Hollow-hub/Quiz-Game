@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,6 +13,8 @@ public class Finish_2 extends JFrame{
 
     public Finish_2(int point1 , int point2){
         setUndecorated(true);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2 - 150 , dim.height/2-this.getSize().height/2 - 150);
         P1points.setText(String.valueOf(point1));
         P2points.setText(String.valueOf(point2));
         add(finishPanel);

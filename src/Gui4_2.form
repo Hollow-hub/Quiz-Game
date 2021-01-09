@@ -206,6 +206,7 @@
         </constraints>
         <properties>
           <background color="-14570407"/>
+          <focusable value="false"/>
           <text value="Exit"/>
         </properties>
       </component>

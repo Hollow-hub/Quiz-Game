@@ -89,12 +89,12 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
-        int rounds = qac.size()/5;
+        int rounds = qac.size()/6;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
         for (int i=0; i<numberOfRounds*rounds; i++) {
-            if (i % 4 == 0) {
+            if (i % rounds == 0) {
                 System.out.println("-----Round " + shownRoundNumber + "-----");
                 shownRoundNumber++;
             }
