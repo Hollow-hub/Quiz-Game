@@ -19,6 +19,7 @@ public class Gui4_2 extends JFrame{
     private JButton kbutton;
     private JButton lbutton;
     private JButton Next;
+    private JButton Exit;
     private JLabel Timer;
     public int correctAnswersPlace;
     public char answer1;
@@ -47,6 +48,9 @@ public class Gui4_2 extends JFrame{
 
     public Gui4_2(Qac qac, String typeofRound, int shownRoundNumber){
 
+        setUndecorated(true);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2 - 330 , dim.height/2-this.getSize().height/2 - 330);
         NumRound.setText("Round " + String.valueOf(shownRoundNumber));
         TypeRound.setText(typeofRound);
         question.setText(qac.getQuestion());
@@ -140,6 +144,12 @@ public class Gui4_2 extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 nextButtonPressed = true;
+            }
+        });
+        Exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }

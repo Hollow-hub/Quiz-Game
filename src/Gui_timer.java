@@ -20,6 +20,7 @@ public class Gui_timer extends JFrame{
     private JButton lbutton;
     public JLabel Timer;
     private JButton nextButton;
+    private JButton Exit;
     public int correctAnswersPlace;
     public char answer1;
     public char answer2;
@@ -47,7 +48,9 @@ public class Gui_timer extends JFrame{
 
     public Gui_timer(Qac qac, String typeofRound, int shownRoundNumber) {
 
-
+        setUndecorated(true);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2 - 330 , dim.height/2-this.getSize().height/2 - 330);
         NumRound.setText("Round " + String.valueOf(shownRoundNumber));
         TypeRound.setText(typeofRound);
         question.setText(qac.getQuestion());
@@ -141,6 +144,12 @@ public class Gui_timer extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 nextButtonPressed = true;
+            }
+        });
+        Exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }

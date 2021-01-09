@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -15,6 +16,7 @@ public class Gui4_1 extends JFrame {
     private JLabel TypeRound;
     private JLabel correctAnswer;
     public JButton nextButton;
+    private JButton Exit;
     public int correctAnswersPlace;
     public char answer;
     public boolean buttonPressed;
@@ -39,7 +41,9 @@ public class Gui4_1 extends JFrame {
 
     public Gui4_1(Qac qac, String typeofRound, int shownRoundNumber){
 
-
+        setUndecorated(true);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2 - 330 , dim.height/2-this.getSize().height/2 - 330);
         NumOfRound.setText("Round " + String.valueOf(shownRoundNumber));
         TypeRound.setText(typeofRound);
         question.setText(qac.getQuestion());
@@ -96,6 +100,12 @@ public class Gui4_1 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 nextButtonPressed = true;
+            }
+        });
+        Exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }

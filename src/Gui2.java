@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,11 +11,15 @@ public class Gui2 extends JFrame{
     private JPanel rootPanel2;
     private JTextField textField1;
     private JButton submitButton;
+    private JButton Exit;
     public int n_rounds;
     public Gui_connection gui_con;
     public int players;
 
     public Gui2(){
+        setUndecorated(true);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2 - 180 , dim.height/2-this.getSize().height/2 - 260);
         gui_con = new Gui_connection();
         add(rootPanel2);
         setTitle("Buzz");
@@ -52,6 +57,12 @@ public class Gui2 extends JFrame{
             }
         });
         //game.play(gui_con);
+        Exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
 }

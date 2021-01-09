@@ -79,4 +79,5 @@ public class Qac {
     public String getImagePath() {
         return this.imagePath;
     }
+
 }

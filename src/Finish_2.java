@@ -11,6 +11,7 @@ public class Finish_2 extends JFrame{
     private JPanel FinishPanel2;
 
     public Finish_2(int point1 , int point2){
+        setUndecorated(true);
         P1points.setText(String.valueOf(point1));
         P2points.setText(String.valueOf(point2));
         add(finishPanel);

@@ -21,7 +21,7 @@ public class Game{
      */
     public Game(){
         this.random = new Randomizer();
-        this.qac = new ArrayList<>(20);
+        this.qac = new ArrayList<>();
         this.number_of_players = new Players();
     }
 
@@ -89,10 +89,11 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
+        int rounds = qac.size()/5;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
-        for (int i=0; i<numberOfRounds*4; i++) {
+        for (int i=0; i<numberOfRounds*rounds; i++) {
             if (i % 4 == 0) {
                 System.out.println("-----Round " + shownRoundNumber + "-----");
                 shownRoundNumber++;

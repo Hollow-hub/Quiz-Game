@@ -9,6 +9,7 @@ public class Finish_1 extends  JFrame{
     private JLabel P1points;
 
     Finish_1(int point){
+        setUndecorated(true);
         P1points.setText(String.valueOf(point));
         add(finishPanel);
         setTitle("Buzz");
