@@ -10,15 +10,18 @@ public class Gui_Bidding extends  JFrame{
     private JButton a750Button;
     private JButton a1000Button;
     public JLabel Player;
+    private JLabel Category;
     public int bidding;
 
-    public Gui_Bidding(){
+    public Gui_Bidding(String category){
+
+        Category.setText("The category is " + category);
         setUndecorated(true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2 - 180 , dim.height/2-this.getSize().height/2 - 200);
         add(rootPanelBidding);
         setTitle("Buzz");
-        setSize(350,220);
+        setSize(400,220);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 

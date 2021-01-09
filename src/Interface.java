@@ -151,7 +151,7 @@ public class Interface {
      */
     public boolean interaction(Qac qac, String typeofRound, int shownRoundNumber) {
         if (typeofRound.equals("Bid")) {
-            Gui_Bidding gui_bidding = new Gui_Bidding();
+            Gui_Bidding gui_bidding = new Gui_Bidding(qac.getCategory());
             gui_bidding.Player.setText("Player 1");
             gui_bidding.setVisible(true);
             while(gui_bidding.bidding == 0) {
@@ -180,6 +180,7 @@ public class Interface {
             while (!gui4_1.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_1.dispose();
         }
         else {
@@ -295,7 +296,7 @@ public class Interface {
         player2.put('l', 4);
 
         if (typeofRound.equals("BidMultiplayer")) {
-            Gui_Bidding gui_bidding = new Gui_Bidding();
+            Gui_Bidding gui_bidding = new Gui_Bidding(qac.getCategory());
             gui_bidding.Player.setText("Player 1");
             gui_bidding.setVisible(true);
             while (gui_bidding.bidding == 0) {
@@ -303,7 +304,7 @@ public class Interface {
             }
             bidding1 = gui_bidding.bidding;
 
-            Gui_Bidding gui_bidding2 = new Gui_Bidding();
+            Gui_Bidding gui_bidding2 = new Gui_Bidding(qac.getCategory());
             gui_bidding2.Player.setText("Player 2");
             gui_bidding2.setVisible(true);
             while (gui_bidding2.bidding == 0) {

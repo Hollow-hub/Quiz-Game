@@ -49,7 +49,7 @@ public class Gui4_1 extends JFrame {
         question.setText(qac.getQuestion());
         add(rootPanel4_1);
         setTitle("Buzz");
-        setSize(650,500);
+        setSize(720,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
