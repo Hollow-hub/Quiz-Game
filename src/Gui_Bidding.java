@@ -18,7 +18,7 @@ public class Gui_Bidding extends  JFrame{
         this.setLocation(dim.width/2-this.getSize().width/2 - 180 , dim.height/2-this.getSize().height/2 - 200);
         add(rootPanelBidding);
         setTitle("Buzz");
-        setSize(350,220);
+        setSize(400,220);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 

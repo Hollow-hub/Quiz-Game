@@ -180,6 +180,7 @@ public class Interface {
             while (!gui4_1.nextButtonPressed){
                 System.out.println("nothing");
             }
+            gui_image.dispose();
             gui4_1.dispose();
         }
         else {

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui_Instructions">
+  <grid id="27dc6" binding="Panel" layout-manager="GridLayoutManager" row-count="12" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="725" height="363"/>
+    </constraints>
+    <properties>
+      <background color="-12233119"/>
+      <font size="14"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="de44b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <text value="INSRTUCTIONS"/>
+        </properties>
+      </component>
+      <component id="7d5a4" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="14"/>
+          <text value="- Σωστή απάντηση. Κάθε παίχτης που απαντάει σωστά κερδίζει 1000 πόντους."/>
+        </properties>
+      </component>
+      <component id="acf2f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="- Σταμάτησε  το  χρονόμετρο.  Υπάρχει  ένα  χρονόμετρο  που  μετράει  αντίστροφα  5 δευτερόλεπτα "/>
+        </properties>
+      </component>
+      <component id="988a2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="5 δευτερόλεπτα και ο κάθε παίχτης που απαντάει σωστά κερδίζει τόσους πόντους "/>
+        </properties>
+      </component>
+      <component id="8090a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value=" όσους τα millisecondπου απέμεναν ακόμα όταν απάντησε επί 0,2."/>
+        </properties>
+      </component>
+      <component id="4c2e4" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="- Ποντάρισμα. Αρχικά εμφανίζεται η κατηγορίατης ερώτησης. Ο παίκτης μπορεί να ποντάρει"/>
+        </properties>
+      </component>
+      <component id="e12c6" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value=" 250, 500, 750 και 1000 πόντους. Στη συνέχεια εμφανίζεται η ερώτηση και αν απαντήσει "/>
+        </properties>
+      </component>
+      <component id="c01c7" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value=" σωστά κερδίζει τους πόντους που πόνταρε, αλλιώς τους χάνει."/>
+        </properties>
+      </component>
+      <component id="6938c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="- Γρήγορη απάντηση. Ο πρώτος που απαντάει σωστά κερδίζει 1000 πόντους και ο δεύτερος"/>
+        </properties>
+      </component>
+      <component id="26f6d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value=" 500 πόντους"/>
+        </properties>
+      </component>
+      <component id="a72d0" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16"/>
+          <text value="- Θερμόμετρο. Ο πρώτος παίχτης που θα απαντήσει σωστά 5 ερωτήσεις κερδίζει 5000 πόντους"/>
+        </properties>
+      </component>
+      <component id="11c68" class="javax.swing.JButton" binding="exitButton" default-binding="true">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14504612"/>
+          <text value="Back"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

@@ -7,6 +7,7 @@ public class Gui1 extends JFrame {
     private JButton newGameButton;
     private JButton quitGameButton;
     private JPanel rootPanel;
+    private JButton instructionsButton;
     public Gui_connection gui_connection;
     public boolean access;
 
@@ -25,8 +26,6 @@ public class Gui1 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 access = true;
-//                Gui2 gui_2 = new Gui2();
-//                gui_2.setVisible(true);
             }
         });
         quitGameButton.addActionListener(new ActionListener() {
@@ -34,6 +33,13 @@ public class Gui1 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 access = false;
                 System.exit(0);
+            }
+        });
+        instructionsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gui_Instructions gui_instructions = new Gui_Instructions();
+                gui_instructions.setVisible(true);
             }
         });
     }
