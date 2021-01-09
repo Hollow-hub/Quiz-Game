@@ -14,7 +14,7 @@ public class Gui_Instructions extends  JFrame{
         this.setLocation(dim.width/2-this.getSize().width/2 - 400 , dim.height/2-this.getSize().height/2 - 300);
         add(Panel);
         setTitle("Buzz");
-        setSize(780,500);
+        setSize(900,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 
