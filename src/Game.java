@@ -89,7 +89,7 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
-        int rounds = qac.size()/6;
+        int rounds = qac.size()/13;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
