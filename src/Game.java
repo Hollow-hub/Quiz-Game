@@ -13,7 +13,6 @@ public class Game{
 
     ArrayList<Qac> qac;
     public Randomizer random;
-    public Players number_of_players;
 //    public int players;
 
     /**
@@ -22,7 +21,6 @@ public class Game{
     public Game(){
         this.random = new Randomizer();
         this.qac = new ArrayList<>();
-        this.number_of_players = new Players();
     }
 
     

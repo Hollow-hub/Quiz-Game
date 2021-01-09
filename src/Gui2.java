@@ -13,14 +13,12 @@ public class Gui2 extends JFrame{
     private JButton submitButton;
     private JButton Exit;
     public int n_rounds;
-    public Gui_connection gui_con;
     public int players;
 
     public Gui2(){
         setUndecorated(true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2 - 180 , dim.height/2-this.getSize().height/2 - 260);
-        gui_con = new Gui_connection();
         add(rootPanel2);
         setTitle("Buzz");
         setSize(350,250);
