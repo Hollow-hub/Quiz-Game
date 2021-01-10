@@ -28,8 +28,7 @@ public class Game{
      * the method that organizes and runs the game
      * @param
      */
-    public void play(){
-//        Gui_connection gui_connection = new Gui_connection();
+    public void play() {
         Gui1 gui1 = new Gui1();
         gui1.setVisible(true);
         while (!gui1.access){

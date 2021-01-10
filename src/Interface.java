@@ -58,6 +58,8 @@ public class Interface {
 
         timer1.start1();
         timer2.start2();
+        PassedTime timerGeneral = new PassedTime();
+        timerGeneral.start1();
 
         Gui_Image gui_image = new Gui_Image(qac.getImagePath());
         if (!qac.getImagePath().equals("none")) {
@@ -67,7 +69,8 @@ public class Interface {
         gui_timer.setVisible(true);
         while (!gui_timer.buttonPressed1 || !gui_timer.buttonPressed2){
             System.out.println("RAM");
-            gui_timer.Timer.setText(String.valueOf(timer1.startingSeconds1));
+            gui_timer.Timer.setText(String.valueOf(timerGeneral.startingSeconds1));
+
             if (gui_timer.buttonPressed1) {
                 timer1.stop1();
                 gui_timer.hbutton.requestFocus();
@@ -78,6 +81,7 @@ public class Interface {
             if (gui_timer.buttonPressed2)
                 timer2.stop2();
         }
+        timerGeneral.stop1();
         gui_timer.correctAnswer.setText(String.valueOf(gui_timer.correctAnswersPlace + 1));
         int player1Answer, player2Answer;
         if(isPlayer1(gui_timer.answer1)){
@@ -87,13 +91,6 @@ public class Interface {
             player1Answer = player2.get(gui_timer.answer1);
             player2Answer = (Integer.parseInt(String.valueOf(gui_timer.answer2)));
         }
-
-//        Scanner scanner = new Scanner(System.in);
-//        char input = scanner.next().charAt(0);
-//        if (isNotValid(input)) {
-//            System.out.println("Wrong input... Aborting:( :( :(");
-//            return 0;
-//        }
 
         results[0] = timer1.getSeconds1();
         results[1] = timer2.getSeconds2();
@@ -107,7 +104,6 @@ public class Interface {
             gui_image.dispose();
             gui_timer.dispose();
             results[1] = 0;
-
         }
         else if (player1Answer - 1 == gui_timer.correctAnswersPlace) {
             System.out.println("Only player 1 got it right :(");
@@ -128,7 +124,8 @@ public class Interface {
             gui_timer.dispose();
             results[0] = 0;
 
-        }else {
+        }
+        else {
             System.out.println("You both idiots, the correct answer is: " +
                     (gui_timer.correctAnswersPlace + 1));
             while (!gui_timer.nextButtonPressed){
@@ -177,7 +174,7 @@ public class Interface {
                 gui4_1.dispose();
                 return true;
             }
-            while (!gui4_1.nextButtonPressed){
+            while (!gui4_1.nextButtonPressed) {
                 System.out.println("nothing");
             }
             gui_image.dispose();
@@ -193,15 +190,15 @@ public class Interface {
             while (!gui4_1.buttonPressed) {
                 System.out.println("RightAnswer");
             }
-            if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1){
-                while (!gui4_1.nextButtonPressed){
+            if (Character.getNumericValue(gui4_1.answer) == gui4_1.correctAnswersPlace + 1) {
+                while (!gui4_1.nextButtonPressed) {
                     System.out.println("nothing");
                 }
                 gui_image.dispose();
                 gui4_1.dispose();
                 return true;
             }
-            while (!gui4_1.nextButtonPressed){
+            while (!gui4_1.nextButtonPressed) {
                 System.out.println("nothing");
             }
             gui_image.dispose();
