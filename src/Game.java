@@ -86,7 +86,7 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
-        int rounds = qac.size()/6;
+        int rounds = qac.size()/13;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
@@ -112,47 +112,47 @@ public class Game{
             }
             else{ // for two player game
                 switch (typeOfRound) {
-                    case "rightAnswerMultiplayer":
-                        round.rightAnswerMultiplayer(qac.get(0));
-                        break;
-                    case "bidMultiplayer":
-                        round.bidMultiplayer(qac.get(0));
-                        break;
-                    case "StopTheTimer":
-                        round.StopTheTimer(qac.get(0));
-                        break;
+//                    case "rightAnswerMultiplayer":
+//                        round.rightAnswerMultiplayer(qac.get(0));
+//                        break;
+//                    case "bidMultiplayer":
+//                        round.bidMultiplayer(qac.get(0));
+//                        break;
+//                    case "StopTheTimer":
+//                        round.StopTheTimer(qac.get(0));
+//                        break;
                     case "FastAnswer":
                         round.fastAnswer(qac.get(0));
                         break;
-                    default:
-                        int p1 = 0;
-                        int p2 = 0;
-//                     if there are less than five questions left,
-//                     thermometer can't be played
-                        if (qac.size() < 5) {
-                            continue;
-                        }
-
-                        for (int j = 0; j < 5; j++) {
-                            int result = round.Thermometer(qac.get(0));
-                            if (result == 3) {
-                                p1++;
-                                p2++;
-                            }
-                            if (result == 1) {
-                                p1++;
-                            } else if (result == 2) {
-                                p2++;
-                            }
-                            qac.remove(0);
-                        }
-
-                        if (p1 == 5) {
-                            round.setPlayer1_points(round.getPlayer1_points() + 5000);
-                        } else if (p2 == 5) {
-                            round.setPlayer2_points(round.getPlayer2_points() + 5000);
-                        }
-                        break;
+//                    default:
+//                        int p1 = 0;
+//                        int p2 = 0;
+////                     if there are less than five questions left,
+////                     thermometer can't be played
+//                        if (qac.size() < 5) {
+//                            continue;
+//                        }
+//
+//                        for (int j = 0; j < 5; j++) {
+//                            int result = round.Thermometer(qac.get(0));
+//                            if (result == 3) {
+//                                p1++;
+//                                p2++;
+//                            }
+//                            if (result == 1) {
+//                                p1++;
+//                            } else if (result == 2) {
+//                                p2++;
+//                            }
+//                            qac.remove(0);
+//                        }
+//
+//                        if (p1 == 5) {
+//                            round.setPlayer1_points(round.getPlayer1_points() + 5000);
+//                        } else if (p2 == 5) {
+//                            round.setPlayer2_points(round.getPlayer2_points() + 5000);
+//                        }
+//                        break;
                 }
 
             }

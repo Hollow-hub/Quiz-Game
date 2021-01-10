@@ -146,18 +146,17 @@ public class Round {
      */
     public void fastAnswer(Qac qac){
         int result = CLI.fastAnswerInteraction(qac,"FastAnswer",shownRoundNumber);
-        if (result == 1) {
+        if (result == 3) {
             this.Player1_points += 1000;
-        }
-        else if (result == 2) {
-            this.Player2_points += 1000;
-        }
-        else if (result == 10) {
-            this.Player1_points += 500;
-        }
-        else if (result == 20) {
             this.Player2_points += 500;
         }
+        else if (result == 4) {
+            this.Player2_points += 1000;
+            this.Player1_points += 500;
+        }else if (result == 1)
+            this.Player1_points += 1000;
+        else if (result == 2)
+            this.Player2_points += 1000;
     }
 
     /**
