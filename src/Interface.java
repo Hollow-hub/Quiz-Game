@@ -162,6 +162,7 @@ public class Interface {
             if (!qac.getImagePath().equals("none")) {
                 gui_image.setVisible(true);
             }
+
             while (!gui4_1.buttonPressed) {
                 System.out.println("Bid");
             }
@@ -174,6 +175,7 @@ public class Interface {
                 gui4_1.dispose();
                 return true;
             }
+
             while (!gui4_1.nextButtonPressed) {
                 System.out.println("nothing");
             }
@@ -249,9 +251,10 @@ public class Interface {
             flag = true;
             player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
             player2Answer = player2.get(gui4_2.answer2);
-        }else{
-            player1Answer = player2.get(gui4_2.answer1);
-            player2Answer = (Integer.parseInt(String.valueOf(gui4_2.answer2)));
+        }
+        else{
+            player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer2)));
+            player2Answer = player2.get(gui4_2.answer1);
         }
 
         if (player1Answer - 1 == gui4_2.correctAnswersPlace && player2Answer - 1 == gui4_2.correctAnswersPlace) {
@@ -283,6 +286,7 @@ public class Interface {
             gui4_2.dispose();
             return 2; // only 2 right
         }
+
         while (!gui4_2.nextButtonPressed){
             System.out.println("nothing");
         }
