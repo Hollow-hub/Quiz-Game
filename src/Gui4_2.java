@@ -79,8 +79,6 @@ public class Gui4_2 extends JFrame{
             public void keyTyped(KeyEvent e) {
                 answer1 = e.getKeyChar();
                 buttonPressed1 = true;
-//                if(typeofRound.equals("FastAnswer"))
-//                    dispose();
             }
         });
         Button2.addKeyListener(new KeyAdapter() {

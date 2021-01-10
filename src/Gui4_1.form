@@ -97,7 +97,7 @@
         </constraints>
         <properties>
           <font size="16"/>
-          <text value="Label"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="b975b" class="javax.swing.JLabel">
