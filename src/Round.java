@@ -154,10 +154,12 @@ public class Round {
             this.Player2_points += 1000;
             this.Player1_points += 500;
         }
-        else if (result == 1)
+        else if (result == 1) {
             this.Player1_points += 1000;
-        else if (result == 2)
+        }
+        else if (result == 2) {
             this.Player2_points += 1000;
+        }
     }
 
     /**

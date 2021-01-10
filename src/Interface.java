@@ -219,7 +219,6 @@ public class Interface {
      * @return 0 if nobody won, 1 if player 1 won and 2 if player 2 won 
      */
     public int fastAnswerInteraction(Qac qac,String typeofRound,int shownRoundNumber) {
-//        int correctAnswersPlace = showQuestions(qac);
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
         player2.put('j', 2);
@@ -232,15 +231,12 @@ public class Interface {
         if (!qac.getImagePath().equals("none")) {
             gui_image.setVisible(true);
         }
-        boolean flag = false;
         while (!gui4_2.buttonPressed1 || !gui4_2.buttonPressed2){
             System.out.println("RAM");
             if (gui4_2.buttonPressed1) {
-                flag = true;
                 gui4_2.hbutton.requestFocus();
             }
             else{
-                flag = false;
                 gui4_2.Button1.requestFocus();
             }
         }
@@ -248,7 +244,9 @@ public class Interface {
 
         int player1Answer = 0, player2Answer = 0;
 
+        boolean flag = false;
         if(isPlayer1(gui4_2.answer1)){
+            flag = true;
             player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
             player2Answer = player2.get(gui4_2.answer2);
         }else{
@@ -263,10 +261,10 @@ public class Interface {
             gui_image.dispose();
             gui4_2.dispose();
             if (flag) {
-                return 3;
+                return 3; // both right, 1 first
             }
             else {
-                return 4;
+                return 4; // both right, 2 first
             }
         } else if (player1Answer - 1 == gui4_2.correctAnswersPlace) {
             while (!gui4_2.nextButtonPressed){
@@ -274,7 +272,7 @@ public class Interface {
             }
             gui_image.dispose();
             gui4_2.dispose();
-            return 1;
+            return 1; // only 1 right
         }
         else if (player2Answer - 1 == gui4_2.correctAnswersPlace) {
             System.out.println("Only player 2 got it right :(");
@@ -283,7 +281,7 @@ public class Interface {
             }
             gui_image.dispose();
             gui4_2.dispose();
-            return 2;
+            return 2; // only 2 right
         }
         while (!gui4_2.nextButtonPressed){
             System.out.println("nothing");
