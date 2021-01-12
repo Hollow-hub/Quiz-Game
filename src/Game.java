@@ -27,7 +27,7 @@ public class Game{
     /**
      * the method that organizes and runs the game
      */
-    public void play() {
+    public void play() throws IOException {
         Gui1 gui1 = new Gui1();
         gui1.setVisible(true);
         while (!gui1.access){
@@ -69,7 +69,7 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
-        int rounds = qac.size()/6;
+        int rounds = qac.size()/16;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
@@ -146,10 +146,12 @@ public class Game{
         if (gui2.players == 1) {
             Finish_1 finish_1 = new Finish_1(round.getPoint());
             finish_1.setVisible(true);
-            if (round.getPoint() > 0)
+            if (round.getPoint() > 0) {
                 System.out.println("Congratulations!!!");
-            else
+            }
+            else {
                 System.out.println("Better luck next time...");
+            }
             System.out.println("Points:" + round.getPoint());
         }
         else {
@@ -170,35 +172,58 @@ public class Game{
             System.out.println("Player 2 points: " + round.getPlayer2_points());
         }
 
-        int player1Score, player2Score, score, i;
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            i = 0;
-            while ((line = reader.readLine()) != null) {
-                String[] words = line.split(":");
-                if (i == 0) {
-                    player1Score = Integer.parseInt(words[1]);
-                }
-                else if (i == 1) {
-                    player2Score = Integer.parseInt(words[1]);
-                }
-                else if (i == 2) {
-                    score = Integer.parseInt(words[1]);
-                }
-                i++;
+        file = "scoreboard.txt";
+        int player1Score=0, player2Score=0, score=0, i=0;
+        String oldPlayer1String = "null", oldPlayer2String = "null", oldScore = "null";
+        StringBuilder buffer = new StringBuilder();
+        Scanner sc = new Scanner(new File(file));
+        String line, next;
+        while (sc.hasNextLine()) {
+            next = sc.nextLine();
+            buffer.append(next).append(System.lineSeparator());
+            line = next;
+            String[] words = line.split(":");
+            if (i == 0) {
+                player1Score = Integer.parseInt(words[1]);
+                oldPlayer1String = line;
+            }
+            else if (i == 1) {
+                player2Score = Integer.parseInt(words[1]);
+                oldPlayer2String = line;
+            }
+            else if (i == 2) {
+                score = Integer.parseInt(words[1]);
+                oldScore = line;
+            }
+            i++;
+        }
+        String fileContents = buffer.toString();
+        sc.close();
+        boolean changed = false;
+        if (gui2.players == 1) {
+            if (score < round.getPoint()) {
+                fileContents = fileContents.replaceAll(oldScore,
+                        "Score:" + String.valueOf(round.getPoint()));
+                changed = true;
             }
         }
-        catch (IOException e) {
-            e.printStackTrace();
+        else {
+            if (round.getPlayer1_points() > round.getPlayer2_points()) {
+                fileContents = fileContents.replaceAll(oldPlayer1String,
+                        String.valueOf(player1Score+1));
+                changed = true;
+            }
+            else if (round.getPlayer1_points() < round.getPlayer2_points()) {
+                fileContents = fileContents.replaceAll(oldPlayer2String,
+                        String.valueOf(player2Score+1));
+                changed = true;
+            }
         }
-        file = "scoreboard.txt";
-//
-//        try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-//
-//        }
-//        catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        FileWriter writer = new FileWriter(file);
+        if (changed) {
+            writer.append(fileContents);
+        }
+        writer.flush();
     }
 
 }
