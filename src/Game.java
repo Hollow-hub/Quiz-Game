@@ -169,5 +169,36 @@ public class Game{
             System.out.println("Player 1 points: " + round.getPlayer1_points());
             System.out.println("Player 2 points: " + round.getPlayer2_points());
         }
+
+        int player1Score, player2Score, score, i;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            i = 0;
+            while ((line = reader.readLine()) != null) {
+                String[] words = line.split(":");
+                if (i == 0) {
+                    player1Score = Integer.parseInt(words[1]);
+                }
+                else if (i == 1) {
+                    player2Score = Integer.parseInt(words[1]);
+                }
+                else if (i == 2) {
+                    score = Integer.parseInt(words[1]);
+                }
+                i++;
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        file = "scoreboard.txt";
+//
+//        try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+//
+//        }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
+
 }
