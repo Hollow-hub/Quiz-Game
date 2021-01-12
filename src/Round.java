@@ -75,7 +75,7 @@ public class Round {
      *            includes question, answers[], category
      */
     public void bid(Qac qac){
-        String category = qac.getCategory();
+//        String category = qac.getCategory();
 
         if (CLI.interaction(qac, "Bid", shownRoundNumber)) {
             this.points += CLI.bidding1;

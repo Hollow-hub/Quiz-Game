@@ -26,7 +26,6 @@ public class Game{
     
     /**
      * the method that organizes and runs the game
-     * @param
      */
     public void play() {
         Gui1 gui1 = new Gui1();
@@ -64,24 +63,8 @@ public class Game{
         roundTypes.put(4, "rightAnswerMultiplayer");
         roundTypes.put(5, "bidMultiplayer");
 
-
-        //gets how many players are gonna play
-//        players = number_of_players.getPlayers();
-//        while (gui_connection.num_players == 0) {
-//            players = gui_connection.num_players;
-//            System.out.println(players);
-//        }
-//        System.out.println(gui_connection.num_players);
-
         System.out.println("How many rounds do you want? (type 1-5)");
-//        Scanner scanner = new Scanner(System.in);
-//         //player chooses the number of rounds
-//        byte numberOfRounds = scanner.nextByte();
-//        while (numberOfRounds < 1 || numberOfRounds > 5) {
-//            System.out.println("Wrong number... Type a number between 1 and 5");
-//            numberOfRounds = scanner.nextByte();
-//        }
-        // scanner.close();
+
         int numberOfRounds = gui2.n_rounds;
         String typeOfRound;
         Round round = new Round();
