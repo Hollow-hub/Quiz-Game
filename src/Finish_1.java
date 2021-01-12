@@ -29,6 +29,8 @@ public class Finish_1 extends  JFrame{
         ScoreBoardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Gui_scores gui_scores = new Gui_scores();
+                gui_scores.setVisible(true);
             }
         });
     }

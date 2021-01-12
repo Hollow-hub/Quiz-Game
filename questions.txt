@@ -38,9 +38,7 @@
 Ποιό είναι το εικονιζόμενο brand;, apple, shell, monster energy, pepsi, brands,apple.jpg
 Ποιό είναι το εικονιζόμενο brand;, playstation, yamaha, instagram, coca cola, brands,PS.jpg
 Ποιό είναι το εικονιζόμενο brand;, kfc, shell, paysafe, nike, brands,KFC.jpg
-Ποιό είναι το εικονιζόμενο brand;, amazon, ebay, skroutz, sony, brands, amazon.jpg
 Ποιό είναι το εικονιζόμενο brand;, nvidia, amd, in, vodafone, brands,Nvidia.jpg
 Ποιό είναι το εικονιζόμενο brand;, starbucks, samsung, target, huawei, brands,starbucks.jpg
 Ποιό είναι το εικονιζόμενο brand;, mcdonald's, jack in the box, taco bell, burger king, brands,mcdonalds.jpg
 Ποιό είναι το εικονιζόμενο brand;, xbox, playstation, nintendo, lg, brands,xbox.jpg
-Ποιό είναι το εικονιζόμενο brand;, volkswagen, mercedes, bmw, alfa romeo, brands,volkwagen.jpg
