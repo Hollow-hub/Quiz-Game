@@ -26,7 +26,6 @@ public class Game{
     
     /**
      * the method that organizes and runs the game
-     * @param
      */
     public void play() {
         Gui1 gui1 = new Gui1();
@@ -64,24 +63,8 @@ public class Game{
         roundTypes.put(4, "rightAnswerMultiplayer");
         roundTypes.put(5, "bidMultiplayer");
 
-
-        //gets how many players are gonna play
-//        players = number_of_players.getPlayers();
-//        while (gui_connection.num_players == 0) {
-//            players = gui_connection.num_players;
-//            System.out.println(players);
-//        }
-//        System.out.println(gui_connection.num_players);
-
         System.out.println("How many rounds do you want? (type 1-5)");
-//        Scanner scanner = new Scanner(System.in);
-//         //player chooses the number of rounds
-//        byte numberOfRounds = scanner.nextByte();
-//        while (numberOfRounds < 1 || numberOfRounds > 5) {
-//            System.out.println("Wrong number... Type a number between 1 and 5");
-//            numberOfRounds = scanner.nextByte();
-//        }
-        // scanner.close();
+
         int numberOfRounds = gui2.n_rounds;
         String typeOfRound;
         Round round = new Round();
@@ -112,47 +95,47 @@ public class Game{
             }
             else{ // for two player game
                 switch (typeOfRound) {
-//                    case "rightAnswerMultiplayer":
-//                        round.rightAnswerMultiplayer(qac.get(0));
-//                        break;
-//                    case "bidMultiplayer":
-//                        round.bidMultiplayer(qac.get(0));
-//                        break;
-//                    case "StopTheTimer":
-//                        round.StopTheTimer(qac.get(0));
-//                        break;
+                    case "rightAnswerMultiplayer":
+                        round.rightAnswerMultiplayer(qac.get(0));
+                        break;
+                    case "bidMultiplayer":
+                        round.bidMultiplayer(qac.get(0));
+                        break;
+                    case "StopTheTimer":
+                        round.StopTheTimer(qac.get(0));
+                        break;
                     case "FastAnswer":
                         round.fastAnswer(qac.get(0));
                         break;
-//                    default:
-//                        int p1 = 0;
-//                        int p2 = 0;
-////                     if there are less than five questions left,
-////                     thermometer can't be played
-//                        if (qac.size() < 5) {
-//                            continue;
-//                        }
-//
-//                        for (int j = 0; j < 5; j++) {
-//                            int result = round.Thermometer(qac.get(0));
-//                            if (result == 3) {
-//                                p1++;
-//                                p2++;
-//                            }
-//                            if (result == 1) {
-//                                p1++;
-//                            } else if (result == 2) {
-//                                p2++;
-//                            }
-//                            qac.remove(0);
-//                        }
-//
-//                        if (p1 == 5) {
-//                            round.setPlayer1_points(round.getPlayer1_points() + 5000);
-//                        } else if (p2 == 5) {
-//                            round.setPlayer2_points(round.getPlayer2_points() + 5000);
-//                        }
-//                        break;
+                    default:
+                        int p1 = 0;
+                        int p2 = 0;
+//                     if there are less than five questions left,
+//                     thermometer can't be played
+                        if (qac.size() < 5) {
+                            continue;
+                        }
+
+                        for (int j = 0; j < 5; j++) {
+                            int result = round.Thermometer(qac.get(0));
+                            if (result == 3) {
+                                p1++;
+                                p2++;
+                            }
+                            if (result == 1) {
+                                p1++;
+                            } else if (result == 2) {
+                                p2++;
+                            }
+                            qac.remove(0);
+                        }
+
+                        if (p1 == 5) {
+                            round.setPlayer1_points(round.getPlayer1_points() + 5000);
+                        } else if (p2 == 5) {
+                            round.setPlayer2_points(round.getPlayer2_points() + 5000);
+                        }
+                        break;
                 }
 
             }

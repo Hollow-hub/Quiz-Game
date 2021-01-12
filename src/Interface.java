@@ -22,6 +22,10 @@ public class Interface {
     /**
      * this method prints the questions
      * we may need to change it to show it on the gui...
+     * @param qac is an object from class Qac, with
+     *            question, answers[4], category and imagePath
+     * @return the answer at the index that will be shown
+     *         to the user
      */
     public String showQuestions(Qac qac) {
         int correctAnswersPlace = 0;
@@ -45,6 +49,16 @@ public class Interface {
         return qac.getAnswers()[questionNumbers[correctAnswersPlace]];
     }
 
+    /**
+     *
+     * @param qac is an object from class Qac
+     * @param typeofRound gets the type of the
+     *                    current round
+     * @param shownRoundNumber is the number of the
+     *                         order of the current round
+     * @return int[2] which are the results
+     *         of the two players
+     */
     public int[] timerInteraction(Qac qac, String typeofRound, int shownRoundNumber) {
         HashMap<Character, Integer> player2 = new HashMap<>();
         player2.put('h', 1);
@@ -144,6 +158,7 @@ public class Interface {
      * @param qac is an object from the class: Qac,
      *          which has question, answers[4] and category
      * @param typeofRound is the type of the current round
+     * @param shownRoundNumber is the order of the current round
      * @return true if user won or false if he lost
      */
     public boolean interaction(Qac qac, String typeofRound, int shownRoundNumber) {
@@ -218,6 +233,8 @@ public class Interface {
      * has 1, 2, 3, 4 as possible answers and player two 
      * has h, j, k, l, that means: h == 1, j == 2, k == 3, l == 4
      * @param qac is an object from class Qac
+     * @param typeofRound is the type of the current round
+     * @param shownRoundNumber is the order of the current round
      * @return 0 if nobody won, 1 if player 1 won and 2 if player 2 won 
      */
     public int fastAnswerInteraction(Qac qac,String typeofRound,int shownRoundNumber) {
@@ -244,7 +261,7 @@ public class Interface {
         }
         gui4_2.correctAnswer.setText(String.valueOf(gui4_2.correctAnswersPlace + 1));
 
-        int player1Answer = 0, player2Answer = 0;
+        int player1Answer, player2Answer;
 
         boolean flag = false;
         if(isPlayer1(gui4_2.answer1)){
@@ -299,7 +316,9 @@ public class Interface {
      * this method handles the interaction when we need to get 
      * an answer from each player
      * @param qac is an object from class Qac (question, answers[], category)
-     * @return 0 if nobody got it correct or
+     * @param typeofRound if the type of the current round
+     * @param shownRoundNumber is the display order of the current round
+     * @return int 0 if nobody got it correct or
      * invalid input. 1 if only player 1 got it right. 2 if only player 2 got
      * it right and 3 if both players got it right
      */
@@ -389,6 +408,9 @@ public class Interface {
 
     /**
      * this method checks if the input is valid
+     * @param input is the user's input as the answer
+     * @return true is not valid answer from the user,
+     *         false is it is a valid answer
      */
     public boolean isNotValid(char input) {
         return input != '1' && input != '2' && input != '3' && input != '4' &&
@@ -396,7 +418,10 @@ public class Interface {
     }
 
     /**
-     * this method checks if input is from player one 
+     * this method checks if input is from player one
+     * @param input is the user's input as the answer
+     * @return true if input is from player1 (1, 2, 3, 4),
+     *         false otherwise
      */
     public boolean isPlayer1(char input) {
         return input == '1' || input == '2' || input == '3' || input == '4';
