@@ -130,9 +130,9 @@ public class Round {
         int[] winner = CLI.timerInteraction(qac,"StopTheTimer",shownRoundNumber);
         if (winner[0] == 0 && winner[1] == 0)
             return;
-        else if (winner[0] == 0)
+        else if (winner[0] <= 0)
             this.Player2_points += (5000 - winner[1])*0.2;
-        else if (winner[1] == 0)
+        else if (winner[1] <= 0)
             this.Player1_points += (5000 - winner[0])*0.2;
         else {
             this.Player1_points += (5000 - winner[0]) * 0.2;

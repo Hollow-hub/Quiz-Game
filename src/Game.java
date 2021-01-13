@@ -69,7 +69,7 @@ public class Game{
         String typeOfRound;
         Round round = new Round();
         Random random = new Random();
-        int rounds = qac.size()/16;
+        int rounds = qac.size()/6;
         
         // a loop that runs each round 
         int shownRoundNumber = 1;
@@ -142,35 +142,6 @@ public class Game{
             qac.remove(0);// removes shown questions
         }
 
-//        scanner.close();
-        if (gui2.players == 1) {
-            Finish_1 finish_1 = new Finish_1(round.getPoint());
-            finish_1.setVisible(true);
-            if (round.getPoint() > 0) {
-                System.out.println("Congratulations!!!");
-            }
-            else {
-                System.out.println("Better luck next time...");
-            }
-            System.out.println("Points:" + round.getPoint());
-        }
-        else {
-            Finish_2 finish_2 = new Finish_2(round.getPlayer1_points(),round.getPlayer2_points());
-            finish_2.setVisible(true);
-            if(round.getPlayer1_points() > round.getPlayer2_points()){
-                finish_2.Player1.setText("Player 1");
-                finish_2.Player2.setText("Player 2");
-            }
-            else if(round.getPlayer1_points() < round.getPlayer2_points()){
-                finish_2.Player1.setText("Player 2");
-                finish_2.Player2.setText("Player 1");
-            }else {
-                finish_2.Won.setText("DRAW");
-                finish_2.Lost.setText("DRAW");
-            }
-            System.out.println("Player 1 points: " + round.getPlayer1_points());
-            System.out.println("Player 2 points: " + round.getPlayer2_points());
-        }
 
         file = "scoreboard.txt";
         int player1Score=0, player2Score=0, score=0, i=0;
@@ -210,12 +181,12 @@ public class Game{
         else {
             if (round.getPlayer1_points() > round.getPlayer2_points()) {
                 fileContents = fileContents.replaceAll(oldPlayer1String,
-                        String.valueOf(player1Score+1));
+                        "Player1:" + String.valueOf(++player1Score));
                 changed = true;
             }
             else if (round.getPlayer1_points() < round.getPlayer2_points()) {
                 fileContents = fileContents.replaceAll(oldPlayer2String,
-                        String.valueOf(player2Score+1));
+                        "Player2:" + String.valueOf(++player2Score));
                 changed = true;
             }
         }
@@ -224,6 +195,35 @@ public class Game{
             FileWriter writer = new FileWriter(file);
             writer.append(fileContents);
             writer.close();
+        }
+
+        if (gui2.players == 1) {
+            Finish_1 finish_1 = new Finish_1(round.getPoint(),score);
+            finish_1.setVisible(true);
+            if (round.getPoint() > 0) {
+                System.out.println("Congratulations!!!");
+            }
+            else {
+                System.out.println("Better luck next time...");
+            }
+            System.out.println("Points:" + round.getPoint());
+        }
+        else {
+            Finish_2 finish_2 = new Finish_2(round.getPlayer1_points(),round.getPlayer2_points(),player1Score,player2Score);
+            finish_2.setVisible(true);
+            if(round.getPlayer1_points() > round.getPlayer2_points()){
+                finish_2.Player1.setText("Player 1");
+                finish_2.Player2.setText("Player 2");
+            }
+            else if(round.getPlayer1_points() < round.getPlayer2_points()){
+                finish_2.Player1.setText("Player 2");
+                finish_2.Player2.setText("Player 1");
+            }else {
+                finish_2.Won.setText("DRAW");
+                finish_2.Lost.setText("DRAW");
+            }
+            System.out.println("Player 1 points: " + round.getPlayer1_points());
+            System.out.println("Player 2 points: " + round.getPlayer2_points());
         }
     }
 }

@@ -5,10 +5,11 @@ import java.awt.event.ActionListener;
 
 public class Gui_scores extends JFrame {
     private JPanel scorePanel;
-    private JLabel singleplayerpoints;
     private JButton backButton;
+    private JLabel PointsPlayer1;
 
-    Gui_scores(){
+    Gui_scores(int point){
+        PointsPlayer1.setText(String.valueOf(point));
         setUndecorated(true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2 - 150 , dim.height/2-this.getSize().height/2 - 150);

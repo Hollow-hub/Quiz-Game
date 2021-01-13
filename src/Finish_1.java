@@ -9,11 +9,14 @@ public class Finish_1 extends  JFrame{
     private JButton quitGameButton;
     private JLabel P1points;
 
-    Finish_1(int point){
+    Finish_1(int roundPoint,int point){
+
+        if (point < roundPoint)
+            point = roundPoint;
         setUndecorated(true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2 - 150 , dim.height/2-this.getSize().height/2 - 150);
-        P1points.setText(String.valueOf(point));
+        P1points.setText(String.valueOf(roundPoint));
         add(finishPanel);
         setTitle("Buzz");
         setSize(350,230);
@@ -26,10 +29,11 @@ public class Finish_1 extends  JFrame{
                 System.exit(0);
             }
         });
+        int finalPoint = point;
         ScoreBoardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Gui_scores gui_scores = new Gui_scores();
+                Gui_scores gui_scores = new Gui_scores(finalPoint);
                 gui_scores.setVisible(true);
             }
         });

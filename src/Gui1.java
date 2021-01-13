@@ -8,6 +8,7 @@ public class Gui1 extends JFrame {
     private JButton quitGameButton;
     private JPanel rootPanel;
     private JButton instructionsButton;
+    private JButton scoreBoardButton;
     public boolean access;
 
     public Gui1(){

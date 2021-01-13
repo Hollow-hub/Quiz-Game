@@ -20,14 +20,6 @@
           <text value="Singleplayer"/>
         </properties>
       </component>
-      <component id="69ef5" class="javax.swing.JLabel" binding="singleplayerpoints">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="-"/>
-        </properties>
-      </component>
       <component id="4a6bd" class="javax.swing.JButton" binding="backButton" default-binding="true">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -35,6 +27,14 @@
         <properties>
           <background color="-13583680"/>
           <text value="Back"/>
+        </properties>
+      </component>
+      <component id="70962" class="javax.swing.JLabel" binding="PointsPlayer1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="-"/>
         </properties>
       </component>
     </children>

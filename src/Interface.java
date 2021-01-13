@@ -367,8 +367,8 @@ public class Interface {
             player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer1)));
             player2Answer = player2.get(gui4_2.answer2);
         } else {
-            player1Answer = player2.get(gui4_2.answer1);
-            player2Answer = (Integer.parseInt(String.valueOf(gui4_2.answer2)));
+            player1Answer = (Integer.parseInt(String.valueOf(gui4_2.answer2)));
+            player2Answer = player2.get(gui4_2.answer1);
         }
         if (player1Answer - 1 == gui4_2.correctAnswersPlace &&
                 player2Answer - 1 == gui4_2.correctAnswersPlace) {
