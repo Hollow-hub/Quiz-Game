@@ -219,11 +219,11 @@ public class Game{
                 changed = true;
             }
         }
-        FileWriter writer = new FileWriter(file);
-        if (changed) {
-            writer.append(fileContents);
-        }
-        writer.flush();
-    }
 
+        if (changed) {
+            FileWriter writer = new FileWriter(file);
+            writer.append(fileContents);
+            writer.close();
+        }
+    }
 }
